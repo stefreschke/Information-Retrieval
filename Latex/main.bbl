@@ -16,5 +16,37 @@
   {}
 \endgroup
 
-\datalist[entry]{ynt/global//global/global}\enddatalist
+\datalist[entry]{ynt/global//global/global}
+  \entry{IR_Uni_Duisburg}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Information Retrieval}
+    \verb{url}
+    \verb http://www.is.informatik.uni-duisburg.de/courses/ie_ss07/folien/folie
+    \verb n-ir.pdf
+    \endverb
+    \field{year}{2007}
+  \endentry
+
+  \entry{VR_Retrieval}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Vektorraum-Retrieval}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Vektorraum-Retrieval
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{klass_IR}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{9}
+    \field{sortinithash}{9}
+    \field{title}{Klassische Information Retrieval Modelle Einführung}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+\enddatalist
 \endinput

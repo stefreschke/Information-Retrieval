@@ -14,4 +14,27 @@ Die theoretischen Hintergründe des invertierten Index, der Komprimierung und de
 
 \section{Ziel der Arbeit}
 Ziel der Arbeit soll es sein, ein grundlegendes Verständnis des Themenkomplexes Information-Retrieval zu vermitteln.
-Darüber hinaus soll die Beispiel-Implementierung die Funktionsweise eines IR-Systemns praxisnah verdeutlichen.
+Das umfasst einerseits die theoretischen Hintergründe, die für die später vorgestellte Beispielimplementierung notwendig sind, sowie die Vorstellung der Beispielimplementierung an sich.
+\newline
+Die Beispielimplementierung soll hauptsächlich die folgenden Themengebiete umfassen:
+\newpage
+\begin{itemize}
+	\item Aufbau eines invertierten Indexes
+	\item Approximierende Beurteilung der Relevanz eines gefundenen Dokuments mittels tf-idf
+	\item Komprimierung des invertierten Indexes
+\end{itemize}
+Die in dieser Arbeit vorgestellte Implementierung hat nicht den Anspruch auf hohe Performance, vielmehr dient diese dem Zwecke der praxisnahen Veranschaulichung der Funktionsweise von IR-Systemen.
+
+\section{Stand der Forschung}
+Dieser Abschnitt soll den aktuellen Stand der Forschung kurz umreißen.
+Es sollen dazu zwei Modelle von Information Retrieval knapp beschrieben werden, die für die Entwicklung einer lokalen Suchmaschine, von Bedeutung sind. Es wird jedoch nur ein Modell im Verlauf dieser Arbeit gezeigt.
+\newline
+
+\subsection{Vector Space Model}
+Das Vector Space Model, zu deutsch Vektorraummodell, repräsentiert Dokumente und Anfragen als hochdimensionale, metrische Vektoren \cite{VR_Retrieval}.
+Der Anfrage-Vektor wird beim Retrieval-Prozess mit den Dokumenten-Vektoren verglichen. Dabei werden jedoch nur Dokumente betrachtet, welche mit der Anfrage in Verbindung stehen könnten \cite{klass_IR}. Welche Dokumente mit der Anfrage in Verbindung stehen könnten, wird mithilfe des invertierten Index ermittelt.
+\newline
+Es gibt verschiedene Maße, mit denen die Vektoren miteinander verglichen werden können. Der einfachste Ansatz besteht darin, den Abstand zu berechnen, jedoch ist dies kein sehr gutes Maß. 
+Besser und weit verbreitet ist deshalb das Cosinus-Maß (heißt das echt so?!), welches den Winkel zwischen Anfrage-Vektor und Dokumenten-Vektor angibt. Je kleiner der Winkel, desto höher ist die Relevanz des Dokuments  \cite{IR_Uni_Duisburg}.
+
+\subsection{Probabilistische Ansätze}
