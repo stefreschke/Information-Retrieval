@@ -36,5 +36,9 @@ Der Anfrage-Vektor wird beim Retrieval-Prozess mit den Dokumenten-Vektoren vergl
 \newline
 Es gibt verschiedene Maße, mit denen die Vektoren miteinander verglichen werden können. Der einfachste Ansatz besteht darin, den Abstand zu berechnen, jedoch ist dies kein sehr gutes Maß. 
 Besser und weit verbreitet ist deshalb das Cosinus-Maß (heißt das echt so?!), welches den Winkel zwischen Anfrage-Vektor und Dokumenten-Vektor angibt. Je kleiner der Winkel, desto höher ist die Relevanz des Dokuments  \cite{IR_Uni_Duisburg}.
+\newline
+Dieses Modell wir im Rahmen dieser Arbeit genauer beleuchtet und als Grundlage für die Beispielimplementierung genutzt.
 
 \subsection{Probabilistische Ansätze}
+Probabilistische Ansätze basieren auf Wahrscheinlichkeiten. Hierbei wird eine Abschätzung der Wahrscheinlichkeit berechnet, mit der ein Dokument $d$ bezüglich einer Anfrage $q$ relevant ist \cite{IR_Uni_Duisburg}.
+Zur Abschätzung der Wahrscheinlichkeit gibt es verschiedene Ansätze, die hier jedoch nicht weiter thematisiert werden sollen. Bei allen praktisch nutzbaren Ansätzen sind jedoch eine - je nach Ansatz - große oder kleine Menge von Zusatzinformationen über die Dokumentenkollektion nötig \cite{IR_Uni_Duisburg}.
