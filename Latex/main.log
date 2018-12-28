@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6530 64-bit)  (format=lualatex 2018.6.6)  27 DEC 2018 18:40
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6530 64-bit)  (format=lualatex 2018.6.6)  28 DEC 2018 14:30
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.402 seconds
+luaotfload | main : initialization completed in 0.398 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ("C:/Program Files/MiKTeX 2.9/tex/latex/koma-script/scrreprt.cls"
 Document Class: scrreprt 2018/03/30 v3.25 KOMA-Script document class (report)
@@ -1675,6 +1675,21 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 27.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 27.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 27.
+ [9.10
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 29.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 29.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 128.
@@ -1684,9 +1699,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 128.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 128.
- [9.10
-
-]
+ [10.11]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line 128.
@@ -1708,7 +1721,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 130.
-[10.11
+[11.12
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
@@ -1717,36 +1730,37 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5D8292CFE412DA99C33D02DCE40EE062;547.
+(rerunfilecheck)             Checksum: 284227913B3779382F29D7112753F80B;610.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 30882 strings out of 494450
+ 30887 strings out of 494450
  100000,1144653 words of node,token memory allocated
  611 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 10 attribute, 70 glue_spec, 10 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:4,2:271,3:83,4:30,5:126,6:18,7:2676,8:81,9:77,10:11,11:341
- 34159 multiletter control sequences out of 65536+200000
+   avail lists: 1:4,2:299,3:83,4:30,5:126,6:20,7:2676,8:81,9:92,10:11,11:341
+ 34160 multiletter control sequences out of 65536+200000
  52 fonts using 11026743 bytes
  54i,11n,77p,9083b,2178s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/program files/miktex 2.9/fonts/opentype/public/lm/lmmono12-regular.otf><c:/p
 rogram files/miktex 2.9/fonts/opentype/public/lm/lmromancaps10-regular.otf>{C:/P
-rogram Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTe
-X 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/
-lm/lm-mathit.enc}<c:/program files/miktex 2.9/fonts/opentype/public/lm/lmsans12-
+rogram Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.
+9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/
+lm/lm-mathsy.enc}<c:/program files/miktex 2.9/fonts/opentype/public/lm/lmsans12-
 oblique.otf><c:/program files/miktex 2.9/fonts/opentype/public/lm/lmsans12-regul
 ar.otf><c:/program files/miktex 2.9/fonts/opentype/public/lm/lmsans10-bold.otf><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/lm/lmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10
-.pfb>
-Output written on main.pdf (11 pages, 82889 bytes).
+iKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (12 pages, 111134 bytes).
 
-PDF statistics: 171 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 131072)
- 65 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 190 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 131072)
+ 73 words of extra memory for PDF output out of 10000 (max. 100000000)
 
