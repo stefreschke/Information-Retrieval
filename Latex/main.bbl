@@ -29,6 +29,28 @@
     \field{year}{2007}
   \endentry
 
+  \entry{IR_Intro_Cambridge}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CDMHSPR}{%
+         family={Cristopher D.\bibnamedelima Manning},
+         familyi={C\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+         suffix={Prabhakar\bibnamedelima Raghavan},
+         suffixi={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+         given={Hinrich\bibnamedelima Schütze},
+         giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CDMPRHS1}
+    \strng{fullhash}{CDMPRHS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Introduction to Information Retrieval}
+    \field{year}{2009}
+  \endentry
+
   \entry{VR_Retrieval}{online}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{2}
