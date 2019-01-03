@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6530 64-bit)  (format=lualatex 2018.6.6)  2 JAN 2019 16:50
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6530 64-bit)  (format=lualatex 2018.6.6)  3 JAN 2019 16:11
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.396 seconds
+luaotfload | main : initialization completed in 0.405 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ("C:/Program Files/MiKTeX 2.9/tex/latex/koma-script/scrreprt.cls"
 Document Class: scrreprt 2018/03/30 v3.25 KOMA-Script document class (report)
@@ -1732,12 +1732,24 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 90.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 90.
-<../Abbildungen/index.png, id=166, 269.005pt x 396.48125pt>
+<../Abbildungen/index.png, id=180, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
 Package luatex.def Info: ../Abbildungen/index.png  used on input line 96.
 (luatex.def)             Requested size: 134.50217pt x 198.24013pt.
-)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 100.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 100.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 108.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 108.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 108.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 108.
+[12.13<../Abbildungen/index.png>])
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 128.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1746,7 +1758,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 128.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 128.
- [12.13<../Abbildungen/index.png>]
+ [13.14]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line 128.
@@ -1754,6 +1766,13 @@ LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmromancaps10-regular.luc)(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/lmmono12-regular.luc)
+Overfull \hbox (10.05704pt too wide) in paragraph at lines 130--130
+[]\TU/lmss/m/sl/12 In-de-xie-rung mit-tels in-ver-tier-ter Da-tei-en\TU/lmss/m/
+n/12 . 2001. \TU/lmr/m/sc/12 url\TU/lmss/m/n/12 : []$\TU/lmtt/m/n/12 http : / /
+ www . cis . uni - muenchen .
+ []
+
+
 Overfull \hbox (6.97293pt too wide) in paragraph at lines 130--130
 []\TU/lmss/m/sl/12 Vektorraum-Retrieval\TU/lmss/m/n/12 . 2017. \TU/lmr/m/sc/12 
 url\TU/lmss/m/n/12 : []$\TU/lmtt/m/n/12 https : / / de . wikipedia . org / wiki
@@ -1768,7 +1787,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 130.
-[13.14
+[14.15
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
@@ -1777,22 +1796,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 74E12A630420580A9B546D0C8BA6D3ED;946.
+(rerunfilecheck)             Checksum: 154875031FFB9D2641431A008BB875DE;1035.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 30927 strings out of 494450
+ 30939 strings out of 494450
  100000,1144653 words of node,token memory allocated
- 616 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 10 attribute, 71 glue_spec, 10 attr
-ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:4,2:440,3:100,4:40,5:188,6:33,7:3754,8:81,9:112,10:13,11:447
- 34182 multiletter control sequences out of 65536+200000
+ 631 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 11 attribute, 72 glue_spec, 11 attr
+ibute_list, 2 write, 3 pdf_action nodes
+   avail lists: 1:4,2:468,3:120,4:42,5:187,6:38,7:3754,8:84,9:119,10:13,11:447
+ 34189 multiletter control sequences out of 65536+200000
  52 fonts using 11026743 bytes
- 54i,11n,77p,9083b,2178s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,11n,77p,9083b,2792s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/program files/miktex 2.9/fonts/opentype/public/lm/lmmono12-regular.otf><c:/p
 rogram files/miktex 2.9/fonts/opentype/public/lm/lmromancaps10-regular.otf>{C:/P
 rogram Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.
@@ -1805,9 +1824,9 @@ iKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (14 pages, 133203 bytes).
+Output written on main.pdf (15 pages, 139960 bytes).
 
-PDF statistics: 248 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 131072)
- 113 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 277 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 131072)
+ 121 words of extra memory for PDF output out of 10000 (max. 100000000)
 
