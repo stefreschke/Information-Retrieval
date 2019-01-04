@@ -82,6 +82,17 @@
     \field{year}{2009}
   \endentry
 
+  \entry{Trie_Blog}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Trying to Understand Tries}
+    \verb{url}
+    \verb https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
+    \endverb
+    \field{year}{2017}
+  \endentry
+
   \entry{VR_Retrieval}{online}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{2}
@@ -91,6 +102,29 @@
     \verb https://de.wikipedia.org/wiki/Vektorraum-Retrieval
     \endverb
     \field{year}{2017}
+  \endentry
+
+  \entry{Trie_wiki}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Trie}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Trie
+    \endverb
+    \field{year}{2018}
+  \endentry
+
+  \entry{trie_Abb}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{9}
+    \field{sortinithash}{9}
+    \field{title}{Introduction to Trie}
+    \verb{url}
+    \verb https://guide.freecodecamp.org/miscellaneous/data-structure-trie/
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
   \endentry
 
   \entry{klass_IR}{misc}{}
