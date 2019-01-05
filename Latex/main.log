@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6530 64-bit)  (format=lualatex 2018.6.6)  4 JAN 2019 16:11
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6530 64-bit)  (format=lualatex 2018.6.6)  5 JAN 2019 15:25
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.844 seconds
+luaotfload | main : initialization completed in 0.401 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ("C:/Program Files/MiKTeX 2.9/tex/latex/koma-script/scrreprt.cls"
 Document Class: scrreprt 2018/03/30 v3.25 KOMA-Script document class (report)
@@ -1738,7 +1738,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 90.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 90.
-<../Abbildungen/index.png, id=184, 269.005pt x 396.48125pt>
+<../Abbildungen/index.png, id=199, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
 Package luatex.def Info: ../Abbildungen/index.png  used on input line 96.
@@ -1756,7 +1756,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 108.
 [12.13<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=195, 303.1325pt x 306.14375pt>
+<../Abbildungen/trie.png, id=210, 303.1325pt x 306.14375pt>
 File: ../Abbildungen/trie.png Graphic file (type png)
 <use ../Abbildungen/trie.png>
 Package luatex.def Info: ../Abbildungen/trie.png  used on input line 117.
@@ -1769,30 +1769,57 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 121.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 121.
- [13.14<../Abbildungen/trie.png>])
-Underfull \hbox (badness 10000) in paragraph at lines 135--130
+ [13.14<../Abbildungen/trie.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 135--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--130
+Underfull \hbox (badness 10000) in paragraph at lines 135--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--130
+Underfull \hbox (badness 10000) in paragraph at lines 135--146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--146
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 151.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 151.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 151.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 151.
 [14.15]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 152.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 152.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 154.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 154.
+)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 128.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 128.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 128.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 128.
+ [15.16]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line 128.
@@ -1821,7 +1848,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 130.
-[15.16
+[16.17
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
@@ -1830,20 +1857,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 154875031FFB9D2641431A008BB875DE;1035.
+(rerunfilecheck)             Checksum: 660E5E3EAE04BB080F4D43148CC0263E;1228.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 30964 strings out of 494450
+ 30971 strings out of 494450
  100000,1144653 words of node,token memory allocated
  651 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 13 attribute, 72 glue_spec, 13 attr
 ibute_list, 2 write, 5 pdf_action nodes
-   avail lists: 1:4,2:500,3:180,4:42,5:188,6:40,7:3754,8:90,9:119,10:18,11:447
- 34202 multiletter control sequences out of 65536+200000
+   avail lists: 1:4,2:550,3:181,4:48,5:188,6:47,7:3935,8:91,9:140,10:18,11:447
+ 34205 multiletter control sequences out of 65536+200000
  52 fonts using 11026743 bytes
  54i,11n,77p,9083b,2792s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/program files/miktex 2.9/fonts/opentype/public/lm/lmmono12-regular.otf><c:/p
@@ -1860,9 +1887,9 @@ pe1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi
 iles/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/lm/lmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (16 pages, 162539 bytes).
+Output written on main.pdf (17 pages, 166283 bytes).
 
-PDF statistics: 319 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 131072)
- 121 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 341 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 131072)
+ 145 words of extra memory for PDF output out of 10000 (max. 100000000)
 
