@@ -16,5 +16,124 @@
   {}
 \endgroup
 
-\datalist[entry]{ynt/global//global/global}\enddatalist
+\datalist[entry]{ynt/global//global/global}
+  \entry{index_Uni_Munich}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Indexierung mittels invertierter Dateien}
+    \verb{url}
+    \verb http://www.cis.uni-muenchen.de/people/Schulz/SeminarSoSe2001IR/Nagy/n
+    \verb ode4.html
+    \endverb
+    \field{year}{2001}
+  \endentry
+
+  \entry{IR_Uni_Duisburg}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Information Retrieval}
+    \verb{url}
+    \verb http://www.is.informatik.uni-duisburg.de/courses/ie_ss07/folien/folie
+    \verb n-ir.pdf
+    \endverb
+    \field{year}{2007}
+  \endentry
+
+  \entry{IR_Uni_Bamberg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HA}{%
+         family={Henrich},
+         familyi={H\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HA1}
+    \strng{fullhash}{HA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Information Retrieval 1}
+    \field{year}{2008}
+  \endentry
+
+  \entry{IR_Intro_Cambridge}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CDMHSPR}{%
+         family={Cristopher D.\bibnamedelima Manning},
+         familyi={C\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+         suffix={Prabhakar\bibnamedelima Raghavan},
+         suffixi={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+         given={Hinrich\bibnamedelima Schütze},
+         giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CDMPRHS1}
+    \strng{fullhash}{CDMPRHS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Introduction to Information Retrieval}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Trie_Blog}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Trying to Understand Tries}
+    \verb{url}
+    \verb https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{VR_Retrieval}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Vektorraum-Retrieval}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Vektorraum-Retrieval
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{Trie_wiki}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Trie}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Trie
+    \endverb
+    \field{year}{2018}
+  \endentry
+
+  \entry{trie_Abb}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{9}
+    \field{sortinithash}{9}
+    \field{title}{Introduction to Trie}
+    \verb{url}
+    \verb https://guide.freecodecamp.org/miscellaneous/data-structure-trie/
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{klass_IR}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{9}
+    \field{sortinithash}{9}
+    \field{title}{Klassische Information Retrieval Modelle Einführung}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+\enddatalist
 \endinput
