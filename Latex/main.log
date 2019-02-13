@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.30)  8 JAN 2019 15:43
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.8.18)  13 FEB 2019 14:16
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -6,13 +6,13 @@ LaTeX2e <2017-04-15>
 Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
 Lua module: lualibs 2017-02-01 2.5 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2017-02-01 2.5 ConTeXt Lua libraries -- extended co
-llection.(using cache: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/gene
+llection.(using cache: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/gene
 ric)
-luaotfload | conf : Root cache directory is C:/Users/marle/AppData/Local/MiKTeX/
+luaotfload | conf : Root cache directory is C:/Users/jonas/AppData/Local/MiKTeX/
 2.9/luatex-cache/generic/names.
 luaotfload | init : Loading fontloader “fontloader-2017-02-11.lua” from kpse
--resolved path “C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/luatex/lu
-aotfload/fontloader-2017-02-11.lua”.
+-resolved path “F:/Jonas/Programme/LaTeX/tex/luatex/luaotfload/fontloader-2017
+-02-11.lua”.
 Lua-only attribute luaotfload@state = 1
 Lua-only attribute luaotfload@noligature = 2
 Lua-only attribute luaotfload@syllabe = 3
@@ -21,7 +21,7 @@ Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
 Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
 Inserting `luaotfload.define_font' at position 1 in `define_font'.
 Lua-only attribute luaotfload_color_attribute = 4
-luaotfload | conf : Root cache directory is C:/Users/marle/AppData/Local/MiKTeX/
+luaotfload | conf : Root cache directory is C:/Users/jonas/AppData/Local/MiKTeX/
 2.9/luatex-cache/generic/names.
 Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
 font'.
@@ -33,34 +33,26 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.772 seconds
+luaotfload | main : initialization completed in 0.680 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrrep
-rt.cls"
+(F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2018/03/30 v3.25 KOMA-Script document class (report)
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrkba
-se.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrkbase.sty
 Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent ba
 sics and keyval usage)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrbas
-e.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrbase.sty
 Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent b
 asics and keyval usage)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.st
-y"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrlfi
-le.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
 )))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/tocbas
-ic.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2018/03/30 v3.25 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
@@ -79,16 +71,13 @@ Package scrreprt Info: You've used standard option `12pt'.
 Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input li
 ne 2328.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrsiz
-e12pt.clo"
+(F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrsize12pt.clo
 File: scrsize12pt.clo 2018/03/30 v3.25 KOMA-Script font size class option (12pt)
 
-luaotfload | db : Font names database loaded from C:/Users/marle/AppData/Local/M
-iKTeX/2.9/luatex-cache/generic/names/luaotfload-names.luc(load luc: C:/Users/mar
-le/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman12-regular.luc
-))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/typear
-ea.sty"
+luaotfload | db : Font names database loaded from C:/Users/jonas/AppData/Local/M
+iKTeX/2.9/luatex-cache/generic/names/luaotfload-names.luc(load luc: C:/Users/jon
+as/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman12-regular.luc
+)) (F:/Jonas/Programme/LaTeX/tex/latex/koma-script/typearea.sty
 Package: typearea 2018/03/30 v3.25 KOMA-Script package (type area)
 \ta@bcor=\skip42
 \ta@div=\count79
@@ -150,14 +139,13 @@ Package tocbasic Info: omitting babel extension for `lot'
 Class scrreprt Info: Redefining `\numberline' on input line 6433.
 \bibindent=\dimen102
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/babel/babel.sty
 Package: babel 2018/02/14 3.18 The Babel package
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/switch.def
-"
+
+(F:/Jonas/Programme/LaTeX/tex/generic/babel/switch.def
 File: switch.def 2018/02/14 3.18 Babel switching mechanism
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/luababel.d
-ef"
+(F:/Jonas/Programme/LaTeX/tex/generic/babel/luababel.def
 \l@afrikaans=\language2
 Package babel Info: Non-standard hyphenation setup on input line 113.
 \l@ancientgreek=\language3
@@ -237,45 +225,35 @@ Package babel Info: Non-standard hyphenation setup on input line 113.
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg"
+(F:/Jonas/Programme/LaTeX/tex/latex/arabi/bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of 
 babel
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/babel-german/ngerm
-an.ldf"
+(F:/Jonas/Programme/LaTeX/tex/latex/babel-german/ngerman.ldf
 Language: ngerman 2016/11/02 v2.9 German support for babel (new orthography)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/babel-german/ngerm
-anb.ldf"
+(F:/Jonas/Programme/LaTeX/tex/latex/babel-german/ngermanb.ldf
 Language: ngermanb 2016/11/02 v2.9 German support for babel (new orthography)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.def"
+(F:/Jonas/Programme/LaTeX/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
 \babel@savecnt=\count89
 \U@D=\dimen103
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/luababel.d
-ef"))
+(F:/Jonas/Programme/LaTeX/tex/generic/babel/luababel.def))
 Package babel Info: Making " an active character on input line 125.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/hyph-utf8/loadhy
-ph/loadhyph-de-1996.tex"
+(F:/Jonas/Programme/LaTeX/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.tex
 UTF-8 German hyphenation patterns (reformed orthography)
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/hyph-utf8/patter
-ns/tex/hyph-de-1996.tex"
+(F:/Jonas/Programme/LaTeX/tex/generic/hyph-utf8/patterns/tex/hyph-de-1996.tex
 German Hyphenation Patterns (Reformed Orthography, 2006) `dehyphn-x' 2017-03-31
- (WL))))))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fontspec/fontspec.
-sty"
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3packages/xparse/
-xparse.sty"
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/expl3.sty
-"
-Package: expl3 2018-05-13 L3 programming layer (loader) 
+ (WL)))))) (F:/Jonas/Programme/LaTeX/tex/latex/fontspec/fontspec.sty
+(F:/Jonas/Programme/LaTeX/tex/latex/l3packages/xparse/xparse.sty
+(F:/Jonas/Programme/LaTeX/tex/latex/l3kernel/expl3.sty
+Package: expl3 2018-06-14 L3 programming layer (loader) 
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/expl3-cod
-e.tex"
-Package: expl3 2018-05-13 L3 programming layer (code)
+(F:/Jonas/Programme/LaTeX/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2018-06-14 L3 programming layer (code)
 \ucharcat@table=\catcodetable5
 \c_max_int=\count90
 \l_tmpa_int=\count91
@@ -419,9 +397,8 @@ Package: expl3 2018-05-13 L3 programming layer (code)
 \l__seq_internal_a_int=\count169
 \l__seq_internal_b_int=\count170
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/l3pdfmode
-.def"
-File: l3pdfmode.def 2018-05-13 v L3 Experimental driver: PDF mode
+(F:/Jonas/Programme/LaTeX/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2018-06-14 v L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count171
 ))
 Package: xparse 2018-05-12 L3 Experimental document command parser
@@ -433,8 +410,7 @@ Package: xparse 2018-05-12 L3 Experimental document command parser
 )
 Package: fontspec 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTeX
 Lua module: fontspec 2017/11/09 2.6g Font selection for XeLaTeX and LuaLaTeX
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fontspec/fontspec-
-luatex.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count177
@@ -449,10 +425,10 @@ X
 \l__fontspec_tmpb_dim=\dimen137
 \l__fontspec_tmpc_dim=\dimen138
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/fontenc.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/tuenc.def"
+(F:/Jonas/Programme/LaTeX/tex/latex/base/tuenc.def
 File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
 ))
@@ -627,16 +603,15 @@ LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
 . Defining command \UndeclareComposite with sig. 'mm' on line 3440.
 .................................................
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fontspec/fontspec.
-cfg")
+(F:/Jonas/Programme/LaTeX/tex/latex/fontspec/fontspec.cfg)
 LaTeX Info: Redefining \itshape on input line 3625.
 LaTeX Info: Redefining \slshape on input line 3630.
 LaTeX Info: Redefining \scshape on input line 3635.
 LaTeX Info: Redefining \upshape on input line 3640.
 LaTeX Info: Redefining \em on input line 3670.
 LaTeX Info: Redefining \emph on input line 3695.
-(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
-l/lmroman12-bold.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-c
+(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
+l/lmroman12-bold.luc)(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-c
 ache/generic/fonts/otl/lmroman12-italic.luc)
 LaTeX Info: Redefining \- on input line 3749.
 .................................................
@@ -650,11 +625,10 @@ LaTeX Info: Redefining \- on input line 3749.
 . Defining command \liningnums with sig. 'm' on line 3848.
 .................................................
 ))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/setspace/setspace.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -689,13 +663,13 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-luaotfload | cache : Lookup cache loaded from C:/Users/marle/AppData/Local/MiKTe
+luaotfload | cache : Lookup cache loaded from C:/Users/jonas/AppData/Local/MiKTe
 X/2.9/luatex-cache/generic/names/luaotfload-lookup-cache.luc.(load luc: C:/Users
-/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/arial.luc)
+/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/arial.luc)
 \g__fontspec_family_Arial_int=\count185
-(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
-l/arialbi.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/ge
-neric/fonts/otl/arialbd.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/l
+(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
+l/arialbi.luc)(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/ge
+neric/fonts/otl/arialbd.luc)(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/ariali.luc)
 .................................................
 . fontspec info: "defining-font"
@@ -724,31 +698,27 @@ uatex-cache/generic/fonts/otl/ariali.luc)
 .................................................
 LaTeX Info: Redefining \rmfamily on input line 17.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graph
-ics.cfg"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: luatex.def on input line 99.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/luate
-x.def"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics-def/luatex.def
 File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/float/float.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count186
 \float@exts=\toks15
@@ -756,30 +726,24 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks16
 \@floatcapt=\box44
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/biblatex.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/pdftexc
-mds.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
 
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/infware
-rr.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifluate
-x.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX detected.
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds
-.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.s
-ty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -787,39 +751,35 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 \pdftexcmds@toks=\toks17
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count187
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions
-.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvsetke
-ys.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/etexcmd
-s.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 )))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/logreq/logreq.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count188
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/logreq/logreq.def"
+
+(F:/Jonas/Programme/LaTeX/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) ("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ifthen.sty
-"
+))
+(F:/Jonas/Programme/LaTeX/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-) ("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/url/url.sty"
+)
+(F:/Jonas/Programme/LaTeX/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xstring/xstring.st
-y"
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/xstring/xstring.
-tex"
+(F:/Jonas/Programme/LaTeX/tex/latex/xstring/xstring.sty
+(F:/Jonas/Programme/LaTeX/tex/generic/xstring/xstring.tex
 \@xs@message=\write3
 \integerpart=\count189
 \decimalpart=\count190
@@ -880,8 +840,7 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/blx-dm.de
-f"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -971,20 +930,17 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/blx-unico
-de.def")
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/blx-unicode.def)
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/blx-compa
-t.def"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load BibTeX backend compatibility...
 Package biblatex Info: ... file 'blx-bibtex.def' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/blx-bibte
-x.def"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/blx-bibtex.def
 File: blx-bibtex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 
 
@@ -994,9 +950,7 @@ Package biblatex Warning: Using fall-back BibTeX(8) backend:
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/biblatex.
-def"
+ (F:/Jonas/Programme/LaTeX/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 \c@textcitecount=\count366
 \c@textcitetotal=\count367
@@ -1009,14 +963,12 @@ File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/bbx/numer
-ic.bbx"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/bbx/numeric.bbx
 File: numeric.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/bbx/stand
-ard.bbx"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count373
 \c@bbx:relatedtotal=\count374
@@ -1024,8 +976,7 @@ File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/cbx/numer
-ic.cbx"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -1042,34 +993,27 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/biblatex.
-cfg"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsmath/amsmath.st
-y"
+(F:/Jonas/Programme/LaTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip86
 
 For additional information on amsmath, use the `?' option.
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsmath/amstext.st
-y"
+(F:/Jonas/Programme/LaTeX/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
-"
+(F:/Jonas/Programme/LaTeX/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen141
 ))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
-"
+(F:/Jonas/Programme/LaTeX/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen142
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
-"
+(F:/Jonas/Programme/LaTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count375
@@ -1110,16 +1054,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hyperref.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-
-hyperref.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/hobsub-
-generic.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -1134,8 +1075,7 @@ Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 Package: luatex-loader 2016/05/16 v0.6 Lua module loader (HO)
 
-(C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/scripts/oberdiek/oberdiek.luat
-ex.lua)
+(F:/Jonas/Programme/LaTeX/scripts/oberdiek/oberdiek.luatex.lua)
 Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
@@ -1152,26 +1092,22 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/auxhook.s
-ty"
+(F:/Jonas/Programme/LaTeX/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen150
 \Hy@linkcounter=\count387
 \Hy@pagecounter=\count388
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/pd1enc.de
-f"
+(F:/Jonas/Programme/LaTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count389
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/00miktex/hyperref.
-cfg"
+(F:/Jonas/Programme/LaTeX/tex/latex/00miktex/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4509.
@@ -1202,22 +1138,19 @@ LaTeX Info: Redefining \pageref on input line 6443.
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/hluatex.d
-ef"
+(F:/Jonas/Programme/LaTeX/tex/latex/hyperref/hluatex.def
 File: hluatex.def 2018/02/06 v6.86b Hyperref driver for luaTeX
 \Fld@listcount=\count395
 \c@bookmark@seq@number=\count396
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/rerunfile
-check.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 2.
 )
 \Hy@SectionHShift=\skip89
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/cleveref/cleveref.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
 LaTeX Info: Redefining \cref on input line 2370.
@@ -1235,8 +1168,7 @@ Package cleveref Info: always capitalise cross-reference names on input line 782
 Package cleveref Info: always capitalise cross-reference names on input line 785
 2.
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/listings.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/listings/listings.sty
 \lst@mode=\count397
 \lst@gtempboxa=\box47
 \lst@token=\toks23
@@ -1250,24 +1182,21 @@ sty"
 \lst@lineno=\count402
 \lst@maxwidth=\dimen157
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/lstmisc.s
-ty"
+(F:/Jonas/Programme/LaTeX/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count403
 \lst@skipnumbers=\count404
 \lst@framebox=\box48
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/listings.
-cfg"
+(F:/Jonas/Programme/LaTeX/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/color
-.cfg"
+(F:/Jonas/Programme/LaTeX/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: luatex.def on input line 225.
@@ -1281,8 +1210,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/listings/lstlang1.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 
@@ -1293,27 +1221,22 @@ Class scrreprt Warning: Usage of package `parskip' together
 (scrreprt)              Nevertheless, using requested
 (scrreprt)              package `parskip' on input line 45.
 
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/ltxmisc/parskip.st
-y"
+(F:/Jonas/Programme/LaTeX/tex/latex/ltxmisc/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/verbatim.sty
-"
+(F:/Jonas/Programme/LaTeX/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks24
 \verbatim@line=\toks25
 \verbatim@in@stream=\read3
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/totpages/totpages.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/totpages/totpages.sty
 Package: totpages 2005/09/19 v2.00 Totpages Package (muewi)
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/ms/everyshi.sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count405
 \Gm@cntv=\count406
@@ -1328,8 +1251,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutvoffset=\dimen165
 \Gm@dimlist=\toks26
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.
-cfg"))
+(F:/Jonas/Programme/LaTeX/tex/latex/geometry/geometry.cfg))
 
 Class scrreprt Warning: Usage of package `fancyhdr' together
 (scrreprt)              with a KOMA-Script class is not recommended.
@@ -1344,9 +1266,7 @@ Class scrreprt Warning: Usage of package `fancyhdr' together
 (scrreprt)              Nevertheless, using requested
 (scrreprt)              package `fancyhdr' on input line 61.
 
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fancyhdr/fancyhdr.
-sty"
+(F:/Jonas/Programme/LaTeX/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip90
@@ -1359,8 +1279,7 @@ Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footers
 \f@nch@O@olf=\skip97
 \f@nch@O@orf=\skip98
 )
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/afterpage.st
-y"
+(F:/Jonas/Programme/LaTeX/tex/latex/tools/afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks27
 \AP@partial=\box49
@@ -1370,21 +1289,18 @@ Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/lbx/ngerm
-an.lbx"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/lbx/ngerman.lbx
 File: ngerman.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'german'...
 Package biblatex Info: ... file 'german.lbx' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/lbx/germa
-n.lbx"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/lbx/german.lbx
 File: german.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'german'...
 Package biblatex Info: ... file 'german.lbx' found.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/biblatex/lbx/germa
-n.lbx"
+(F:/Jonas/Programme/LaTeX/tex/latex/biblatex/lbx/german.lbx
 File: german.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 ))
 
@@ -1412,10 +1328,9 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
-(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
+(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmsans12-regular.luc)
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mk
-ii"
+(F:/Jonas/Programme/LaTeX/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count411
 \scratchdimen=\dimen166
@@ -1428,13 +1343,10 @@ ii"
 \MPnumerator=\count415
 \makeMPintoPDFobject=\count416
 \everyMPtoPDFconversion=\toks29
-)
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-
-base.sty"
+) (F:/Jonas/Programme/LaTeX/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/grfext.st
-y"
+(F:/Jonas/Programme/LaTeX/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
@@ -1473,13 +1385,10 @@ Package biblatex Info: Reference section=0 on input line 91.
 Package biblatex Info: Reference segment=0 on input line 91.
 \AtBeginShipoutBox=\box52
 Package hyperref Info: Link coloring OFF on input line 91.
-
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/nameref.s
-ty"
+ (F:/Jonas/Programme/LaTeX/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/gettitl
-estring.sty"
+(F:/Jonas/Programme/LaTeX/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count417
@@ -1527,28 +1436,30 @@ LaTeX Info: Redefining \nameref on input line 91.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./deckblatt.tex(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/
-generic/fonts/otl/lmsans17-regular.luc)(load luc: C:/Users/marle/AppData/Local/M
+(./deckblatt.tex(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/
+generic/fonts/otl/lmsans17-regular.luc)(load luc: C:/Users/jonas/AppData/Local/M
 iKTeX/2.9/luatex-cache/generic/fonts/otl/lmsans10-bold.luc)
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 15.
-(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
+(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmsans12-oblique.luc)
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 20.
- ("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd"
+ (F:/Jonas/Programme/LaTeX/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 20.
- ("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd"
+
+(F:/Jonas/Programme/LaTeX/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 20.
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd"
+
+(F:/Jonas/Programme/LaTeX/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 20.
 
-("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd"
+(F:/Jonas/Programme/LaTeX/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1565,13 +1476,12 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 25.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 25.
-
-[1.1
-
+ [1.1
 
 
-{C:/Users/marle/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-(./erklaerung.tex)
+
+{C:/Users/jonas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]) (./erklaer
+ung.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 3--99
 
  []
@@ -1834,7 +1744,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 78.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 78.
-<../Abbildungen/index.png, id=213, 269.005pt x 396.48125pt>
+<../Abbildungen/index.png, id=218, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
 Package luatex.def Info: ../Abbildungen/index.png  used on input line 84.
@@ -1861,7 +1771,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 102.
  [15.16<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=229, 303.1325pt x 306.14375pt>
+<../Abbildungen/trie.png, id=234, 303.1325pt x 306.14375pt>
 File: ../Abbildungen/trie.png Graphic file (type png)
 <use ../Abbildungen/trie.png>
 Package luatex.def Info: ../Abbildungen/trie.png  used on input line 105.
@@ -1912,9 +1822,22 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 140.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 144.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 144.
+ [18.19]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 145.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 145.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 147.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 147.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 131.
@@ -1924,13 +1847,13 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 131.
- [18.19]
+ [19.20]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line 131.
 
-(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
-l/lmromancaps10-regular.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/l
+(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
+l/lmromancaps10-regular.luc)(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/lmmono12-regular.luc)
 Overfull \hbox (10.05704pt too wide) in paragraph at lines 133--133
 []\TU/lmss/m/sl/12 In-de-xie-rung mit-tels in-ver-tier-ter Da-tei-en\TU/lmss/m/
@@ -1953,7 +1876,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 133.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 133.
-[19.20
+[20.21
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
@@ -1962,44 +1885,39 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 58AD17911929562549C384E4E699B895;1228.
+(rerunfilecheck)             Checksum: CFBBE37D802DEB07F2A8EB30E6D4013F;1307.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 30944 strings out of 494447
+ 31000 strings out of 494447
  100000,1144653 words of node,token memory allocated
  646 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 13 attribute, 71 glue_spec, 13 attr
 ibute_list, 2 write, 5 pdf_action nodes
-   avail lists: 1:5,2:550,3:181,4:48,5:196,6:48,7:4018,8:91,9:140,10:18,11:476
- 34191 multiletter control sequences out of 65536+200000
+   avail lists: 1:5,2:580,3:182,4:54,5:196,6:51,7:4018,8:92,9:147,10:18,11:476
+ 34245 multiletter control sequences out of 65536+200000
  51 fonts using 10944079 bytes
  54i,11n,77p,9083b,2792s stack positions out of 5000i,500n,10000p,200000b,50000s
-<c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lmmon
-o12-regular.otf><c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype
-/public/lm/lmromancaps10-regular.otf>{C:/Users/marle/AppData/Local/Programs/MiKT
-eX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/marle/AppData/Local/Programs/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/marle/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/marle/AppData/Local/Programs
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}<c:/users/marle/appdata/local/progr
-ams/miktex 2.9/fonts/opentype/public/lm/lmsans12-oblique.otf><c:/users/marle/app
-data/local/programs/miktex 2.9/fonts/opentype/public/lm/lmsans12-regular.otf><c:
-/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lmsans10
--bold.otf><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
-m/lmex10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmmi12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmmi6.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/lm/lmmi8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/lm/lmr12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmsy10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (20 pages, 162107 bytes).
+<f:/jonas/programme/latex/fonts/opentype/public/lm/lmmono12-regular.otf><f:/jona
+s/programme/latex/fonts/opentype/public/lm/lmromancaps10-regular.otf>{F:/Jonas/P
+rogramme/LaTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{F:/Jonas/Programme/LaTeX/fonts/
+enc/dvips/lm/lm-mathex.enc}{F:/Jonas/Programme/LaTeX/fonts/enc/dvips/lm/lm-rm.en
+c}{F:/Jonas/Programme/LaTeX/fonts/enc/dvips/lm/lm-mathit.enc}<f:/jonas/programme
+/latex/fonts/opentype/public/lm/lmsans12-oblique.otf><f:/jonas/programme/latex/f
+onts/opentype/public/lm/lmsans12-regular.otf><f:/jonas/programme/latex/fonts/ope
+ntype/public/lm/lmsans10-bold.otf><F:/Jonas/Programme/LaTeX/fonts/type1/public/l
+m/lmex10.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmmi12.pfb><F:/Jona
+s/Programme/LaTeX/fonts/type1/public/lm/lmmi6.pfb><F:/Jonas/Programme/LaTeX/font
+s/type1/public/lm/lmmi8.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr1
+2.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr8.pfb><F:/Jonas/Program
+me/LaTeX/fonts/type1/public/lm/lmsy10.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/
+public/lm/lmsy8.pfb>
+Output written on main.pdf (21 pages, 164772 bytes).
 
-PDF statistics: 360 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 131072)
- 145 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 374 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 131072)
+ 153 words of extra memory for PDF output out of 10000 (max. 100000000)
 

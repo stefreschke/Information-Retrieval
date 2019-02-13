@@ -35,6 +35,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Komprimierung des Index}{18}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{18}{section.2.6}
+\contentsline {subsection}{\numberline {2.5.1}Nutzen der Komprimierung}{18}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Retrieval}{18}{section.2.7}
+\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{19}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Retrieval}{19}{section.2.7}
