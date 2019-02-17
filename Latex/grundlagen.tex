@@ -122,7 +122,7 @@ Im Folgenden soll eine formale Definition eines Tries gegeben werden:
 	\end{itemize}
 \end{defi}
 
-Definition 27 ist aus \cite{Trie_wiki} entnommen.
+Definition 2.7 ist aus \cite{Trie_wiki} entnommen.
 \newline \newline
 Das Suchen nach gespeicherten Wörtern gestaltet sich nun verhältnismäßig einfach: Um das Wort \glqq Tree\grqq im, in der Abbildung gezeigten, Trie zu finden, wird wie folgt vorgegangen.
 \newline 
@@ -144,9 +144,29 @@ Bevor die technischen Details der Komprimierung betrachtet werden, sollen zunäc
 \\
 In erster Linie wird durch die Komprimierung Platz auf dem Speichermedium, auf dem der Index liegt, gespart. Liegt dieser beispielsweise in einer Datei auf einer Festplatte, zieht die Komprimierung noch weitere Vorteile mit sich: Bei Schreib- bzw. Leseoperationen auf die Datei, müssen durch die Komprimierung weniger Bytes vom Hauptspeicher zur Festplatte bzw. umgekehrt, transportiert werden. Dadurch verringert sich die I/O-Zeit \cite[S. 58, 86]{IR_Intro_Cambridge}. Weiter kann ein größerer Teil des Indexes im Cache gehalten werden, was den Zugriff auf den Index beschleunigt, da weniger I/O-Operationen auf der Festplatte erforderlich sind \cite[S. 58, 86]{IR_Intro_Cambridge}.
 
-\subsection{Möglichkeiten Index zu Komprimieren}
+\subsection{Möglichkeiten der Index-Kompression}
 In \ref{txt:inverted_index} wurde beschrieben, dass sich der invertierte Index in das Dictionary und die Posting-Listen aufteilt.
 Dies sind die beiden Punkte, an denen bei der Komprimierung angesetzt werden kann.
+Die erste Möglichkeit, die genauer betrachtet werden soll, ist die Dictionary-Kompression.
+
+\subsubsection{Dictionary komprimieren}
+Der Idee, die betrachtet werden soll, liegt zugrunde, dass in der Datenstruktur, die zur Suche der Wörter, die in der Query enthalten sind, in jedem Knoten ein Zeichen gespeichert wird. Wird UTF-8 zur Zeichencodierung verwendet, fällt pro Zeichen mindestens $1$ Byte an, das in jedem Knoten gespeichert werden muss. Meist besteht ein in UTF-8 codiertes Zeichen jedoch aus mehr als einem Byte. \\
+Eine Möglichkeit, Speicherplatz zu sparen, ist, nicht ein Zeichen pro Konten zu speichern, sondern lediglich einen Pointer auf ein Zeichen. Der Pointer wird als Index auf eine Liste verwendet, welche alle Zeichen enthält, die in den Dokumenten, die der Index \glqq kennt \grqq. Ist die dem Index zugrunde liegende Datenstruktur ein B-Baum oder ein Binärbaum, kann noch weiter Speicherplatz gespart werden, indem der Liste Teilstrings hinzugefügt werden, die in mehreren Wörtern vorkommen. Da im Rahmen dieser Arbeit jedoch ein Trie verwendet wird, wird dieser Punkt nicht weiter betrachtet, da ein Trie eine solche Komprimierung bereits liefert, da jeder Substring lediglich ein mal abgespeichert wird.
+\\
+\\
+Ein Beispiel soll aufzeigen, wie mittels Pointern Speicherplatz gespart werden kann. Dazu zunächst eine Rechnung, wie viel Speicherplatz durch Zeichen in einem klassischen Trie benötigt wird:
+Sei $T_1$ ein Trie mit einer Knotenzahl von $15$ Knoten. Jeder der Knoten beinhaltet ein Zeichen, welches jeweils $2$ Byte benötigt. Somit werden $15 * 2 = 30$ Byte benötigt, um alle Zeichen zu speichern. 
+\\
+Wird nun die Dictionary-Komprimierung angewendet, so wird eine Liste mit allen Zeichen, die in den eingelesenen Dokumenten vorkommen, angelegt. Die Größe dieser Liste bleibt beim Hinzufügen neuer Dokumente in den Index konstant, sofern die Dokumente keine bisher unbekannten Zeichen beinhalten. Die Größe der Liste ist somit für große Tries, wie sie in einem Index gewöhnlicherweise entstehen, vernachlässigbar. 
+\\
+Die Liste $l$ habe $26$ Einträge und beinhaltet das Alphabet von a-z ohne Umlaute.
+Jeder Knoten im Trie muss jetzt lediglich einen Zeiger auf einen Listeneintrag abspeichern. Damit werden nur noch $log_2(26) \approx 4,7$ Bits benötigt. Da aufgerundet werden muss, werden 5 Bits zum Speichern des Zeigers benötigt. Damit wird eine Einsparung von $11$ Bits pro Knoten erreicht, wodurch im gesamten Trie $T_1$ $11*15 = 165$ Bits eingespart werden, was $20$ Bytes entspricht.
+\\
+Um noch weitere Zeichen in die Liste aufnehmen zu können, kann pro Zeiger ein Byte genutzt werden. Dadurch können $256$ Zeichen unterstützt werden und dennoch werden im Trie $T_1$ $15$ Bytes eingespart.
+Dies wird Byte-Alignment genannt.
+\\
+In diesem Beispiel scheint sich der Nutzen der Komprimierung in Grenzen zu halten, betrachtet man jedoch einen Trie $T_2$ mit einer Knotenzahl von $10.000$, ergibt sich ein anderes Bild: 
+Statt $10.000 * 2 = 20.000$ Byte werden mit Byte-Alignment nur noch $10.000$ Byte benötigt, wodurch $50\%$ Speicherplatz gespart werden, sofern man den marginalen Speicherbedarf der Liste $l$ nicht mit einbezieht. 
 
 \section{TF-IDF Gewichtung}
 

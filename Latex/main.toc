@@ -37,8 +37,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.1}Nutzen der Komprimierung}{18}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Möglichkeiten Index zu Komprimieren}{19}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}Möglichkeiten der Index-Kompression}{19}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{19}{section.2.6}
+\contentsline {subsubsection}{\nonumberline Dictionary komprimieren}{19}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Retrieval}{19}{section.2.7}
+\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{20}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Retrieval}{20}{section.2.7}
