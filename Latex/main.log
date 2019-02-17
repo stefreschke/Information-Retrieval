@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.8.18)  13 FEB 2019 14:16
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.8.18)  16 FEB 2019 14:07
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.680 seconds
+luaotfload | main : initialization completed in 0.564 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2018/03/30 v3.25 KOMA-Script document class (report)
@@ -1741,103 +1741,107 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 76.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 78.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 78.
-<../Abbildungen/index.png, id=218, 269.005pt x 396.48125pt>
+(babel)             in language  on input line 79.
+<../Abbildungen/index.png, id=225, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
-Package luatex.def Info: ../Abbildungen/index.png  used on input line 84.
+Package luatex.def Info: ../Abbildungen/index.png  used on input line 86.
 (luatex.def)             Requested size: 134.50217pt x 198.24013pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 89.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 89.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 89.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 89.
  [14.15]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 88.
+(babel)             in language  on input line 90.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 104.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 104.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 104.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 104.
  [15.16<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=234, 303.1325pt x 306.14375pt>
+<../Abbildungen/trie.png, id=241, 303.1325pt x 306.14375pt>
 File: ../Abbildungen/trie.png Graphic file (type png)
 <use ../Abbildungen/trie.png>
-Package luatex.def Info: ../Abbildungen/trie.png  used on input line 105.
+Package luatex.def Info: ../Abbildungen/trie.png  used on input line 107.
 (luatex.def)             Requested size: 212.1913pt x 214.29915pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 111.
  [16.17<../Abbildungen/trie.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 123--134
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--134
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--134
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--134
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 136.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 136.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 136.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 136.
 [17.18]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 144.
+(babel)             in language  on input line 146.
  [18.19]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 151.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 151.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 153.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 153.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 131.
@@ -1855,13 +1859,6 @@ LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmromancaps10-regular.luc)(load luc: C:/Users/jonas/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/lmmono12-regular.luc)
-Overfull \hbox (10.05704pt too wide) in paragraph at lines 133--133
-[]\TU/lmss/m/sl/12 In-de-xie-rung mit-tels in-ver-tier-ter Da-tei-en\TU/lmss/m/
-n/12 . 2001. \TU/lmr/m/sc/12 url\TU/lmss/m/n/12 : []$\TU/lmtt/m/n/12 http : / /
- www . cis . uni - muenchen .
- []
-
-
 Overfull \hbox (6.97293pt too wide) in paragraph at lines 133--133
 []\TU/lmss/m/sl/12 Vektorraum-Retrieval\TU/lmss/m/n/12 . 2017. \TU/lmr/m/sc/12 
 url\TU/lmss/m/n/12 : []$\TU/lmtt/m/n/12 https : / / de . wikipedia . org / wiki
@@ -1885,22 +1882,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CFBBE37D802DEB07F2A8EB30E6D4013F;1307.
+(rerunfilecheck)             Checksum: FADF3CB06905F93C666909E45C18F637;1398.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 31000 strings out of 494447
+ 31004 strings out of 494447
  100000,1144653 words of node,token memory allocated
  646 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 13 attribute, 71 glue_spec, 13 attr
 ibute_list, 2 write, 5 pdf_action nodes
-   avail lists: 1:5,2:580,3:182,4:54,5:196,6:51,7:4018,8:92,9:147,10:18,11:476
- 34245 multiletter control sequences out of 65536+200000
+   avail lists: 1:5,2:608,3:186,4:56,5:196,6:53,7:4018,8:92,9:154,10:18,11:476
+ 34248 multiletter control sequences out of 65536+200000
  51 fonts using 10944079 bytes
- 54i,11n,77p,9083b,2792s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,11n,77p,9083b,2799s stack positions out of 5000i,500n,10000p,200000b,50000s
 <f:/jonas/programme/latex/fonts/opentype/public/lm/lmmono12-regular.otf><f:/jona
 s/programme/latex/fonts/opentype/public/lm/lmromancaps10-regular.otf>{F:/Jonas/P
 rogramme/LaTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{F:/Jonas/Programme/LaTeX/fonts/
@@ -1915,9 +1912,9 @@ s/type1/public/lm/lmmi8.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr1
 2.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr8.pfb><F:/Jonas/Program
 me/LaTeX/fonts/type1/public/lm/lmsy10.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/
 public/lm/lmsy8.pfb>
-Output written on main.pdf (21 pages, 164772 bytes).
+Output written on main.pdf (21 pages, 166531 bytes).
 
-PDF statistics: 374 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 131072)
- 153 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 383 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 131072)
+ 161 words of extra memory for PDF output out of 10000 (max. 100000000)
 

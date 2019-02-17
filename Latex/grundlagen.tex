@@ -74,9 +74,11 @@ Diese Methode führt Wörter auf ihren Wortstamm zurück \cite{IR_Intro_Cambridg
 Weiter existieren sprachspezifische Probleme. Beispielsweise wird im Englischen häufig mit Kurzformen von Wörtern gearbeitet, so wird \glqq are not\grqq zu \glqq aren't\grqq. Es muss geklärt werden wie mit solchen Formen umgegangen werden soll. Ein Ansatz ist Query Preprocessing. Hierbei werden Wörter dieser Art, die in der Query stehen, in eine einheitliche Form gebracht \cite{IR_Intro_Cambridge}. Darüber hinaus gilt es zu beachten, dass Eigennamen wie \glqq Hewlett-Packard\grqq\ nicht oder nur nach bestimmten Regeln prozessiert werden dürfen. Welche Wörter als Eigenname behandelt werden und welche nicht, kann mittels Machine Learning-Verfahren oder auf Basis eines großen Vokabulars gelöst werden.
 
 \section{Invertierter Index}
+\label{txt:inverted_index}
 Dieser Abschnitt wird die Idee des invertierten Index vorstellen sowie die Erzeugung des invertierten Index erläutern. Darüber hinaus wird aufgezeigt, wie die Verarbeitung einer Query mittels des invertierten Index funktioniert. Ab jetzt werden die Ausdrücke \glqq invertierter Index\grqq und \glqq Index\grqq synonym verwendet.
 \subsection{Grundlegender Aufbau}
 Der invertierte Index kann als eine Liste betrachtet werden, welche für jeden Term, der in der Dokumentenmenge vorkommt, einen Eintrag hält \cite{IR_Intro_Cambridge} \cite{IR_Uni_Bamberg}. Dieser Eintrag wiederum ist eine weitere Liste. Diese Liste hält mindestens eine eindeutige Dokumenten-ID, meist jedoch darüber hinaus weitere Informationen. Beispiele für solche weiteren Informationen sind Häufigkeit, in der ein Term in einem Dokument vorkommt, die Position und die umliegenden Wörter in der Nähe zum Term $t$ \cite{IR_Intro_Cambridge}.
+Die Datenstruktur, die jedes Wort aus der Dokumentenmenge (Vokabular) hält, heißt Dictionary \cite{IR_Intro_Cambridge}. Die Listen, die zu jedem Term angelegt werden, heißen Posting-Listen \cite{IR_Intro_Cambridge}.
 \newline
 Den invertierten Index kann man folgendermaßen visualisieren:
 \begin{figure}[H]
@@ -142,8 +144,11 @@ Bevor die technischen Details der Komprimierung betrachtet werden, sollen zunäc
 \\
 In erster Linie wird durch die Komprimierung Platz auf dem Speichermedium, auf dem der Index liegt, gespart. Liegt dieser beispielsweise in einer Datei auf einer Festplatte, zieht die Komprimierung noch weitere Vorteile mit sich: Bei Schreib- bzw. Leseoperationen auf die Datei, müssen durch die Komprimierung weniger Bytes vom Hauptspeicher zur Festplatte bzw. umgekehrt, transportiert werden. Dadurch verringert sich die I/O-Zeit \cite[S. 58, 86]{IR_Intro_Cambridge}. Weiter kann ein größerer Teil des Indexes im Cache gehalten werden, was den Zugriff auf den Index beschleunigt, da weniger I/O-Operationen auf der Festplatte erforderlich sind \cite[S. 58, 86]{IR_Intro_Cambridge}.
 
-\subsection{title}
+\subsection{Möglichkeiten Index zu Komprimieren}
+In \ref{txt:inverted_index} wurde beschrieben, dass sich der invertierte Index in das Dictionary und die Posting-Listen aufteilt.
+Dies sind die beiden Punkte, an denen bei der Komprimierung angesetzt werden kann.
 
 \section{TF-IDF Gewichtung}
+
 
 \section{Retrieval}
