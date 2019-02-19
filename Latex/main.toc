@@ -37,10 +37,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.1}Nutzen der Komprimierung}{18}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Möglichkeiten der Index-Kompression}{19}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}Dictionary komprimieren}{19}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Dictionary komprimieren}{19}{section*.6}
+\contentsline {subsection}{\numberline {2.5.3}Postings-Liste komprimieren}{20}{subsection.2.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{20}{section.2.6}
+\contentsline {subsubsection}{\nonumberline Variable Byte Encoding (VBE)}{21}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Retrieval}{20}{section.2.7}
+\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{21}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Retrieval}{21}{section.2.7}

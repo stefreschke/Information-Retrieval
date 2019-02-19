@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.8.18)  17 FEB 2019 15:22
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.8.18)  19 FEB 2019 22:23
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.594 seconds
+luaotfload | main : initialization completed in 0.570 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (F:/Jonas/Programme/LaTeX/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2018/03/30 v3.25 KOMA-Script document class (report)
@@ -1835,27 +1835,58 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 147.
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--170
+Underfull \hbox (badness 10000) in paragraph at lines 148--168
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 170.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 170.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 170.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 170.
+(babel)             in language  on input line 168.
 [19.20]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 171.
+(babel)             in language  on input line 169.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 171.
+(babel)             in language  on input line 169.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 174.
+(babel)             in language  on input line 177.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 174.
+(babel)             in language  on input line 177.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 177.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 177.
+ [20.21]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.180 K
+     leinere Zahlen können mit weniger Bits codiert werden, wie dies umgese...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--189
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 192.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 192.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 195.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 195.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 131.
@@ -1865,7 +1896,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 131.
- [20.21]
+ [21.22]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line 131.
@@ -1887,7 +1918,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 133.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 133.
-[21.22
+[22.23
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
@@ -1895,20 +1926,27 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6152E2490BFD340B33FDE9DEB393A758;1398.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 6152E2490BFD340B33FDE9DEB393A758;1398
+(rerunfilecheck)             After:  208AB44DD92D86316138267A0B8D3C03;1467.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 31006 strings out of 494447
+ 31008 strings out of 494447
  100000,1144653 words of node,token memory allocated
  646 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 13 attribute, 71 glue_spec, 13 attr
 ibute_list, 2 write, 5 pdf_action nodes
-   avail lists: 1:5,2:608,3:186,4:56,5:202,6:53,7:4303,8:92,9:154,10:18,11:476
+   avail lists: 1:5,2:608,3:186,4:56,5:198,6:53,7:4292,8:92,9:154,10:18,11:476
  34248 multiletter control sequences out of 65536+200000
  51 fonts using 10944079 bytes
  54i,11n,77p,9084b,2799s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1926,9 +1964,9 @@ s/type1/public/lm/lmmi8.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr1
 2.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr8.pfb><F:/Jonas/Program
 me/LaTeX/fonts/type1/public/lm/lmsy10.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/
 public/lm/lmsy8.pfb>
-Output written on main.pdf (22 pages, 179960 bytes).
+Output written on main.pdf (23 pages, 186581 bytes).
 
-PDF statistics: 388 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 131072)
+PDF statistics: 393 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 131072)
  161 words of extra memory for PDF output out of 10000 (max. 100000000)
 
