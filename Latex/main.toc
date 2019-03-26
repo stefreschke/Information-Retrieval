@@ -44,3 +44,5 @@
 \contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{20}{section.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.7}Retrieval}{20}{section.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}TF-IDF}{21}{chapter.3}
