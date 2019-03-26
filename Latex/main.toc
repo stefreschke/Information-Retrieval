@@ -11,8 +11,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.1}Vector Space Model}{8}{subsection.1.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Probabilistische Ansätze}{9}{subsection.1.3.2}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Information Retrieval - Theoretische Grundlagen}{10}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Problemstellung}{10}{section.2.1}
@@ -23,26 +21,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.1}Vorarbeiten}{12}{subsection.2.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Tokenerzeugung}{12}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Tokenerzeugung}{13}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Invertierter Index}{14}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Grundlegender Aufbau}{14}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Grundlegender Aufbau}{15}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Umsetzung eines invertierten Index}{15}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\nonumberline Tries}{16}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Komprimierung des Index}{18}{section.2.5}
+\contentsline {section}{\numberline {2.5}TF-IDF Gewichtung}{18}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Nutzen der Komprimierung}{18}{subsection.2.5.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Möglichkeiten der Index-Kompression}{19}{subsection.2.5.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Dictionary komprimieren}{19}{section*.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}TF-IDF Gewichtung}{20}{section.2.6}
-\defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {section}{\numberline {2.7}Retrieval}{20}{section.2.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}TF-IDF}{21}{chapter.3}
+=======
+\contentsline {section}{\numberline {2.6}Retrieval}{18}{section.2.6}
+>>>>>>> origin/Jonas
