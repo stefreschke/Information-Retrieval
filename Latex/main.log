@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.30)  26 MAR 2019 15:03
-=======
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.8.18)  17 MAR 2019 14:21
->>>>>>> origin/Jonas
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.30)  26 MAR 2019 15:16
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -37,11 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-<<<<<<< HEAD
-luaotfload | main : initialization completed in 0.764 seconds
-=======
-luaotfload | main : initialization completed in 0.611 seconds
->>>>>>> origin/Jonas
+luaotfload | main : initialization completed in 0.763 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrrep
@@ -1727,7 +1719,9 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 14.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 14.
-[7.8
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1.8
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
@@ -1751,7 +1745,9 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 32.
-[8.9])
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
+[2.9])
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1760,7 +1756,9 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 123.
- [9.10]
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
+[3.10]
 chapter 2.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 123.
@@ -1779,7 +1777,9 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 16.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 16.
- [10.11
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
+[4.11
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 36--38
@@ -1798,7 +1798,9 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 51.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 51.
-[11.12]
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.5'
+[5.12]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 52.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1815,7 +1817,9 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 63.
- [12.13]
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.6'
+[6.13]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1828,7 +1832,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 90.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 90.
- [13.14]
+ [7.14]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 91.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1836,13 +1840,8 @@ Package babel Info: Redefining ngerman shorthand "~
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 94.
 Package babel Info: Redefining ngerman shorthand "~
-<<<<<<< HEAD
-(babel)             in language  on input line 79.
-<../Abbildungen/index.png, id=230, 269.005pt x 396.48125pt>
-=======
 (babel)             in language  on input line 94.
-<../Abbildungen/index.png, id=206, 269.005pt x 396.48125pt>
->>>>>>> origin/Jonas
+<../Abbildungen/index.png, id=205, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
 Package luatex.def Info: ../Abbildungen/index.png  used on input line 101.
@@ -1855,7 +1854,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 103.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 103.
- [14.15]
+ [8.15]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 105.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1872,15 +1871,9 @@ Package babel Info: Redefining ngerman shorthand "~
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "~
-<<<<<<< HEAD
-(babel)             in language  on input line 104.
- [15.16<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=246, 303.1325pt x 306.14375pt>
-=======
 (babel)             in language  on input line 115.
-[15.16<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=223, 303.1325pt x 306.14375pt>
->>>>>>> origin/Jonas
+[9.16<../Abbildungen/index.png>]
+<../Abbildungen/trie.png, id=222, 303.1325pt x 306.14375pt>
 File: ../Abbildungen/trie.png Graphic file (type png)
 <use ../Abbildungen/trie.png>
 Package luatex.def Info: ../Abbildungen/trie.png  used on input line 126.
@@ -1893,7 +1886,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 130.
- [16.17<../Abbildungen/trie.png>]
+ [10.17<../Abbildungen/trie.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 144--155
 
  []
@@ -1921,7 +1914,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 155.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 155.
-[17.18]
+[11.18]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 213.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1938,9 +1931,8 @@ Package babel Info: Redefining ngerman shorthand "~
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "~
-<<<<<<< HEAD
 (babel)             in language  on input line 127.
- [20.21]
+ [12.19]
 chapter 3.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 127.
@@ -1948,80 +1940,62 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 127.
 (./tfidf.tex)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
- [21.22
+(babel)             in language  on input line 134.
+ [13.20
 
 ]
-=======
-(babel)             in language  on input line 131.
- [18.19]
->>>>>>> origin/Jonas
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 135.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 144.
 
 (load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmromancaps10-regular.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/lmmono12-regular.luc)
-Overfull \hbox (6.97293pt too wide) in paragraph at lines 137--137
+Overfull \hbox (6.97293pt too wide) in paragraph at lines 146--146
 []\TU/lmss/m/sl/12 Vektorraum-Retrieval\TU/lmss/m/n/12 . 2017. \TU/lmr/m/sc/12 
 url\TU/lmss/m/n/12 : []$\TU/lmtt/m/n/12 https : / / de . wikipedia . org / wiki
  / Vektorraum -
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-<<<<<<< HEAD
-(babel)             in language  on input line 137.
-[22.23
-=======
-(babel)             in language  on input line 133.
-[19.20
->>>>>>> origin/Jonas
+(babel)             in language  on input line 146.
+[1.21
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 146.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 146.
 Package rerunfilecheck Info: File `main.out' has not changed.
-<<<<<<< HEAD
-(rerunfilecheck)             Checksum: DA41D047F0E27520E7CF37B10E9F0817;1441.
-=======
-(rerunfilecheck)             Checksum: 0D1C3C43EDBC99C1A88434E0C2C7AF07;1077.
->>>>>>> origin/Jonas
+(rerunfilecheck)             Checksum: B64DD4925C23870A5A7D26C994E2E52B;1120.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
-<<<<<<< HEAD
- 30967 strings out of 494447
-=======
- 30997 strings out of 494447
->>>>>>> origin/Jonas
+ 30940 strings out of 494447
  100000,1144653 words of node,token memory allocated
  646 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 13 attribute, 71 glue_spec, 13 attr
 ibute_list, 2 write, 5 pdf_action nodes
-<<<<<<< HEAD
-   avail lists: 1:5,2:636,3:186,4:60,5:202,6:55,7:4303,8:92,9:159,10:18,11:476
- 34201 multiletter control sequences out of 65536+200000
+   avail lists: 1:5,2:522,3:166,4:48,5:240,6:30,7:4102,8:83,9:131,10:18,11:434
+ 34187 multiletter control sequences out of 65536+200000
  51 fonts using 10944079 bytes
- 54i,11n,77p,9084b,2799s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,11n,77p,9084b,2794s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lmmon
 o12-regular.otf><c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype
 /public/lm/lmromancaps10-regular.otf>{C:/Users/marle/AppData/Local/Programs/MiKT
@@ -2038,37 +2012,13 @@ c/lm/lmmi12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/lm/lmmi6.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/lm/lmmi8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/lm/lmr12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmsy10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (23 pages, 182016 bytes).
+pe1/public/lm/lmr6.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmr8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/lm/lmsy10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (21 pages, 176984 bytes).
 
-PDF statistics: 397 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 131072)
- 169 words of extra memory for PDF output out of 10000 (max. 100000000)
-=======
-   avail lists: 1:5,2:530,3:185,4:44,5:240,6:47,7:4102,8:91,9:126,10:18,11:434
- 34246 multiletter control sequences out of 65536+200000
- 51 fonts using 10944079 bytes
- 54i,11n,77p,9084b,2799s stack positions out of 5000i,500n,10000p,200000b,50000s
-<f:/jonas/programme/latex/fonts/opentype/public/lm/lmmono12-regular.otf><f:/jona
-s/programme/latex/fonts/opentype/public/lm/lmromancaps10-regular.otf>{F:/Jonas/P
-rogramme/LaTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{F:/Jonas/Programme/LaTeX/fonts/
-enc/dvips/lm/lm-mathex.enc}{F:/Jonas/Programme/LaTeX/fonts/enc/dvips/lm/lm-rm.en
-c}{F:/Jonas/Programme/LaTeX/fonts/enc/dvips/lm/lm-mathit.enc}<f:/jonas/programme
-/latex/fonts/opentype/public/lm/lmsans12-oblique.otf><f:/jonas/programme/latex/f
-onts/opentype/public/lm/lmsans12-regular.otf><f:/jonas/programme/latex/fonts/ope
-ntype/public/lm/lmsans10-bold.otf><F:/Jonas/Programme/LaTeX/fonts/type1/public/l
-m/lmex10.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmmi12.pfb><F:/Jona
-s/Programme/LaTeX/fonts/type1/public/lm/lmmi6.pfb><F:/Jonas/Programme/LaTeX/font
-s/type1/public/lm/lmmi8.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr1
-2.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmr6.pfb><F:/Jonas/Program
-me/LaTeX/fonts/type1/public/lm/lmr8.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/pu
-blic/lm/lmsy10.pfb><F:/Jonas/Programme/LaTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (20 pages, 177797 bytes).
-
-PDF statistics: 356 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 131072)
- 129 words of extra memory for PDF output out of 10000 (max. 100000000)
->>>>>>> origin/Jonas
+PDF statistics: 347 PDF objects out of 1000 (max. 8388607)
+ 56 named destinations out of 1000 (max. 131072)
+ 137 words of extra memory for PDF output out of 10000 (max. 100000000)
 
