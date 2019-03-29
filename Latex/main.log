@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.30)  26 MAR 2019 15:16
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.30)  28 MAR 2019 13:55
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.763 seconds
+luaotfload | main : initialization completed in 0.817 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrrep
@@ -1841,7 +1841,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 94.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 94.
-<../Abbildungen/index.png, id=205, 269.005pt x 396.48125pt>
+<../Abbildungen/index.png, id=245, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
 Package luatex.def Info: ../Abbildungen/index.png  used on input line 101.
@@ -1873,7 +1873,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 115.
 [9.16<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=222, 303.1325pt x 306.14375pt>
+<../Abbildungen/trie.png, id=262, 303.1325pt x 306.14375pt>
 File: ../Abbildungen/trie.png Graphic file (type png)
 <use ../Abbildungen/trie.png>
 Package luatex.def Info: ../Abbildungen/trie.png  used on input line 126.
@@ -1940,85 +1940,256 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 127.
 (./tfidf.tex)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 131.
  [13.20
 
 ]
+chapter 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 131.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 131.
+(./impl.tex(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/gener
+ic/fonts/otl/lmsans10-regular.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX
+/2.9/luatex-cache/generic/fonts/otl/lmmono10-regular.luc)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 7.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 7.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 10.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 10.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 26.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 42.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 42.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 42.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 42.
+ [14.21
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 70.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 70.
+
+Overfull \hbox (12.3485pt too wide) in paragraph at lines 72--76
+\TU/lmss/m/n/12 Das Spei-chern er für das Re-trie-val wich-ti-gen In-for-ma-ti
+o-nen, ge-schieht mit-tels ei-ner Document-
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 77.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 77.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 77.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 77.
+[15.22]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 92.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 92.
+
+Overfull \hbox (13.55519pt too wide) in paragraph at lines 105--112
+[]\TU/lmss/m/n/12 Die Member-Variable \TU/lmss/m/sl/12 hash-map \TU/lmss/m/n/12
+ ord-net al-len Ter-men ei-ne Men-ge von ein-deu-ti-gen Dokumenten-
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 120.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 120.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 125.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 125.
+[16.23]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 164.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 164.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 164.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 164.
+ [17.24]
+Overfull \hbox (73.25629pt too wide) in paragraph at lines 167--168
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (13.25568pt too wide) in paragraph at lines 168--169
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (103.25659pt too wide) in paragraph at lines 200--201
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 215.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 215.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 215.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 215.
+[18.25]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 261.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 261.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 261.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 261.
+ [19.26]
+Overfull \hbox (7.06721pt too wide) in paragraph at lines 302--314
+[]\TU/lmss/m/n/12 Zu-nächst wird der Such-String des Nut-zers mit-tels der be-
+reits be-kann-ten Me-tho-de __\TU/lmss/m/sl/12 prepro-
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 314.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 314.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 314.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 314.
+[20.27]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 339.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 339.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 356.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 356.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 356.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 356.
+ [21.28]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 400.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 400.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 400.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 400.
+ [22.29]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 438.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 438.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 438.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 438.
+ [23.30])
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 137.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 137.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 137.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 137.
+ [24.31]
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 144.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 147.
 
 (load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/ot
 l/lmromancaps10-regular.luc)(load luc: C:/Users/marle/AppData/Local/MiKTeX/2.9/l
 uatex-cache/generic/fonts/otl/lmmono12-regular.luc)
-Overfull \hbox (6.97293pt too wide) in paragraph at lines 146--146
+Overfull \hbox (6.97293pt too wide) in paragraph at lines 149--149
 []\TU/lmss/m/sl/12 Vektorraum-Retrieval\TU/lmss/m/n/12 . 2017. \TU/lmr/m/sc/12 
 url\TU/lmss/m/n/12 : []$\TU/lmtt/m/n/12 https : / / de . wikipedia . org / wiki
  / Vektorraum -
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 146.
+(babel)             in language  on input line 149.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 146.
+(babel)             in language  on input line 149.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 146.
+(babel)             in language  on input line 149.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 146.
-[1.21
+(babel)             in language  on input line 149.
+[1.32
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 146.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 146.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B64DD4925C23870A5A7D26C994E2E52B;1120.
+(rerunfilecheck)             Checksum: F093F295EC5A166AB9FB8C5EA828D89E;1688.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 30940 strings out of 494447
+ 31456 strings out of 494447
  100000,1144653 words of node,token memory allocated
  646 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 13 attribute, 71 glue_spec, 13 attr
 ibute_list, 2 write, 5 pdf_action nodes
-   avail lists: 1:5,2:522,3:166,4:48,5:240,6:30,7:4102,8:83,9:131,10:18,11:434
- 34187 multiletter control sequences out of 65536+200000
- 51 fonts using 10944079 bytes
+   avail lists: 1:5,2:3100,3:175,4:474,5:622,6:46,7:4102,8:242,9:1662,10:18,11:4
+34
+ 34452 multiletter control sequences out of 65536+200000
+ 53 fonts using 11201839 bytes
  54i,11n,77p,9084b,2794s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lmmon
 o12-regular.otf><c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype
-/public/lm/lmromancaps10-regular.otf>{C:/Users/marle/AppData/Local/Programs/MiKT
-eX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/marle/AppData/Local/Programs/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/marle/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/marle/AppData/Local/Programs
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}<c:/users/marle/appdata/local/progr
-ams/miktex 2.9/fonts/opentype/public/lm/lmsans12-oblique.otf><c:/users/marle/app
-data/local/programs/miktex 2.9/fonts/opentype/public/lm/lmsans12-regular.otf><c:
-/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lmsans10
--bold.otf><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
-m/lmex10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmmi12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmmi6.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/lm/lmmi8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/lm/lmr12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr6.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmr8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/lm/lmsy10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (21 pages, 176984 bytes).
+/public/lm/lmromancaps10-regular.otf><c:/users/marle/appdata/local/programs/mikt
+ex 2.9/fonts/opentype/public/lm/lmmono10-regular.otf>{C:/Users/marle/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/marle/AppData/
+Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/marle/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/marle/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}<c:/users/marle/app
+data/local/programs/miktex 2.9/fonts/opentype/public/lm/lmsans12-oblique.otf><c:
+/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lmsans12
+-regular.otf><c:/users/marle/appdata/local/programs/miktex 2.9/fonts/opentype/pu
+blic/lm/lmsans10-bold.otf><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmex10.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/lm/lmmi12.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/marle/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/marle/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/marle/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/marle/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/marle/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/marle/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (32 pages, 250423 bytes).
 
-PDF statistics: 347 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 131072)
- 137 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 671 PDF objects out of 1000 (max. 8388607)
+ 299 named destinations out of 1000 (max. 131072)
+ 201 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -36,3 +36,33 @@
 \contentsline {section}{\numberline {2.6}Retrieval}{12}{section.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}TF-IDF}{13}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Implementierung}{14}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Beispiel-Implementierung: Lokale Suchmaschine}{14}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Ziel der Beispiel-Implementierung}{14}{subsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}Genutzte Bibliotheken}{14}{subsection.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Tika}{15}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline python-magic}{15}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline nltk}{15}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}Die Document-Klasse}{15}{subsection.4.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.4}Der Index}{16}{subsection.4.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.5}buildIndex}{17}{subsection.4.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Hilfsmethoden}{18}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline \_addToIndex}{19}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline \_preprocessText Diese Methode dient der Vorverarbeitung der Texte, die in den pdf-Dokumenten stehen. Als erster Schritt wird der gesamte Text in Lower-Case gesetzt, damit bei der Suche später die Groß- bzw. Kleinschreibung unwichtig ist. Im nächsten Schritt werden alle Zahlen aus dem Text entfernt.}{19}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline retrieve}{20}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Probleme}{21}{section.4.2}
