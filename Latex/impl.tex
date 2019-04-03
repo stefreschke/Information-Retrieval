@@ -1,62 +1,36 @@
-\begin{lstlisting}[language=Python]
-from IPython.core.display import HTML, display
-display(HTML('<style>.container { width:100%; !important } </style>'))
-\end{lstlisting}
+\section{Ziel der Beispiel-Implementierung}\label{ziel-der-beispiel-implementierung}
 
-\section{Beispiel-Implementierung: Lokale
-Suchmaschine}\label{beispiel-implementierung-lokale-suchmaschine}
+Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutierten Inhalte vorgestellt. Dabei soll eine lokale Suchmaschine entwickelt werden, welche in der Lage ist, PDF-Dateien auf einem lokalen Computer-System zu parsen, in einen invertierten Index aufzunehmen, sowie Suchanfragen eines Benutzers sinnvoll zu beantworten. Zur Relevanz-Bestimmung der Dokumente wird das TF-IDF-Maß, welches bereits vorgestellt wurde, genutzt. Das Speichern des Index wird mit der von Python mitgelieferte Datenstruktur \textit{Dictionary}, welche im Grunde eine Hashmap ist, umgesetzt. Weiter werden Bibliotheken eingesetzt, welche einige Vorarbeit leisten und damit den Code der Beispiel-Implementierung auf das Wesentliche beschränken. Die Anwendung soll die grundlegende Arbeitsweise eines Information Retrieval-Systems darlegen.
 
-\subsection{Ziel der
-Beispiel-Implementierung}\label{ziel-der-beispiel-implementierung}
+\section{Genutzte Bibliotheken}\label{genutzte-bibliotheken}
 
-Im Folgenden wird eine Anwendung der zuvor theoretisch diskutierten
-Inhalte vorgestellt. Dabei soll eine lokale Suchmaschine entwickelt
-werden, welche in der Lage ist, pdf-Dateien auf einem lokalen
-Computer-System zu parsen, in einen invertierten Index aufzunehmen sowie
-Suchanfragen eines Benutzers sinnvoll zu beantworten. Zur
-Relevanz-Bestimmung der Dokumente wird das TF-IDF-Maß, welches bereits
-vorgestellt wurde, genutzt. Um den Index zu speichern, wird die von
-Python mitgelieferte Datenstruktur ``dictionary'', welche im Grunde eine
-Hashmap ist, genutzt. Weiter werden einige Bibliotheken eingesetzt,
-welche einige Vorarbeit leisten und damit den Code der
-Beispiel-Implementierung auf das Wesentliche beschränken. So soll die
-grundlegende Arbeitsweise eines Information Retrieval-Systems dargelegt
-werden.
+Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Bibliotheken eingebunden, welche die Implementierung unterstützen. Folgend werden die Bibliotheken aufgelistet und im jeweiligen Abschnitt genauer erläutert:
+\begin{itemize}
+	\item Apache Tika: parsen der Texte aus dem PDF-Dokument
+	\item Math: Standard Python-Modul für mathematische Funktionen
+	\item OS: 
+	\item Python Magic:
+	\item RE:
+	\item Platform:
+	\item Operator:
+	\item NLTK:
+\end{itemize}
 
-\subsection{Genutzte Bibliotheken}\label{genutzte-bibliotheken}
+\subsection{Apache Tika}\label{apache-tika}
 
-Bevor mit der eigentlichen Implementierung der lokalen Suchmaschine
-begonnen werden kann, müssen einige Bibliotheken eingebunden werden.
-Darunter fallen Apache Tika, das Math-Modul von Python, os (um auf die
-Directories zugreifen zu können), python-magic, regular expressions (re)
-(und noch weitere, bei Bedarf einfügen!).
+Bei Apache Tika handelt es sich um ein Framework um Inhalte zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren Tika liefert eine Parser, mit dessen Hilfe der Text aus - unter anderem - pdf-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine pdf-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der pdf-Datei zugegriffen werden kann.
 
-\subsubsection{Tika}\label{tika}
+\subsection{python-magic}\label{python-magic}
 
-Tika liefert eine Parser, mit dessen Hilfe der Text aus - unter anderem
-- pdf-Dateien extrahiert werden kann. Mit dem Aufruf
-\emph{parser.from}\_\emph{file(file)} kann eine pdf-Datei in reinen Text
-umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches
-einen Key \emph{content} besitzt, über den auf den Inhalt der pdf-Datei
-zugegriffen werden kann.
+Mittels python-magic ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle pdf-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
 
-\subsubsection{python-magic}\label{python-magic}
+\subsection{nltk}\label{nltk}
 
-Mittels python-magic ist es möglich, unabhängig von der Dateiendung, den
-Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die
-Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle
-pdf-Dateien finden kann, da unter Unix die Dateiendung keine
-garantierten Rückschlüsse auf den Typ der Datei zulässt.
+Die Bibliothek nltk (natural language toolkit) wird verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu normalisieren. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
 
-\subsubsection{nltk}\label{nltk}
-
-Die Bibliothek nltk (natural language toolkit) wird verwendet, um die
-Eingabetexte der Dokumente und die Eingaben des Nutzers zu
-normalisieren. Zudem wird Stemming mithilfe von nltk durchgeführt, um
-Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird
-näheres über die genutzten Operationen erläutert.
-
-\begin{lstlisting}[language=Python]
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 from tika import parser
 import magic
 import math
@@ -64,401 +38,313 @@ import os
 import string
 import platform
 import re
+import operator
 from nltk.tokenize import RegexpTokenizer
-\end{lstlisting}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Imports}
+	\label{fig:import}
+\end{figure}
 
-\subsection{Die Document-Klasse}\label{die-document-klasse}
+\section{Die Document-Klasse}\label{die-document-klasse}
 
-Das Speichern er für das Retrieval wichtigen Informationen, geschieht
-mittels einer Document-Klasse. Diese Klasse hält alle Attribute, die
-wichtig sind, um das TF-IDF-Maß berechnen zu können. Diese Attribute
-sind: - url - length - id
+Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse. Diese Klasse hält alle Attribute, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Diese Attribute sind:
+\begin{itemize}
+	\item url
+	\item length 
+	\item id
+\end{itemize} 
+Die Variable \emph{url} ist ein String und enthält den Pfad zum Dokument, welches durch das entsprechende Document-Objekt repräsentiert wird. \emph{length} ist ein Integer und beinhaltet die Anzahl der Wörter, die in dem Dokument vorkommen und \emph{id} ist die eindeutige Dokumenten-ID, zu der weiter unten noch genaueres gesagt wird.
 
-Die Variable \emph{url} ist ein String und enthält den Pfad zum
-Dokument, welches durch das entsprechende Document-Objekt repräsentiert
-wird. \emph{length} ist ein Integer und beinhaltet die Anzahl der
-Wörter, die in dem Dokument vorkommen und \emph{id} ist die eindeutige
-Dokumenten-ID, zu der weiter unten noch genaueres gesagt wird.
-
-\begin{lstlisting}[language=Python]
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 class Document:
-    def __init__(self, url, length, id):
-        self.url = url
-        self.length = length
-        self.id = id
-        self.score = {}
-\end{lstlisting}
 
-\subsection{Der Index}\label{der-index}
+  def __init__(self, url, length, id, textList):
+    self.url = url
+    self.length = length
+    self.id = id
+    self.score = 0.
+    self.textList = textList
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Dokumentenklasse}
+	\label{fig:document}
+\end{figure}
 
-Nachdem die benötigten Bibliotheken bekannt sind, kann der Index
-implementiert werden. Bevor dieser jedoch aufgebaut werden kann, sind
-einige Vorarbeiten nötig, die durch die vorgestellten Bibliotheken
-gestützt werden. Der Index wird im Folgenden als Klasse implementiert.
-Diese beinhaltet die folgenden Methoden, die in den folgenden
-Abschnitten genauer diskutiert werden: - buildIndex() - retrieve() -
-calcTFIDF()
+\subsection{TF-IDF}\label{tf-idf}
 
-Weiter werden die folgenden Member-Variablen benötigt: - hashmap -
-fileCount - docHashmap
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
+def tf_idf(self, termList, df):
 
-Die Member-Variable \emph{hashmap} ordnet allen Termen eine Menge von
-eindeutigen Dokumenten-IDs zu, in denen sie vorkommen. Im Dictionary
-\emph{docHashmap} werden die Dokuemnten-IDs als Key genutzt, um eine
-Zurodnung von Dokumenten-IDs auf Document-Objekte zu ermöglichen. Die
-Variable \emph{fileCount} ist ein Integer und wird für jedes gefundene
-Dokument um \emph{1} hochgezählt. Damit ist diese Variable qualifiziert
-als eindeutige Dokumenten-ID zu fungieren, wofür sie genutzt wird.
+  tfDict = {}
+  ind = Index()
+  
+  for term in termList:
+    tfDict[term] = 0  
 
-\begin{lstlisting}[language=Python]
+  for term in self.textList:
+    if term in termList:
+      tfDict[term] = tfDict[term]+1
+
+  for key, value in df.items():
+    idf = math.log((ind.fileCount+1/value+1),10)
+    tfDict[key] = tfDict[key]*idf
+
+  self.score = sum(tfDict.values())
+
+Document.tf_idf = tf_idf
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{TF-IDF-Methode}
+	\label{fig:tfidf}
+\end{figure}
+
+\section{Der Index}\label{der-index}
+
+Nachdem die benötigten Bibliotheken bekannt sind, kann der Index implementiert werden. Bevor dieser jedoch aufgebaut werden kann, sind einige Vorarbeiten nötig, die durch die vorgestellten Bibliotheken gestützt werden. Der Index wird im Folgenden als Klasse implementiert. Diese beinhaltet die folgenden Methoden, die in den folgenden Abschnitten genauer diskutiert werden:
+
+\begin{itemize}
+	\item buildIndex()
+	\item retrieve()
+	\item calcTFIDF()
+\end{itemize}
+
+Weiter werden die folgenden Member-Variablen benötigt:
+
+\begin{itemize}
+	\item hashmap
+	\item fileCount
+	\item docHashmap
+\end{itemize}
+
+Die Member-Variable \emph{hashmap} ordnet allen Termen eine Menge von eindeutigen Dokumenten-IDs zu, in denen sie vorkommen. Im Dictionary \emph{docHashmap} werden die Dokuemnten-IDs als Key genutzt, um eine Zurodnung von Dokumenten-IDs auf Document-Objekte zu ermöglichen. Die Variable \emph{fileCount} ist ein Integer und wird für jedes gefundene Dokument um \emph{1} hochgezählt. Damit ist diese Variable qualifiziert als eindeutige Dokumenten-ID zu fungieren, wofür sie genutzt wird.
+
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 class Index:
-    hashmap = {} #dictionary
-    fileCount = 0 #integer, Gesamtzahl aller gefunden Dateien
-    docHashmap = {}
-\end{lstlisting}
+    
+  hashmap = {} #dictionary
+  fileCount = 0 #integer, Gesamtzahl aller gefunden Dateien
+  docHashmap = {}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Indexklasse}
+	\label{fig:index}
+\end{figure}
 
 \subsection{buildIndex}\label{buildindex}
 
-Die Methode \emph{buildIndex} baut - wie der Name bereits vermuten lässt
-- den Index auf. Dabei dient ein Dictionary als Basis-Datenstruktur.
+Die Methode \emph{buildIndex} baut - wie der Name bereits vermuten lässt - den Index auf. Dabei dient ein Dictionary als Basis-Datenstruktur.
 
-Der erste Schritt stellt das Iterieren über alle Directories dar.
-Gestartet wird bei Linux-Systemen im Root-Directory, unter
-Windows-Systemen muss über jede Partition iteriert werden. Als nächstes
-wird über alle Dateien in den Verzeichnissen iteriert. Für jede Datei
-wird durch python-magic ermittelt, ob es sich um ein pdf-Dokument
-handelt. Ist ein Dokument vom Typ \emph{pdf}, wird mithilfe von tika der
-Text aus dem pdf-Dokument extrahiert.
+Der erste Schritt stellt das Iterieren über alle Directories dar. Gestartet wird bei Linux-Systemen im Root-Directory, unter Windows-Systemen muss über jede Partition iteriert werden. Als nächstes wird über alle Dateien in den Verzeichnissen iteriert. Für jede Datei wird durch python-magic ermittelt, ob es sich um ein pdf-Dokument handelt. Ist ein Dokument vom Typ \emph{pdf}, wird mithilfe von tika der Text aus dem pdf-Dokument extrahiert.
 
-Für jede entdeckte pdf-Datei wird ein Zähler erhöht, welcher eine
-eindeutige Dokumenten-ID darstellt. Anschlißend wird mittels der
-Hilfsmethode \_\_\emph{processText} der Text der pdf-Dateien
-normalisiert. Diese Methode wird weiter unten genauer betrachtet.
+Für jede entdeckte pdf-Datei wird ein Zähler erhöht, welcher eine eindeutige Dokumenten-ID darstellt. Anschlißend wird mittels der Hilfsmethode \_\_\emph{processText} der Text der pdf-Dateien normalisiert. Diese Methode wird weiter unten genauer betrachtet. 
 
-Die letzten Schritte beinhalten das Anlegen eines neuen
-Dokumenten-Objekts, welches in das Dictionary \emph{docHashmap}
-eingefügt wird. Zudem wird die Dokumenten-ID mithilfe der Hilfsmethode
-\_\_\emph{addToIndex} dem Dictionary \emph{hasmap} hinzugefügt, welches
-den eigentlichen Index enthält.
+Die letzten Schritte beinhalten das Anlegen eines neuen Dokumenten-Objekts, welches in das Dictionary \emph{docHashmap} eingefügt wird. Zudem wird die Dokumenten-ID mithilfe der Hilfsmethode \_\_\emph{addToIndex} dem Dictionary \emph{hasmap} hinzugefügt, welches den eigentlichen Index enthält.
 
-\begin{lstlisting}[language=Python]
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 def buildIndex(self):
-    # alle Start-Verzeichnisse holen
-    #start = self._getStartDirectories()
-    #start = ["F:/Jonas/Uni"]
-    start = ["C:/Users/marle/OneDrive/Studium"]
-    # Magic-Instanz erstellen, um Datei-Typ bestimmen zu können
-    mime = magic.Magic(mime=True)
     
-    for s in start:
-        for root, _dir, files in os.walk(s):
-            for f in files:
-                path = os.path.abspath(os.path.join(root, f))
-                try:
-                    if mime.from_file(path) == "application/pdf":
-                        #print("pdf")
-                    # in Text umwawndeln und tokenization durchführen
-                        #print(path)
-                        fileData = parser.from_file(path)
-                        rawText = fileData['content']
-                        self.fileCount += 1
+  #startDirectories = self._getStartDirectories()
+  mime = magic.Magic(mime=True)
+    
+  for directory in startDirectories:
+    for root, _, files in os.walk(directory):
+      for file in files:
+                
+        path = os.path.abspath(os.path.join(root, file))
+                
+        try:
+          if mime.from_file(path) == "application/pdf":
+
+            fileData = parser.from_file(path)
+            rawText = fileData['content']
+            self.fileCount += 1
                     
-                        processedText = self._preprocessText(rawText)
-                        document = Document(path, len(processedText), self.fileCount)
-                        self.docHashmap.update({self.fileCount : document})
-                        self._addToIndex(self.fileCount, processedText)
-                except:
-                    continue
-                    
-    return
+            processedText = self._preprocessText(rawText)
+            document = Document(path, len(processedText),
+                         self.fileCount, processedText)
+            self.docHashmap.update({self.fileCount : document})
+            self._addToIndex(self.fileCount, processedText)
+        except:
+          continue
 
 Index.buildIndex = buildIndex
-\end{lstlisting}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{BuildIndex-Methode}
+	\label{fig:build}
+\end{figure}
 
-\subsubsection{Hilfsmethoden}\label{hilfsmethoden}
+\subsection{Hilfsmethoden}\label{hilfsmethoden}
 
-In diesem Abschnitt werden die genutzten Hilfsmethoden kurz vorgestellt.
-Diese werden jedoch nicht in der Tiefe behandelt, wie die drei
-Haupt-Methoden behandelt werden.
+In diesem Abschnitt werden die genutzten Hilfsmethoden vorgestellt und am Code erklärt, wie die Funktionsweise implementiert wurde.
 
-\paragraph{\texorpdfstring{\emph{getStartDirectories Die Methode
-}\_\emph{getSartDirectories} liefert eine Liste zurück, welche abhängig
-vom Betriebssystem, auf dem die Suchmaschine läuft, die
-Start-Verzeichnisse zurückgibt, in denen nach pdf-Dateien gesucht werden
-soll. Falls das zugrunde liegende Betriebssystem ein Linux-basiertes
-System ist, wird die Liste \textbf{{[}``/''{]}} zurückgegeben, falls ein
-Windows-System zugrundeliegt, wird die Liste aller Partitionen
-zurückgegeben.}{getStartDirectories Die Methode \_getSartDirectories liefert eine Liste zurück, welche abhängig vom Betriebssystem, auf dem die Suchmaschine läuft, die Start-Verzeichnisse zurückgibt, in denen nach pdf-Dateien gesucht werden soll. Falls das zugrunde liegende Betriebssystem ein Linux-basiertes System ist, wird die Liste {[}/{]} zurückgegeben, falls ein Windows-System zugrundeliegt, wird die Liste aller Partitionen zurückgegeben.}}\label{getstartdirectories-die-methode-_getsartdirectories-liefert-eine-liste-zuruxfcck-welche-abhuxe4ngig-vom-betriebssystem-auf-dem-die-suchmaschine-luxe4uft-die-start-verzeichnisse-zuruxfcckgibt-in-denen-nach-pdf-dateien-gesucht-werden-soll.-falls-das-zugrunde-liegende-betriebssystem-ein-linux-basiertes-system-ist-wird-die-liste-zuruxfcckgegeben-falls-ein-windows-system-zugrundeliegt-wird-die-liste-aller-partitionen-zuruxfcckgegeben.}
+\subsubsection{\_getStartDirectories}
 
-\begin{lstlisting}[language=Python]
+Die Methode \_getSartDirectories liefert eine Liste der Start-Verzeichnisse, abhängig vom Betriebssystem auf dem die Suchmaschine läuft, zurück. In diesen Verzeichnissen werden nach pdf-Dateien gesucht, welche in den Index mit einfließen. Falls das zugrunde liegende Betriebssystem ein Linux-basiertes System ist, wird die Liste ["/"] zurückgegeben, da das Verzeichnis / immer das root-Verzeichnis ist. Bei auf Windows basierenden Systemen gibt es wiederum mehrere Partitionen, welche immer mit einem Großbuchstaben abgekürtzt, und somit auch mehrere root-Verzeichnisse.
+
+Zuerst wird geprüft welches Betriebssystem vorliegt. Bei einem auf Linux basierenden System wird einfach eine List mit dem Element "/" erstellt. Bei einem auf Windows basierenden Betriebssystem ist das erstellen der Startverzeichnisse aufwendiger. Hierbei werden alle Großbuchstaben darauf geprüft eine Partition zu sein. Dies wird mithilfe der os.path.exists-Methode realisiert. Ist ein Großbuchstabe tatsächliche eine Partition auf dem Computer, so wird er in der Liste gespeichert. Jedoch wird an den Großbuchstaben noch der String ":\" angehangen, damit die buildIndex-Methode mit den Elementen als Start-Verzeichnisse arbeiten kann.
+
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 def _getStartDirectories(self):
-    start = []
-    
-    if platform.system() == "Linux":
-        start.append("/")
-    elif platform.system() == "Windows":
-        start = ['%s:\\' % d for d in string.ascii_uppercase if os.path.exists('%s:' % d)]
-    else:
-        raise EnvironmentError
+
+  if platform.system() == "Linux":
+    directories = ["/"]
         
-    return start
+  elif platform.system() == "Windows":
+    directories = ['%s:\\' % d for d in string.ascii_uppercase if os.path.exists('%s:' % d)]
+        
+  else:
+    raise EnvironmentError
+        
+  return directories
 
 Index._getStartDirectories = _getStartDirectories
-\end{lstlisting}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{GetStartDirectories-Methode}
+	\label{fig:start}
+\end{figure}
 
-\paragraph{\_addToIndex}\label{addtoindex}
+\subsubsection{\_addToIndex}\label{addtoindex}
 
-Diese Methode bekommt als Argumente eine Liste von Termen, die in einem
-pdf-Dokument vorkommen. Zudem wird eine eindeutige Dokumenten-ID
-übergeben.
+Die Methode \_addToIndex soll die Dokumenten ID zu den invertierten Index der in dem Dokument vorkommenden Terme hinzufügen. Hierfür bekommt die Methode eine Liste von Termen die in einem PDF-Dokument vorkommen und die zum Dokumente gehörige Document ID als Parameter übergeben. Für jeden Term in der Liste \emph{terms} wird dazu der zum Term gehörige Eintrag im invertierten Index 
+Schlägt der Versuch, die Menge für den Term \emph{term} aus dem Dictionary zu holen, fehl, existiert noch keine Menge. In diesem Fall wird eine neue Menge erstellt und für den Term \emph{term} ein Eintrag im Dictionary hinzugefügt, der auf die neu erstellte Menge referenziert.
 
-Für jeden Term in \emph{terms} wird versucht, eine Menge mit
-Dokumenten-IDs aus dem Index zu holen. Existiert bereits eine Menge,
-wird kein Fehler geworfen.
-
-Schlägt der Versuch, die Menge für den Term \emph{term} aus dem
-Dictionary zu holen, fehl, existiert noch keine Menge. In diesem Fall
-wird eine neue Menge erstellt und für den Term \emph{term} ein Eintrag
-im Dictionary hinzugefügt, der auf die neu erstellte Menge referenziert.
-
-\begin{lstlisting}[language=Python]
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 def _addToIndex(self, documentID, terms):
-    for t in terms:
-        try:
-            docs = self.hashmap[t]
-            docs.add(documentID)
-            self.hashmap.update({t : docs})
-        except KeyError:
-            docs = {documentID}
-            self.hashmap.update({t : docs})
+    
+  for term in terms:
+        
+    try:
+      docSet = self.hashmap[term]
+      docSet.add(documentID)
+      self.hashmap.update({term : docSet})
+            
+    except KeyError:
+      docSet = {documentID}
+      self.hashmap.update({term : docSet})
     
 Index._addToIndex = _addToIndex
-\end{lstlisting}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{AddToIndex-Methode}
+	\label{fig:addToIndex}
+\end{figure}
 
-\paragraph{\_preprocessText Diese Methode dient der Vorverarbeitung der
-Texte, die in den pdf-Dokumenten stehen. Als erster Schritt wird der
-gesamte Text in Lower-Case gesetzt, damit bei der Suche später die Groß-
-bzw. Kleinschreibung unwichtig ist. Im nächsten Schritt werden alle
-Zahlen aus dem Text
-entfernt.}\label{preprocesstext-diese-methode-dient-der-vorverarbeitung-der-texte-die-in-den-pdf-dokumenten-stehen.-als-erster-schritt-wird-der-gesamte-text-in-lower-case-gesetzt-damit-bei-der-suche-spuxe4ter-die-grouxdf--bzw.-kleinschreibung-unwichtig-ist.-im-nuxe4chsten-schritt-werden-alle-zahlen-aus-dem-text-entfernt.}
+\subsubsection{\_preprocessText}
+Diese Methode dient der Vorverarbeitung der Texte, die in den PDF-Dokumenten stehen. Hierfür wird der Text eines PDF-Dokumentes an den Parameter \textit{text} übergeben. Als erster Schritt wird der gesamte Text in Lower-Case (Kleinschreibung) gesetzt, damit später bei der Suche die Groß- bzw. Kleinschreibung irrelevant ist. Das Ergebnis wird in der Variable \textit{lowerText} gespeichert. Im nächsten Schritt werden alle Zahlen aus \textit{lowerText} entfernt und in \textit{prepText} gespeichert, da Zahlen für die Textsuche nicht von Bedeutung sind.
 
-Als nächstes wird mithilfe der Klasse \emph{RegexpTokenizer}, die die
-nltk-Bibliothek mitliefert, der String \emph{txt} in eine Liste von
-Tokens aufgespalten. Was als Token gewertet wird, wird mithilfe einer
-\emph{regular expression} definiert, die dem Konstruktor des
-\emph{RegexpTokenizer} mitgegeben. Mithilfe der \emph{tokenize}-Methode
-wird die \emph{regular expression} auf den übergebenen String
-angewendet. Jeder Substring des mitgegebenen Arguments, der die
-\emph{regular expression} erfüllt, wird einer Liste angefügt. Diese
-Liste enthält am Ende der Verarbeitung alle Substrings von \emph{txt},
-die nur Buchstaben enthalten oder nur Buchstaben enthalten und mit einem
-Bindestrich (-) enden.
+Als nächstes wird mithilfe der Klasse \textit{RegexpTokenizer}, die durch die NLTK-Bibliothek zur Verfügung gestellt wird, der String \textit{prepText} in eine Liste von Tokens aufgespalten. Was als Token gewertet wird, wird mithilfe einer \textit{regular expression} definiert, im Deutschen regulärer Ausdruck genannt. Ein regulärer Ausdruck ist eine Zeichenkette, welche eine Menge von bestimmten Zeichenketten beschreibt. Der gewünschte reguläre Ausdruck wird dem Konstruktor der \textit{RegexpTokenizer}-Klasse in Form eines raw Strings übergeben. Ein raw String ist ein String, welcher mit einem \textit{r} am Anfang gekennzeichnet ist und ein Backslash als ein Literal und kein Escape-Zeichen behandelt. Dies ist bei regulären Ausdrücken nützlich, da in diesen viel mit Backslashes gearbeitet wird.
 
-Der Bindestrich ist wichtig, da mit dessen Hilfe, alle Wörter gefunden
-werden können, die im Text aufgrund eines Zeilenumbruchs getrennt
-wurden. Diese Wörter werden innerhlab der for-Schleife zusammengefügt
-und der Bindestrich wird entfernt.
+Im Folgenden wird der raw String bzw. reguläre Ausdruck näher betrachtet, um zu verstehen, was als ein Token gewertet wird. Der erste Teil des regulären Ausdrucks \textit{[a-zA-Z]+-\$} definiert alle Buchstabenketten mit einen oder mehreren Elementen, die mit einem Bindestrich bei einem Zeilenumbruch enden, als Token. Die eckigen Klammern werden bei regulären Ausdrücken genutzt, um eine Zeichenauswahl zu definieren. Das bedeutet, dass ein Zeichen aus dieser Auswahl dann an dieser Stelle steht. Mithilfe von Quantoren kann definiert werden, wie viele Zeichen einer Auswahl hintereinander stehen dürfen. Das Pluszeichen ist genau so ein Quantor, welcher aussagt, dass mindestens ein oder mehrere Zeichen der Zeichenauswahl hintereinander vorkommen muss. Die Funktion des Dollarzeichens hängt von einem Flag, dem Multiline-Flag ab. Dieses ist in NLTK standardmäßig gesetzt und bewirkt, dass das Dollarzeichen für das Ende einer Zeile steht.\cite{nltk} Sonst würde das Dollarzeichen das Ende eines Wortes markieren. Dadurch das ein Bindestrich vor das Dollarzeichen des regulären Ausdrucks gesetzt haben, bedeutet der reguläre Teilausdruck \textit{-\$}, dass die letzte Zeichenkette einer Zeile auf einem Bindestrich endet.
 
-Diese Methode ist jedoch nicht immer korrekt, denn es kann auch
-folgender Fall eintreten: Eine Zeile endet mit z.B. Damen-, die nächste
-Zeile geht mit z.B. und Herrenschuhe weiter. In diesem Fall ist der
-Bindestrich gewollt, der Algorithmus fügt jedoch die Wörter \emph{Damen}
-und \emph{und} zu einem Wort zusammen. Da dieser Fall jedoch sehr selten
-auftritt, wird in Kauf genommen, dass ab und zu die Wörter falsch
-zusammengefügt werden.
+Bei dem \textbar{}-Zeichen handelt es sich um eine logische Oder-Verknüpfung, die es ermöglicht, mehrere reguläre Ausdrücke zu verknüpfen. In unserem Fall \textit{\textbackslash w+}. Der zweite reguläre Ausdruck \textit{\textbackslash w+} definiert alle alphanumerischen Zeichenketten mit einem oder mehreren Elementen als Token. Hierbei ist \textit{\textbackslash w} eine vordefinierte Zeichenklasse für den regulären Ausdruck \textit{[a-zA-Z\_0-9]} und beinhaltet außer alphanumerische Werte auch noch den Unterstrich. Das Pluszeichen ist hier wieder der Quantor, welcher aussagt, dass aus dieser Zeichenklasse ein oder mehrere Zeichen hintereinander vorkommen muss. Mithilfe der \textit{tokenize}-Methode wird der reguläre Ausdruck auf den String \textit{prepText} angewendet. Jeder Substring des mitgegebenen Strings, der den regulären Ausdruck erfüllt, wird an die Liste \textit{tokenList} angefügt.
 
-\begin{lstlisting}[language=Python]
-def _preprocessText(self, txt):
-    # lower all:
-    txt = txt.lower()
+Der Grund warum die Wörter, die auf einem Bindestrich enden, bei der Tokenerzeugen extra beachtet werden, ist der, dass die Wörter, welche bei Zeilenumbrüchen getrennt werden, wieder zusammengefügt werden sollen. In der for-Schleife werden diese Tokens auf die Eigenschaft hin, auf einem Bindestrich zu enden, geprüft und gegebenenfalls zusammengesetzt. Dazu wird der Bindestrich aus dem Token entfernt und mit dem nächsten Token in der Tokenliste verknüpft (\textit{token[:-1]+tokenList[index+1]}). Die Tokenliste wird darauf hin aktualisiert. Der neu zusammengesetzte Token ersetzt den Token, welcher den Bindestrich enthielt, und der darauffolgende Token der Liste wird gelöscht, da er schon mit dem Token davor zusammengesetzt wurde.
+
+Diese Methode, die Wörter mit einem Bindestrich am Zeilenende mit dem nächsten Token zusammenzufügen, ist jedoch nicht immer korrekt. Es kann auch folgender Fall eintreten: Eine Zeile endet zum Beispiel mit \textit{Damen-} und die nächste Zeile geht mit \textit{und Herrenschuhe} weiter. In diesem Fall ist der Bindestrich gewollt, der Algorithmus fügt jedoch die Wörter \textit{Damen} und \textit{und} zu einem Wort zusammen. Da davon auszugehen ist, dass dieser Fall selten eintritt, wurde er vernachlässigt.
+
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
+def _preprocessText(self, text):
     
-    # remove digits
-    txt = re.sub(r'\d+', '', txt)
+  lowerText = text.lower()
+    
+  prepText = re.sub(r'\d+', '', lowerText)
             
-    # tokenize the text
-    tokenizer = RegexpTokenizer(r'[a-zA-Z]+-$|\w+')
-    result = tokenizer.tokenize(txt)
+  tokenizer = RegexpTokenizer(r'[a-zA-Z]+-$|\w+')
+  tokenList = tokenizer.tokenize(prepText)
     
-    # concatenate divided words
-    for word in result:
-        if word[-1] == '-':
-            ind = result.index(word)
-            corrected = word[:-1]+result[ind+1]
-            result[ind] = corrected
-            del result[ind+1]
-    return result
+  for token in tokenList:
+    if token[-1] == '-':
+            
+      index = tokenList.index(token)
+      compositeWord = token[:-1]+tokenList[index+1]
+      tokenList[index] = compositeWord
+      del tokenList[index+1]
+            
+  return tokenList
     
 Index._preprocessText = _preprocessText
-\end{lstlisting}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{PreprocessText-Methode}
+	\label{fig:preprocess}
+\end{figure}
 
-\paragraph{retrieve}\label{retrieve}
+\subsubsection{retrieve}\label{retrieve}
 
-Die retrieve-Methode dient der Suche. Die Idee dabei ist, dass der
-Nutzer ein oder mehrere Schlagworte eingeben kann, auf deren Basis die
-am besten passenden Dokumente zurückgeliefert werden. Auch die
-Schlagworte werden den gleichen Normalisierungs-Prozess durchlaufen wie
-die Texte der Dokumente.
+Die retrieve-Methode dient der Suche. Die Idee dabei ist, dass der Nutzer ein oder mehrere Schlagworte eingeben kann, auf deren Basis die am besten passenden Dokumente zurückgeliefert werden. Auch die Schlagworte werden den gleichen Normalisierungs-Prozess durchlaufen wie die Texte der Dokumente.
 
-Zunächst wird der Such-String des Nutzers mittels der bereits bekannten
-Methode \_\_\emph{preprocessText} normalisiert. Im zweiten Schritt wird
-eine leere Menge angelegt, in der die Dokumenten-IDs, die zu den Termen
-gefunden werden, gespeichert. Mithilfe der for-Schleife wird über
-\emph{processedStrings} iteriert. Für jedes Wort wird versucht, die
-Menge aller Dokumenten-IDs zu dem Term \emph{word} aus dem Index zu
-beschaffen. Existiert die Menge zu dem Term \emph{word}, wird die
-Vereinigung der bereits in der Menge \emph{result} stehenden
-Dokumenten-IDs und der mit dem Term \emph{word} gefundenen
-Dokumenten-IDs gebildet. Existiert der Term \emph{word} nicht als Key im
-Index, wird beim nächsten Term der Liste \emph{processedStrings}
-fortgefahren.
+Zunächst wird der Such-String des Nutzers mittels der bereits bekannten Methode \_\_\emph{preprocessText} normalisiert. Im zweiten Schritt wird eine leere Menge angelegt, in der die Dokumenten-IDs, die zu den Termen gefunden werden, gespeichert. Mithilfe der for-Schleife wird über \emph{processedStrings} iteriert. Für jedes Wort wird versucht, die Menge aller Dokumenten-IDs zu dem Term \emph{word} aus dem Index zu beschaffen. Existiert die Menge zu dem Term \emph{word}, wird die Vereinigung der bereits in der Menge \emph{result} stehenden Dokumenten-IDs und der mit dem Term \emph{word} gefundenen Dokumenten-IDs gebildet. Existiert der Term \emph{word} nicht als Key im Index, wird beim nächsten Term der Liste \emph{processedStrings} fortgefahren.
 
-\begin{lstlisting}[language=Python]
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 def retrieve(self, searchString):
-    # pre-processing
-    processedStrings = self._preprocessText(searchString)
-    result = set()
-    for word in processedStrings:
-        try:
-            documents = set(self.hashmap[word])
-            result = result.union(documents)
-        except KeyError:
-            continue
-    return result
+ 
+  processedStrings = self._preprocessText(searchString)
+  result = set()
+  df = {}
+  helpDict = {}
+  resultList = []
+    
+  for word in processedStrings:
+    try:
+      documents = set(self.hashmap[word])
+      df[word] = len(documents)
+      result = result.union(documents)
+    except KeyError:
+      continue
+    
+  for document in result:
+    doc = ind.docHashmap[document]
+    doc.tf_idf(processedStrings,df)
+    helpDict[doc.id] = doc.score
+        
+  sortedDict = sorted(helpDict.items(), key=operator.itemgetter(1))
+    
+  for key,_ in sortedDict:
+    resultList.append(ind.docHashmap[key].url)
+        
+  return resultList[::-1]
 
 Index.retrieve = retrieve
-\end{lstlisting}
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Retrieve-Methode}
+	\label{fig:retrieve}
+\end{figure}
 
-\begin{lstlisting}[language=Python]
+\begin{figure}[h]
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
 ind = Index()
 ind.buildIndex()
-\end{lstlisting}
 
-\begin{lstlisting}[language=Python]
-\end{lstlisting}
+resultSet = ind.retrieve("Teststring")
+if resultSet:
+  for elem in resultSet:
+    if elem.split('.')[1] != 'dat':
+      print(elem)
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Execute}
+	\label{fig:execute}
+\end{figure}
 
-\section{Probleme}\label{probleme}
-
-\begin{itemize}
-\item
-  er findet *.dat-Dateien
-\item
-  Kontext der Wörter nicht einbezogen
-\item
-  Vereinigung der Ergebnismengen sorgen dafür, dass Ergebnisse für
-  \(t_1 \cup t_2 \cup .. \cup t_n\) zurückgegeben werden -\textgreater{}
-  kann durch Gewichtung verbessert/umgangen werden
-\item
-  kein Stemming bisher
-\item
-  Queries mit einem Buchstaben finden viele Dokumente (vor allem Formeln
-  etc.) -\textgreater{} durch Stemming gelöst, falls nicht gewollt
-\item
-  Index.build() braucht sehr lange -\textgreater{} parallelisieren?
-\item
-  Index muss jedes Mal neu aufgebaut werden -\textgreater{} via Pickle,
-  JSON oder XML speichern und ziehen bei Start des Programms
-\end{itemize}
-
-\begin{lstlisting}[language=Python]
-def tf_idf(self, searchString):
-    tfDict = {}
-    ind = Index()
-    termList = ind._preprocessText(searchString)
-    for term in termList:
-        tfDict[term] = 0
-        
-    fileData = parser.from_file(self.url)
-    rawText = fileData['content']
-    rawTextList = ind._preprocessText(rawText)
-    
-    for term in rawTextList:
-        if term in termList:
-            tfDict[term] = tfDict[term]+1
-            
-    self.score = tfDict
-
-Document.tf_idf = tf_idf
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
-resultSet = ind.retrieve("information retrieval")
-#for result in resultSet:
-    #print(ind.docHashmap[result].url)
-for document in resultSet:
-    doc = ind.docHashmap[document]
-    doc.tf_idf("information retrieval")
-    print(doc.score)
-\end{lstlisting}
-
-\begin{lstlisting}
-{'information': 16, 'retrieval': 1}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 0, 'retrieval': 1}
-{'information': 4, 'retrieval': 0}
-{'information': 0, 'retrieval': 5}
-{'information': 6, 'retrieval': 0}
-{'information': 4, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 5, 'retrieval': 0}
-{'information': 13, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 8, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 444, 'retrieval': 54}
-{'information': 2, 'retrieval': 0}
-{'information': 5, 'retrieval': 0}
-{'information': 8, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 5, 'retrieval': 0}
-{'information': 3, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 6, 'retrieval': 0}
-{'information': 6, 'retrieval': 0}
-{'information': 3, 'retrieval': 0}
-{'information': 5, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 3, 'retrieval': 0}
-{'information': 6, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 15, 'retrieval': 1}
-{'information': 3, 'retrieval': 0}
-{'information': 15, 'retrieval': 0}
-{'information': 16, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 3, 'retrieval': 0}
-{'information': 595, 'retrieval': 711}
-{'information': 4, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 2, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-{'information': 154, 'retrieval': 1}
-{'information': 1, 'retrieval': 0}
-{'information': 1, 'retrieval': 0}
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
-\end{lstlisting}
-
+In der Abbildung \ref{fig:execute} wird Index aufgebaut und der

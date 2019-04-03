@@ -157,6 +157,28 @@
     \field{year}{2018}
   \endentry
 
+  \entry{nltk}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o2}
+    \strng{fullhash}{o2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{ource code for nltk.tokenize.regexp}
+    \verb{url}
+    \verb https://www.nltk.org/_modules/nltk/tokenize/regexp.html
+    \endverb
+    \field{day}{17}
+    \field{month}{11}
+    \field{year}{2018}
+  \endentry
+
   \entry{trie_Abb}{online}{}
     \name{author}{1}{}{%
       {{hash=f}{%

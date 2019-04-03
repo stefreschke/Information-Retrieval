@@ -37,32 +37,42 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}TF-IDF}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementierung}{14}{chapter.4}
+\contentsline {section}{\numberline {3.1}Term Frequency}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Beispiel-Implementierung: Lokale Suchmaschine}{14}{section.4.1}
+\contentsline {section}{\numberline {3.2}Inverse Document Frequency}{13}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Ziel der Beispiel-Implementierung}{14}{subsection.4.1.1}
+\contentsline {chapter}{\numberline {4}Beispiel-Implementierung: Lokale Suchmaschine}{14}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Genutzte Bibliotheken}{14}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.1}Ziel der Beispiel-Implementierung}{14}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Tika}{15}{section*.6}
+\contentsline {section}{\numberline {4.2}Genutzte Bibliotheken}{14}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline python-magic}{15}{section*.7}
+\contentsline {subsection}{\numberline {4.2.1}Apache Tika}{15}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline nltk}{15}{section*.8}
+\contentsline {subsection}{\numberline {4.2.2}python-magic}{15}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Die Document-Klasse}{15}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.2.3}nltk}{15}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}Der Index}{16}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.3}Die Document-Klasse}{16}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.5}buildIndex}{17}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.3.1}TF-IDF}{17}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Hilfsmethoden}{18}{section*.9}
+\contentsline {section}{\numberline {4.4}Der Index}{17}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\nonumberline \_addToIndex}{19}{section*.11}
+\contentsline {subsection}{\numberline {4.4.1}buildIndex}{18}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\nonumberline \_preprocessText Diese Methode dient der Vorverarbeitung der Texte, die in den pdf-Dokumenten stehen. Als erster Schritt wird der gesamte Text in Lower-Case gesetzt, damit bei der Suche später die Groß- bzw. Kleinschreibung unwichtig ist. Im nächsten Schritt werden alle Zahlen aus dem Text entfernt.}{19}{section*.12}
+\contentsline {subsection}{\numberline {4.4.2}Hilfsmethoden}{19}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\nonumberline retrieve}{20}{section*.13}
+\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{19}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Probleme}{21}{section.4.2}
+\contentsline {subsubsection}{\nonumberline \_addToIndex}{20}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline \_preprocessText}{21}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline retrieve}{23}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Probleme und Mängel}{26}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Verbesserungen}{27}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Fazit}{28}{chapter.7}
