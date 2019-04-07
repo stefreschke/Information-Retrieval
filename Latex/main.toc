@@ -39,40 +39,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Term Frequency}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Inverse Document Frequency}{13}{section.3.2}
+\contentsline {section}{\numberline {3.2}Inverse Document Frequency}{14}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Beispiel-Implementierung: Lokale Suchmaschine}{14}{chapter.4}
+\contentsline {chapter}{\numberline {4}Beispiel-Implementierung: Lokale Suchmaschine}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Ziel der Beispiel-Implementierung}{14}{section.4.1}
+\contentsline {section}{\numberline {4.1}Ziel der Beispiel-Implementierung}{15}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Genutzte Bibliotheken}{14}{section.4.2}
+\contentsline {section}{\numberline {4.2}Genutzte Bibliotheken}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Apache Tika}{15}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Apache Tika}{16}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}python-magic}{15}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}python-magic}{16}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}nltk}{15}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}nltk}{16}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Die Document-Klasse}{16}{section.4.3}
+\contentsline {section}{\numberline {4.3}Die Document-Klasse}{17}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}TF-IDF}{17}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}TF-IDF}{18}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Der Index}{17}{section.4.4}
+\contentsline {section}{\numberline {4.4}Der Index}{18}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}buildIndex}{18}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}buildIndex}{19}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Hilfsmethoden}{19}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Hilfsmethoden}{20}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{19}{section*.6}
+\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{20}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_addToIndex}{20}{section*.7}
+\contentsline {subsubsection}{\nonumberline \_addToIndex}{21}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_preprocessText}{21}{section*.8}
+\contentsline {subsubsection}{\nonumberline \_preprocessText}{22}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline retrieve}{23}{section*.9}
+\contentsline {subsubsection}{\nonumberline retrieve}{24}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Probleme und Mängel}{26}{chapter.5}
+\contentsline {chapter}{\numberline {5}Verbesserungen}{27}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Verbesserungen}{27}{chapter.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Fazit}{28}{chapter.7}
+\contentsline {chapter}{\numberline {6}Fazit}{28}{chapter.6}

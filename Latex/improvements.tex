@@ -1,0 +1,22 @@
+In der Vorgestellten Implementierung gibt es einige Probleme und daraus folgende Verbesserungen, die in diesem Abschnitt besprochen werden.
+
+Die folgende Liste dient nur zur Dokumentation der vorhanden Probleme und wird später durch ausführlichere Erläuterungen und Beispielen ersetzt.
+\begin{itemize}
+	\item BuildIndex Laufzeit verringern
+	\begin{itemize}
+		\item Mit Threads parallelisieren?
+	\end{itemize}
+	\item Invertierten Index persistieren, damit er nicht immer wieder neu aufgebaut werden muss
+	\begin{itemize}
+		\item Wie soll persistiert werden?
+		\item Wie sollen nur Verzeichnisse mit Änderungen (Löschung/Erstellung von PDF) erkannt werden?
+		\item Wann sollen Aktualisierungen durchgeführt werden?
+	\end{itemize}
+	\item *.dat Dateien werden als PDFs erkannt
+	\item Implementierung von Stemming?
+	\item RAM-Auslastung durch Speicherung der Terme der Dokumente als Liste in Document-Klasse hoch. Verlangsamt BuildINdex, beschleunigt aber Retrieve.
+	\item Kontext der Wörter wird nicht beachtet (Bags of Words Modell)
+	\begin{itemize}
+		\item N-Gramm nutzen? (Speichern von zwei aufeinander treffende Wörter als Token)
+	\end{itemize}
+\end{itemize}
