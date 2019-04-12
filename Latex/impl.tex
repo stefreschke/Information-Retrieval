@@ -8,24 +8,27 @@ Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Bibl
 \begin{itemize}
 	\item Apache Tika: parsen der Texte aus dem PDF-Dokument
 	\item Math: Standard Python-Modul für mathematische Funktionen
-	\item OS: 
-	\item Python Magic:
-	\item RE:
-	\item Platform:
-	\item NLTK:
+	\item OS: Betriebssystem-Funktionalitäten, um durch Verzeichnisse zu navigieren
+	\item Python Magic: Dateityp-Erkennung
+	\item re: Regular Expressions werden in diesem Beispiel als Hilfe bei der Token-Erzeugung herangezogen
+	\item Platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen
+	\item NLTK: Token-Erzeugung, die mittels Regular Expressions Texte tokenisiert
 \end{itemize}
 
 \subsection{Apache Tika}\label{apache-tika}
 
-Bei Apache Tika handelt es sich um ein Framework um Inhalte zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren Tika liefert eine Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine PDF-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der PDF-Datei zugegriffen werden kann.
+Bei Apache Tika handelt es sich um ein Framework um Inhalte zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren. Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine PDF-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der PDF-Datei zugegriffen werden kann.
 
 \subsection{python-magic}\label{python-magic}
 
 Mittels python-magic ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle PDF-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
 
 \subsection{nltk}\label{nltk}
+nltk (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenization und Stemming.
+In diesem Beispiel wird nltk verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von Regular Expressions arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
 
-Die Bibliothek nltk (natural language toolkit) wird verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu normalisieren. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
+\subsection{Platform}
+Das Platform-Modul wird in dieser Implementierung dazu verwendet, festzustellen, auf welchem Betriebssystem die lokale Suchmaschine ausgeführt wird. Dies muss ermittelt werden, da auf Windows und Linux unterschiedliche Dateisysteme arbeiten. In Linux ist das Startverzeichnis immer das Root-Verzeichnis (\glqq /\grqq). Unter Windows gibt meist mehrere Partitionen, die alle durchsucht werden müssen.
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
