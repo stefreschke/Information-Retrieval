@@ -23,54 +23,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}Tokenerzeugung}{7}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Invertierter Index}{8}{section.2.4}
+\contentsline {chapter}{\numberline {3}Invertierter Index}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Grundlegender Aufbau}{9}{subsection.2.4.1}
+\contentsline {section}{\numberline {3.1}Grundlegender Aufbau}{9}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Umsetzung eines invertierten Index}{9}{subsection.2.4.2}
+\contentsline {section}{\numberline {3.2}Umsetzung eines invertierten Index}{10}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Tries}{10}{section*.5}
+\contentsline {subsection}{\numberline {3.2.1}Tries}{11}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}TF-IDF Gewichtung}{12}{section.2.5}
+\contentsline {chapter}{\numberline {4}TF-IDF}{14}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Retrieval}{12}{section.2.6}
+\contentsline {section}{\numberline {4.1}Term Frequency}{14}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}TF-IDF}{13}{chapter.3}
+\contentsline {section}{\numberline {4.2}Inverse Document Frequency}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Term Frequency}{13}{section.3.1}
+\contentsline {section}{\numberline {4.3}Das TF-IDF-Maß}{15}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Inverse Document Frequency}{14}{section.3.2}
+\contentsline {chapter}{\numberline {5}Implementierung - Lokale Suchmaschine}{16}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Beispiel-Implementierung: Lokale Suchmaschine}{15}{chapter.4}
+\contentsline {section}{\numberline {5.1}Ziel der Beispiel-Implementierung}{16}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Ziel der Beispiel-Implementierung}{15}{section.4.1}
+\contentsline {section}{\numberline {5.2}Genutzte Bibliotheken}{16}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Genutzte Bibliotheken}{15}{section.4.2}
+\contentsline {section}{\numberline {5.3}Die Document-Klasse}{18}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Apache Tika}{16}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {5.3.1}TF-IDF}{19}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}python-magic}{16}{subsection.4.2.2}
+\contentsline {section}{\numberline {5.4}Der Index}{20}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}nltk}{16}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {5.4.1}buildIndex}{21}{subsection.5.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Die Document-Klasse}{17}{section.4.3}
+\contentsline {subsection}{\numberline {5.4.2}Hilfsmethoden}{21}{subsection.5.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}TF-IDF}{18}{subsection.4.3.1}
+\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{21}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Der Index}{18}{section.4.4}
+\contentsline {subsubsection}{\nonumberline \_addToIndex}{23}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}buildIndex}{19}{subsection.4.4.1}
+\contentsline {subsubsection}{\nonumberline \_preprocessText}{23}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Hilfsmethoden}{20}{subsection.4.4.2}
+\contentsline {subsubsection}{\nonumberline retrieve}{26}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{20}{section*.6}
+\contentsline {chapter}{\numberline {6}Verbesserungen}{28}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_addToIndex}{21}{section*.7}
+\contentsline {section}{\numberline {6.1}Probleme der aktuellen Beispiel-Implementierung}{29}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_preprocessText}{22}{section*.8}
+\contentsline {subsection}{\numberline {6.1.1}Analyse der Precision}{29}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline retrieve}{24}{section*.9}
+\contentsline {subsubsection}{\nonumberline Test und Auswertung der Ergebnisse}{29}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Verbesserungen}{27}{chapter.5}
+\contentsline {subsubsection}{\nonumberline Lösungsvorschläge}{29}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit}{28}{chapter.6}
+\contentsline {subsection}{\numberline {6.1.2}Analyse des Recalls}{29}{subsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Test und Auswertung der Ergebnisse}{30}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Lösungsvorschläge}{30}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Aufbaudauer des Index}{30}{subsection.6.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Persistierung}{30}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Parallelisierung}{31}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Fazit}{32}{chapter.7}

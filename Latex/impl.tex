@@ -15,19 +15,19 @@ Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Bibl
 	\item NLTK: Token-Erzeugung, die mittels Regular Expressions Texte tokenisiert
 \end{itemize}
 
-\subsection{Apache Tika}\label{apache-tika}
+\subsection*{Apache Tika}\label{apache-tika}
 
 Bei Apache Tika handelt es sich um ein Framework um Inhalte zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren. Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine PDF-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der PDF-Datei zugegriffen werden kann.
 
-\subsection{python-magic}\label{python-magic}
+\subsection*{python-magic}\label{python-magic}
 
 Mittels python-magic ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle PDF-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
 
-\subsection{nltk}\label{nltk}
+\subsection*{nltk}\label{nltk}
 nltk (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenization und Stemming.
 In diesem Beispiel wird nltk verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von Regular Expressions arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
 
-\subsection{Platform}
+\subsection*{Platform}
 Das Platform-Modul wird in dieser Implementierung dazu verwendet, festzustellen, auf welchem Betriebssystem die lokale Suchmaschine ausgeführt wird. Dies muss ermittelt werden, da auf Windows und Linux unterschiedliche Dateisysteme arbeiten. In Linux ist das Startverzeichnis immer das Root-Verzeichnis (\glqq /\grqq). Unter Windows gibt meist mehrere Partitionen, die alle durchsucht werden müssen.
 
 \begin{figure}[h]
@@ -39,6 +39,7 @@ import math
 import os
 import string
 import platform
+import operator
 import re
 from nltk.tokenize import RegexpTokenizer
 		\end{lstlisting}
@@ -51,11 +52,14 @@ from nltk.tokenize import RegexpTokenizer
 
 Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse. Diese Klasse hält alle Attribute, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Diese Attribute sind:
 \begin{itemize}
-	\item url
-	\item length 
-	\item id
+	\item url: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird
+	\item length: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt
+	\item id: Integer, welcher dem Dokument einen eindeutigen Document Identifier gibt
+	\item score: Float, welcher den Score zu einer Anfrage widerspiegelt
+	\item termList: Eine Liste von Strings, die die Terme des Dokumentes entsprechen. Diese wird durch die Methode \textit{\_preprocess} erzeugt (siehe Abschnitt \ref{preprocess})
 \end{itemize} 
-Die Variable \emph{url} ist ein String und enthält den Pfad zum Dokument, welches durch das entsprechende Document-Objekt repräsentiert wird. \emph{length} ist ein Integer und beinhaltet die Anzahl der Wörter, die in dem Dokument vorkommen und \emph{id} ist die eindeutige Dokumenten-ID, zu der weiter unten noch genaueres gesagt wird.
+
+
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
@@ -67,7 +71,7 @@ class Document:
     self.length = length
     self.id = id
     self.score = 0.
-    self.textList = textList
+    self.termList = termList
 		\end{lstlisting}
 	\rule{\textwidth}{0.4pt}
 	\caption{Dokumentenklasse}
@@ -206,7 +210,8 @@ def _getStartDirectories(self):
     directories = ["/"]
      
   elif platform.system() == "Windows":
-    directories = ['%s:\\' % d for d in string.ascii_uppercase if os.path.exists('%s:' % d)]
+    directories = ['%s:\\' % d for d in string.ascii_uppercase
+    			   if os.path.exists('%s:' % d)]
         
   else:
     raise EnvironmentError
@@ -248,7 +253,7 @@ Index._addToIndex = _addToIndex
 	\label{fig:addToIndex}
 \end{figure}
 
-\subsubsection{\_preprocessText}
+\subsubsection{\_preprocessText}\label{preprocess}
 Diese Methode dient der Vorverarbeitung der Texte, die in den PDF-Dokumenten stehen. Hierfür wird der Text eines PDF-Dokumentes an den Parameter \textit{text} übergeben. Als erster Schritt wird der gesamte Text in Lower-Case (Kleinschreibung) gesetzt, damit später bei der Suche die Groß- bzw. Kleinschreibung irrelevant ist. Das Ergebnis wird in der Variable \textit{lowerText} gespeichert. Im nächsten Schritt werden alle Zahlen aus \textit{lowerText} entfernt und in \textit{prepText} gespeichert, da Zahlen für die Textsuche nicht von Bedeutung sind.
 
 Als nächstes wird mithilfe der Klasse \textit{RegexpTokenizer}, die durch die NLTK-Bibliothek zur Verfügung gestellt wird, der String \textit{prepText} in eine Liste von Tokens aufgespalten. Was als Token gewertet wird, wird mithilfe einer \textit{regular expression} definiert, im Deutschen regulärer Ausdruck genannt. Ein regulärer Ausdruck ist eine Zeichenkette, welche eine Menge von bestimmten Zeichenketten beschreibt. Der gewünschte reguläre Ausdruck wird dem Konstruktor der \textit{RegexpTokenizer}-Klasse in Form eines raw Strings übergeben. Ein raw String ist ein String, welcher mit einem \textit{r} am Anfang gekennzeichnet ist und ein Backslash als ein Literal und kein Escape-Zeichen behandelt. Dies ist bei regulären Ausdrücken nützlich, da in diesen viel mit Backslashs gearbeitet wird.
