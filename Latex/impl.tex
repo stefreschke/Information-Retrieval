@@ -4,14 +4,15 @@ Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutiert
 
 \section{Genutzte Bibliotheken}\label{genutzte-bibliotheken}
 
-Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Bibliotheken eingebunden, welche die Implementierung unterstützen. Folgend werden die Bibliotheken aufgelistet und im jeweiligen Abschnitt genauer erläutert:
+Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Folgend werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:
 \begin{itemize}
 	\item Apache Tika: parsen der Texte aus dem PDF-Dokument
 	\item Math: Standard Python-Modul für mathematische Funktionen
 	\item OS: Betriebssystem-Funktionalitäten, um durch Verzeichnisse zu navigieren
 	\item Python Magic: Dateityp-Erkennung
-	\item re: Regular Expressions werden in diesem Beispiel als Hilfe bei der Token-Erzeugung herangezogen
+	\item RE: Regular Expressions werden in diesem Beispiel als Hilfe bei der Token-Erzeugung herangezogen
 	\item Platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen
+	\item Operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlich Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode
 	\item NLTK: Token-Erzeugung, die mittels Regular Expressions Texte tokenisiert
 \end{itemize}
 
@@ -76,9 +77,11 @@ class Document:
 	\label{fig:document}
 \end{figure}
 
-Das Attribut \textit{url} soll am Ende des Retrievalprozesses zurückgegeben werden, da der Nutzer durch den Pfad direkten Zugriff auf das Dokument bekommt. Die Attribute \textit{length}, \textit{termList} und \textit{score} werden für die Berechnung des TF-IDF-Maßes benötigt und so auch für den Retrievalprozess. Das Attribut \textit{id} wird in der Indexklasse einerseits genutzt, um die Identifier auf die Terme zu mappen (siehe )
+Das Attribut \textit{url} soll am Ende des Retrievalprozesses zurückgegeben werden, da der Nutzer durch den Pfad direkten Zugriff auf das Dokument bekommt. Die Attribute \textit{length}, \textit{termList} und \textit{score} werden für die Berechnung des TF-IDF-Maßes benötigt und so auch für den Retrievalprozess. Das Attribut \textit{id} wird in der Indexklasse einerseits genutzt, um die Identifier auf die Terme zu mappen. Des Weiteren erfolgt die Zuordnung der jeweiligen ID zu ihrer Document-Instanz über die docHashmap in der Indexklasse (siehe hashmap und docHashmap in Abschnitt \ref{der-index}).
 
 \subsection{TF-IDF}\label{tf-idf}
+
+Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf}. Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchquery aus. Hierbei benötigt die Funktion
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
