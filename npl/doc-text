@@ -1,3 +1,4 @@
+
 1
 compact memories have flexible capacities  a digital data storage
 system with capacity up to bits and random and or sequential access
@@ -44669,21 +44670,6 @@ the other occupation binomial taking account of the coupling data
 two schemes for formulating this occupation factor and associated
 expressions probably cover all cases of coupling by a single resistor
    /
-6984
-quartz crystal circuit with variable coupling as oscillator and discriminator
-the principle of the fm oscillator described is the use of
-two coupled tuned circuits the second of which has a crystal connected
-in parallel  a reactance valve drives the oscillator valve which
-has the first circuit connected between anode and a capacitor connected
-to the grid with anode feed to the centre tap on the inductor  the
-relative frequency swing attainable is from to parts in  impedance
-diagrams for the circuit are shown  the principle is also applied
-in a discriminator in which the centre tap of the second circuit
-inductor is connected through a large value capacitor to the anode
-side of the first circuit the coupling between the inductors being
-variable  the centre frequency of this discriminator is largely independent
-of the characteristics of the rectifying diodes
-   /
 6985
 wien bridge oscillator design  a set of curves is presented which
 allows direct determination of design parameters of wien bridge oscillators
@@ -53075,10 +53061,6 @@ of the circuit lay out and performance of an amplifier with an output
 stage of two type el high slope pentodes in push pull with partial
 screen grid loading  part of july
    /
-8139
-a new circuit for balancing the characteristics of pairs of valves
-a more detailed account of the work described previously of april
-   /
 8140
 vx band receiving amplifier  a regenerative klystron amplifier is
 described suitable for use in a microwave television receiver having
@@ -53095,9 +53077,6 @@ circuit
 representation of physical quantities in formulae tables and coordinate
 systems  a comprehensive discussion covering both fundamental physical
 principles and typographical aspects
-   /
-8143
-a new system of logarithmic units
    /
 8144
 proposal for a new aether drift experiment  a method of greater sensitivity
