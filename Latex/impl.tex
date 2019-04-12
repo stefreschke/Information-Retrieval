@@ -54,12 +54,10 @@ Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels 
 \begin{itemize}
 	\item url: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird
 	\item length: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt
-	\item id: Integer, welcher dem Dokument einen eindeutigen Document Identifier gibt
+	\item id: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt
 	\item score: Float, welcher den Score zu einer Anfrage widerspiegelt
 	\item termList: Eine Liste von Strings, die die Terme des Dokumentes entsprechen. Diese wird durch die Methode \textit{\_preprocess} erzeugt (siehe Abschnitt \ref{preprocess})
 \end{itemize} 
-
-
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
@@ -78,25 +76,25 @@ class Document:
 	\label{fig:document}
 \end{figure}
 
+Das Attribut \textit{url} soll am Ende des Retrievalprozesses zurückgegeben werden, da der Nutzer durch den Pfad direkten Zugriff auf das Dokument bekommt. Die Attribute \textit{length}, \textit{termList} und \textit{score} werden für die Berechnung des TF-IDF-Maßes benötigt und so auch für den Retrievalprozess. Das Attribut \textit{id} wird in der Indexklasse einerseits genutzt, um die Identifier auf die Terme zu mappen (siehe )
+
 \subsection{TF-IDF}\label{tf-idf}
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
-def tf_idf(self, termList, df):
+def tf_idf(self, termList, df, fileCount):
 
   tfDict = {}
-  ind = Index()
-  
   for term in termList:
     tfDict[term] = 0  
-
+  
   for term in self.textList:
     if term in termList:
       tfDict[term] = tfDict[term]+1
 
   for key, value in df.items():
-    idf = math.log((ind.fileCount+1/value+1),10)
+    idf = math.log((fileCount/value+1),10)
     tfDict[key] = tfDict[key]*idf
 
   self.score = sum(tfDict.values())
@@ -115,7 +113,6 @@ Nachdem die benötigten Bibliotheken bekannt sind, kann der Index implementiert 
 \begin{itemize}
 	\item buildIndex()
 	\item retrieve()
-	\item calcTFIDF()
 \end{itemize}
 
 Weiter werden die folgenden Member-Variablen benötigt:
@@ -132,10 +129,11 @@ Die Member-Variable \emph{hashmap} ordnet allen Termen eine Menge von eindeutige
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
 class Index:
-    
-  hashmap = {} #dictionary
-  fileCount = 0 #integer, Gesamtzahl aller gefunden Dateien
-  docHashmap = {}
+  
+  def __init__(self):
+    self.hashmap = {}
+    self.fileCount = 0
+    self.docHashmap = {}
 		\end{lstlisting}
 	\rule{\textwidth}{0.4pt}
 	\caption{Indexklasse}
