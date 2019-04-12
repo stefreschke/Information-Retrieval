@@ -10,8 +10,20 @@ Um Dokumente aus einer Kollektion nach Termen einer Suchquery zu gewichten, ist 
 Bei dieser Vorgehensweise werden jedoch nicht die Anordnung der Terme sowohl im Dokument, als auch in der Query berücksichtigt. Die Query \glqq Karl ist engagierter als Eckhard\grqq\ liefert die gleiche Gewichtung für die Dokumente einer Kollektion zurück wie \glqq Eckhard ist engagierter als Karl\grqq . Dieses Modell, das die Anordnung der Terme innerhalb des Dokumentes ignoriert, wird auch als \glqq Bag of Words Model\grqq\ bezeichnet und beschreibt, dass ein Dokument, eine Menge von Wörter und deren Anzahl ist. Das bedeutet, dass zwei Dokumente, welche die selben Wörter und die selbe Anzahl dieser haben, als identisch angesehen werden, obwohl sie das nicht unbedingt sind. Des Weiteren werden alle Terme als gleich wichtig gewertet, welches nicht immer zielführend ist, wie in Abschnitt \ref{sub:tokenerzeugung} mit den \glqq stop words\grqq\ beschrieben wurde.
 
 \section{Inverse Document Frequency}
-Da die Terme in einer Suchquery nicht alle von gleicher Bedeutung für die Suche sind, muss eine Lösung gefunden werden, wie die Terme untereinander gewichtet werden solen. Hier fällt der Begriff der Document Frequency (siehe \cref{def:DF})
+Da die Terme in einer Suchquery nicht alle von gleicher Bedeutung für die Suche sind, muss eine Lösung gefunden werden, wie die Terme untereinander gewichtet. Hier fällt der Begriff der Document Frequency (siehe \cref{def:DF})
 
 \begin{defi}[Document Frequency]\label{def:DF}
 	Die Document Frequency $df_t$ gibt die Anzahl der Dokumente $d$ in der genutzten Kollektion an, welche den Term $t$ besitzen.
+\end{defi}
+
+\begin{defi}[Inverse Document Frequency]\label{def:IDF}
+	$IDF_t = log(\frac{N_D}{df_t})$
+\end{defi}
+
+Durch die Document Frequency kann festgestellt werden,
+
+\section{Das TF-IDF-Maß}
+
+\begin{defi}[TF-IDF]\label{defi:TF-IDF}
+	Inhalt...
 \end{defi}
