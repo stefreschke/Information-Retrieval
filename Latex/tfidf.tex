@@ -1,29 +1,49 @@
 Bei großen Sammlungen von Dokumenten reicht es nicht aus, wenn das IR die Dokumente zurückgibt, welche die Suchanfrage erfüllen. Die Menge der Dokumente, die durch das IR zurückgegebene werden, ist meist zu groß, so dass der Nutzer nicht in der Lage ist alle Dokumente zu sichten und die für ihn relevanten Dokument auszuwählen.\\
 Die Frage, die sich hier stellt, ist, wie der Nutzer die Dokumente bekommt, die er mit hoher wahrscheinlichsten benötigt. Hier fällt der Begriff des Scorings. Scoring oder auch Bewertung wird genutzt um zu bestimmen, welche Dokumente für die Suchanfrage am relevantesten sind. Es kann auch von einer Gewichtung der Dokumente gesprochen werden.\\
-Das Gewichtungsmodell, welches in dieser Arbeit thematisiert und genutzt wird, ist das TF-IDF-Maß. Da es sich bei der Eingabe des Nutzers um Freitext handelt und nicht um Terme, welche durch logische Operatoren verknüpft werden, bietet sich das TF-IDF-Maß an. TF steht hierbei für Term Frequency und IDF für Inverse Document Frequency. Beide Methoden werde einzeln in den folgenden Abschnitten vorgestellt und am Ende verknüpft.
+Das Gewichtungsmodell, welches in dieser Arbeit thematisiert und genutzt wird, ist das TF-IDF-Maß. Da es sich bei der Eingabe des Nutzers um Freitext handelt und nicht um Terme, welche durch logische Operatoren verknüpft werden, bietet sich das TF-IDF-Maß an. Denn das TF-IDF-Maß bewertet ein Dokument anhand der Terme, die in der Query stehen, ohne zu beachten wie diese miteinander verknüpft sind. TF steht hierbei für Term Frequency und IDF für Inverse Document Frequency. Beide Methoden werde einzeln in den folgenden Abschnitten vorgestellt und am Ende zum TF-IDF-Maß verknüpft.
 
 \section{Term Frequency}
-Um Dokumente aus einer Kollektion nach Termen einer Suchquery zu gewichten, ist das zählen der Terme $t$ einer Query in jedem Dokument $d$ die zunächst trivialste Lösung. Denn ein Dokument welches einen Term öfter besitzt, als ein anderes Dokument, hat mehr mit der Suchquery zu tun und muss dementsprechend höher gewichtet werden. Bei dieser Vorgehensweise wird von Term Frequency (siehe \cref{def:TF}) gesprochen, auf deutsch auch als Suchwortdichte bekannt. \newpage
+Um Dokumente aus einer Kollektion nach Termen einer Suchquery zu gewichten, ist das zählen der Terme $t$ einer Query in jedem Dokument $d$ die zunächst trivialste Lösung. Denn ein Dokument welches einen Term öfter besitzt, als ein anderes Dokument, hat mehr mit der Suchquery zu tun und muss dementsprechend höher gewichtet werden.\newpage
+Bei dieser Vorgehensweise wird von Term Frequency (siehe \cref{def:TF}) gesprochen, auf deutsch auch als Suchwortdichte bekannt.
 \begin{defi}[Term Frequency]\label{def:TF}
-	Die Term Frequency $tf_d,_t$ gibt die Anzahl des Terms $t$ in dem Dokument $d$ wider.
+	Die Term Frequency $tf_d,_t$ gibt die Anzahl des Terms $t$ in dem Dokument $d$ wieder.
 \end{defi}
-Bei dieser Vorgehensweise werden jedoch nicht die Anordnung der Terme sowohl im Dokument, als auch in der Query berücksichtigt. Die Query \glqq Karl ist engagierter als Eckhard\grqq\ liefert die gleiche Gewichtung für die Dokumente einer Kollektion zurück wie \glqq Eckhard ist engagierter als Karl\grqq . Dieses Modell, das die Anordnung der Terme innerhalb des Dokumentes ignoriert, wird auch als \glqq Bag of Words Model\grqq\ bezeichnet und beschreibt, dass ein Dokument, eine Menge von Wörter und deren Anzahl ist. Das bedeutet, dass zwei Dokumente, welche die selben Wörter und die selbe Anzahl dieser haben, als identisch angesehen werden, obwohl sie das nicht unbedingt sind. Des Weiteren werden alle Terme als gleich wichtig gewertet, welches nicht immer zielführend ist, wie in Abschnitt \ref{sub:tokenerzeugung} mit den \glqq stop words\grqq\ beschrieben wurde.
+Bei dieser Vorgehensweise werden jedoch nicht die Anordnung der Terme sowohl im Dokument, als auch in der Query berücksichtigt. Die Query \glqq Karl ist engagierter als Eckhard\grqq\ liefert die gleiche Gewichtung für die Dokumente einer Kollektion zurück wie \glqq Eckhard ist engagierter als Karl\grqq . Dieses Modell, das die Anordnung der Terme innerhalb des Dokumentes ignoriert, wird auch als \glqq Bag of Words Model\grqq\ bezeichnet und beschreibt, dass ein Dokument, eine Menge von Wörter und deren Anzahl ist. Ein Dokument ist ein \glqq Beutel\grqq\ mit vielen losen Wörtern. Daraus folgt, dass zwei Dokumente, welche die selben Wörter und die selbe Anzahl dieser haben, als identisch angesehen werden, obwohl sie das nicht unbedingt sind. Des Weiteren werden alle Terme als gleich wichtig gewertet, welches nicht immer zielführend ist, wie zum Beispiel im Abschnitt \ref{sub:tokenerzeugung} mit den \glqq stop words\grqq\ beschrieben wurde.
 
 \section{Inverse Document Frequency}
-Da die Terme in einer Suchquery nicht alle von gleicher Bedeutung für die Suche sind, muss eine Lösung gefunden werden, wie die Terme untereinander gewichtet. Hier fällt der Begriff der Document Frequency (siehe \cref{def:DF})
+Da die Terme in einer Suchquery nicht alle von gleicher Bedeutung für die Suche sind, muss eine Lösung gefunden werden, wie die Terme untereinander gewichtet. Wenn in einer Dokumenten-Kollektion im Automobilbereich nach \glqq elektrische Autos sind die Zukunft\grqq\ gesucht wird, taucht das Wort Auto in allen Dokumenten häufig auf. Deshalb sollte der Term \glqq Auto\grqq\ nicht so stark ins Gewicht fallen wie zum Beispiel das Wort \glqq elektrische\grqq\ . Hier fällt der Begriff der Inverse Document Frequency (siehe \cref{def:IDF}). Jedoch muss vorher geklärt werden worum es sich bei der Document Frequency (siehe \cref{def:DF}) handelt.
 
 \begin{defi}[Document Frequency]\label{def:DF}
 	Die Document Frequency $df_t$ gibt die Anzahl der Dokumente $d$ in der genutzten Kollektion an, welche den Term $t$ besitzen.
 \end{defi}
+\newpage
+Durch die Document Frequency kann also festgestellt werden, wie viele Dokumente einen bestimmten Term beinhalten, ohne dabei auf die Menge dieses Terms einzugehen. Um jetzt aus der Document Frequency die einzelnen Terme sinnvoll zu gewichten, wird die Inverse Document Frequency genutzt. 
 
 \begin{defi}[Inverse Document Frequency]\label{def:IDF}
-	$IDF_t = log(\frac{N_D}{df_t})$
+	Die Inverse Document Frequency ist definiert als:
+	\begin{center}
+		$idf_t = log(\frac{N_D}{df_t})$
+	\end{center}
+	$df_t$ ist hierbei die Document Frequency und $N_D$ die Anzahl der Dokumente in der Kollektion.
 \end{defi}
 
-Durch die Document Frequency kann festgestellt werden,
+Das Dividieren der Gesamtzahl der Dokument in der Kollektion ($N_D$) durch die Document Frequency hat zur Folge, dass das Gewicht eines seltenen Terms höher ist und das eines häufigen Terms niedrig. Der Logarithmus sorgt dafür, dass das gewonnene Gewicht nicht zu groß wird, bei zum Beispiel großen Kollektionen und seltenen Termen.
 
 \section{Das TF-IDF-Maß}
 
+In diesen Abschnitt wird die Zusammensetzung der Term Frequency und der Inverse Document Frequency zum TF-IDF-Maß beschrieben. 
+
 \begin{defi}[TF-IDF]\label{defi:TF-IDF}
-	Inhalt...
+	Die TF-IDF-Maß ist wie folgt definiert:
+	\begin{center}
+		$tf\text{-}idf_t,_d = tf_t,_d * idf_t$
+	\end{center}
+	Hierbei wird lediglich das Produkt der Inverse Document Frequency mit der Term Frequency genommen.
 \end{defi}
+
+Interessant ist hier, wie das Gewicht für ein Dokument gewonnen werden kann. Die folgende Funktion $score(q,d)$ zeigt die Lösung, wobei $q$ hier die Suchquery ist und $d$ das zu gewichtende Dokument: 
+\begin{center}
+	$score(q,d)=\sum\limits_{t \in q}tf\text{-}idf_t,_d$
+\end{center}
+\newpage
+Wie in der Funktion beschrieben wird für jeden Term in der Suchquery das TF-IDF-Maß berechnet und diese Maße werden dann über die Summe addiert. Am Ende dieser Prozedur erhält man dann eine Gewichtung für ein Dokument anhand der Suchquery und ist in der Lage seine Relevanz mit der Relevanz der anderen gefundenen Dokumente zu vergleichen.

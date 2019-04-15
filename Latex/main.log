@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.27)  12 APR 2019 15:35
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.27)  15 APR 2019 17:21
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.550 seconds
+luaotfload | main : initialization completed in 0.520 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scr
@@ -1980,23 +1980,48 @@ Package babel Info: Redefining ngerman shorthand "~
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 25.
-)
+(babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 137.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 137.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 19.
  [15.22]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 32.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 32.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
+(load luc: C:/Users/Marletin/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts
+/otl/lmsans8-oblique.luc)
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
+(load luc: C:/Users/Marletin/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts
+/otl/lmsans8-regular.luc)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 48.
+ [16.23])
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 137.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 137.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 137.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 137.
+ [17.24]
 chapter 5.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 137.
@@ -2019,143 +2044,148 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 12.
- [16.23
+ [18.25
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 29.
- [17.24](load luc: C:/Users/Marletin/AppData/Local/MiKTeX/2.9/luatex-cache/gener
+(babel)             in language  on input line 30.
+ [19.26](load luc: C:/Users/Marletin/AppData/Local/MiKTeX/2.9/luatex-cache/gener
 ic/fonts/otl/lmsans10-regular.luc)(load luc: C:/Users/Marletin/AppData/Local/MiK
 TeX/2.9/luatex-cache/generic/fonts/otl/lmmono10-regular.luc)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 52.
 
-Overfull \hbox (18.3725pt too wide) in paragraph at lines 53--54
+Overfull \hbox (18.3725pt too wide) in paragraph at lines 54--55
 \TU/lmss/m/n/12 Das Spei-chern der für das Re-trie-val wich-ti-gen In-for-ma-t
 io-nen, ge-schieht mit-tels ei-ner Document-
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 59.
-[18.25]
+(babel)             in language  on input line 57.
+[20.27]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 81.
+(babel)             in language  on input line 82.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 81.
+(babel)             in language  on input line 82.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 112.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 112.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 114.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 114.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 114.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 114.
- [19.26]
+(babel)             in language  on input line 115.
+[21.28]
 Overfull \hbox (13.55519pt too wide) in paragraph at lines 129--130
 []\TU/lmss/m/n/12 Die Member-Variable \TU/lmss/m/sl/12 hash-map \TU/lmss/m/n/12
  ord-net al-len Ter-men ei-ne Men-ge von ein-deu-ti-gen Dokumenten-
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
-[20.27]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 191.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 191.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 199.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 199.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 199.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 199.
-[21.28]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 232.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 232.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 232.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 232.
+(babel)             in language  on input line 130.
 [22.29]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 146.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 146.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 192.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 192.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 196.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 196.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 196.
 [23.30]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 201.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 201.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 201.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 201.
  [24.31]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 301.
+(babel)             in language  on input line 259.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 301.
+(babel)             in language  on input line 259.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 301.
+(babel)             in language  on input line 259.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 301.
+(babel)             in language  on input line 259.
 [25.32]
-Overfull \hbox (7.06721pt too wide) in paragraph at lines 302--303
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 263.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 263.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 263.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 263.
+ [26.33]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 269.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 269.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 269.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 269.
+ [27.34]
+Overfull \hbox (7.06721pt too wide) in paragraph at lines 303--304
 []\TU/lmss/m/n/12 Zu-nächst wird der Such-String des Nut-zers mit-tels der be-
 reits be-kann-ten Me-tho-de __\TU/lmss/m/sl/12 prepro-
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 304.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 304.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 304.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 304.
+[28.35]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2168,7 +2198,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 141.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 141.
- [26.33]
+ [29.36]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 141.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2177,7 +2207,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 141.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 141.
- [27.34]
+ [30.37]
 chapter 6.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 141.
@@ -2201,7 +2231,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 26.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 26.
-[28.35
+[31.38
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
@@ -2220,7 +2250,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 53.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 53.
- [29.36]
+ [32.39]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2233,7 +2263,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 68.
- [30.37])
+ [33.40])
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 145.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2242,7 +2272,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 145.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 145.
- [31.38]
+ [34.41]
 chapter 7.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 145.
@@ -2257,7 +2287,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 151.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 151.
- [32.39
+ [35.42
 
 ]
 
@@ -2281,7 +2311,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 163.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 163.
-[1.40
+[1.43
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
@@ -2297,16 +2327,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 31583 strings out of 494447
+ 31597 strings out of 494447
  100000,1144653 words of node,token memory allocated
  656 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 14 attribute, 71 glue_spec, 14 attr
 ibute_list, 2 write, 6 pdf_action nodes
-   avail lists: 1:5,2:2519,3:236,4:159,5:586,6:68,7:4650,8:368,9:1649,10:22,11:4
+   avail lists: 1:5,2:1602,3:226,4:107,5:496,6:61,7:4179,8:242,9:1068,10:22,11:4
 59
- 34574 multiletter control sequences out of 65536+200000
- 53 fonts using 11201839 bytes
- 54i,12n,77p,9084b,2794s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34580 multiletter control sequences out of 65536+200000
+ 57 fonts using 11729247 bytes
+ 54i,11n,77p,9084b,2794s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lm
 mono12-regular.otf><c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/op
 entype/public/lm/lmromancaps10-regular.otf><c:/users/marletin/appdata/local/prog
@@ -2329,9 +2359,9 @@ r6.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
 m/lmr8.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmsy10.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/lm/lmsy8.pfb>
-Output written on main.pdf (40 pages, 279270 bytes).
+Output written on main.pdf (43 pages, 286215 bytes).
 
-PDF statistics: 737 PDF objects out of 1000 (max. 8388607)
- 286 named destinations out of 1000 (max. 131072)
+PDF statistics: 750 PDF objects out of 1000 (max. 8388607)
+ 288 named destinations out of 1000 (max. 131072)
  265 words of extra memory for PDF output out of 10000 (max. 100000000)
 
