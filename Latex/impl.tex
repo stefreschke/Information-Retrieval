@@ -4,7 +4,7 @@ Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutiert
 
 \section{Genutzte Bibliotheken}\label{genutzte-bibliotheken}
 
-Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Folgend werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:
+Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Folgend werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:\newpage
 \begin{itemize}
 	\item PyPDF2: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen
 	\item Math: Standard Python-Modul für mathematische Funktionen
@@ -24,8 +24,8 @@ Bei PyPDF2 handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkenne
 
 Mittels filetype ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle PDF-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
 
-\subsection*{nltk}\label{nltk}
-nltk (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenization und Stemming.
+\subsection*{NLTK}\label{nltk}
+NLTK (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenization und Stemming.
 In diesem Beispiel wird nltk verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von Regular Expressions arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
 
 \subsection*{Platform}
@@ -35,7 +35,7 @@ Das Platform-Modul wird in dieser Implementierung dazu verwendet, festzustellen,
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
 from tika import parser
-import magic
+import filetype
 import math
 import os
 import string
@@ -51,12 +51,12 @@ from nltk.tokenize import RegexpTokenizer
 
 \section{Die Document-Klasse}\label{die-document-klasse}
 
-Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse. Diese Klasse hält alle Attribute, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Diese Attribute sind:
+Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse. Diese Klasse hält alle Member-Variablen, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Diese Member-Variablen sind:
 \begin{itemize}
 	\item url: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird
 	\item length: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt
-	\item id: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt
-	\item score: Float, welcher den Score zu einer Anfrage widerspiegelt
+	\item docId: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt
+	\item score: Float, welcher die Gewichtung der Dokument-Instanz zu einer Anfrage angibt
 	\item termList: Eine Liste von Strings, die die Terme des Dokumentes entsprechen. Diese wird durch die Methode \textit{\_preprocess} erzeugt (siehe Abschnitt \ref{preprocess})
 \end{itemize} 
 
@@ -65,10 +65,10 @@ Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels 
 		\begin{lstlisting}[language=Python]
 class Document:
 
-  def __init__(self, url, length, id, textList):
+  def __init__(self, url, length, docId, termList):
     self.url = url
     self.length = length
-    self.id = id
+    self.docId = docId
     self.score = 0.
     self.termList = termList
 		\end{lstlisting}
@@ -77,23 +77,23 @@ class Document:
 	\label{fig:document}
 \end{figure}
 
-Das Attribut \textit{url} soll am Ende des Retrievalprozesses zurückgegeben werden, da der Nutzer durch den Pfad direkten Zugriff auf das Dokument bekommt. Die Attribute \textit{length}, \textit{termList} und \textit{score} werden für die Berechnung des TF-IDF-Maßes benötigt und so auch für den Retrievalprozess. Das Attribut \textit{id} wird in der Indexklasse einerseits genutzt, um die Identifier auf die Terme zu mappen. Des Weiteren erfolgt die Zuordnung der jeweiligen ID zu ihrer Document-Instanz über die docHashmap in der Indexklasse (siehe hashmap und docHashmap in Abschnitt \ref{der-index}).
+Die Member-Variable \textit{url} soll am Ende des Retrievalprozesses zurückgegeben werden, da der Nutzer durch den Pfad direkten Zugriff auf das Dokument bekommt. Die Member-Variablen \textit{length}, \textit{termList} und \textit{score} werden für die Berechnung des TF-IDF-Maßes benötigt und so auch für den Retrievalprozess. Die Member-Variable \textit{docId} wird in der Indexklasse einerseits genutzt, um die Identifier in dem \textit{hashmap}-Dictionary den jeweiligen Termen zuzuordnen. Des Weiteren erfolgt die Zuordnung der jeweiligen ID zu ihrer Document-Instanz über die \textit{docHashmap} in der Indexklasse (siehe hashmap und docHashmap in Abschnitt \ref{der-index}).
 
 \subsection{TF-IDF}\label{tf-idf}
 
-Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf}. Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchquery aus. Hierbei benötigt die Funktion
+Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf}. Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchquery aus. Hierbei benötigt die Funktion die Terme der Suchquery, welche über das Attribut \textit{terms} übergeben werden. Das Attribut \textit{df} steht für die Document Frequency, welches für jeden Term die Anzahl der gefunden Dokumente in Form eines Dictionaries beinhaltet. Über das Attribut \textit{fileCount} wird die Anzahl der Dokumente in der Kollektion, hier die Dateien die im invertierten Index aufgenommen wurden, übergeben.
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
-def tf_idf(self, termList, df, fileCount):
+def tf_idf(self, terms, df, fileCount):
 
   tfDict = {}
-  for term in termList:
+  for term in terms:
     tfDict[term] = 0  
   
-  for term in self.textList:
-    if term in termList:
+  for term in self.termList:
+    if term in terms:
       tfDict[term] = tfDict[term]+1
 
   for key, value in df.items():
@@ -109,15 +109,11 @@ Document.tf_idf = tf_idf
 	\label{fig:tfidf}
 \end{figure}
 
+Als erstes wird das Dictionary \textit{tfDict} für die Term Frequency erstellt und mit den Termen der Query als Schlüssel und den Werten 0 initialisiert. In der nächsten For-Schleife wird über \textit{self.termList} iteriert, welches die Liste der Terme des Dokumentes sind. Wenn ein Term auch in der Suchquery enthalten ist, also \textit{term in terms}, dann wird im \textit{tfDict} der Wert des gefunden Terms um eins aufaddiert. Am Ende enthält das \textit{tfDict} die Terme der Suchquery als Schlüssel und die Anzahl ihrer Vorkommnisse im Dokument als Wert, also die Term Frequency. Als letztes muss jede Term Frequency mit der Inverse Document Frequency multipliziert werden. Dafür wird über das Dictionary \textit{df} iteriert und für jedes Key-Value-Paar die Inverse Document Frequency ausgerechnet und auf die jeweilige Term Frequency multipliziert. Am Ende wird die Summe aller TF-IDF-Maße der \textit{score}-Variable zugeordnet und bilden so die finale Gewichtung für die gegebene Suche.
+
 \section{Der Index}\label{der-index}
 
-Nachdem die benötigten Bibliotheken bekannt sind, kann der Index implementiert werden. Bevor dieser jedoch aufgebaut werden kann, sind einige Vorarbeiten nötig, die durch die vorgestellten Bibliotheken gestützt werden. Der Index wird im Folgenden als Klasse implementiert. Diese beinhaltet die folgenden Methoden, die in den folgenden Abschnitten genauer diskutiert werden:
-
-\begin{itemize}
-	\item buildIndex()
-	\item retrieve()
-\end{itemize}
-
+Die Index-Klasse beinhaltet alle Methoden um 
 Weiter werden die folgenden Member-Variablen benötigt:
 
 \begin{itemize}
@@ -156,10 +152,7 @@ Die letzten Schritte beinhalten das Anlegen eines neuen Dokumenten-Objekts, welc
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
-def buildIndex(self):
-    
-  #startDirectories = self._getStartDirectories()
-  mime = magic.Magic(mime=True)
+def buildIndex(self, startDirectories=self._getStartDirectories()):
     
   for directory in startDirectories:
     for root, _, files in os.walk(directory):
@@ -168,7 +161,7 @@ def buildIndex(self):
         path = os.path.abspath(os.path.join(root, file))
                 
         try:
-          if mime.from_file(path) == "application/pdf":
+          if filetype.guess(path).mime == "application/pdf":
 
             fileData = parser.from_file(path)
             rawText = fileData['content']
@@ -195,36 +188,36 @@ In diesem Abschnitt werden die genutzten Hilfsmethoden vorgestellt und am Code e
 
 \subsubsection{\_getStartDirectories}
 
-Die Methode \_getSartDirectories liefert eine Liste der Start-Verzeichnisse, abhängig vom Betriebssystem auf dem die Suchmaschine läuft, zurück. In diesen Verzeichnissen werden nach PDF-Dateien gesucht, welche in den Index mit einfließen. Falls das zugrunde liegende Betriebssystem ein Linux-basiertes System ist, wird die Liste ["/"] zurückgegeben, da das Verzeichnis / immer das root-Verzeichnis ist. Bei auf Windows basierenden Systemen gibt es wiederum mehrere Partitionen, welche immer mit einem Großbuchstaben abgekürzt, und somit auch mehrere root-Verzeichnisse.
-
-Zuerst wird geprüft welches Betriebssystem vorliegt. Bei einem auf Linux basierenden System wird einfach eine List mit dem Element "/" erstellt. Bei einem auf Windows basierenden Betriebssystem ist das erstellen der Startverzeichnisse aufwendiger. Hierbei werden alle Großbuchstaben darauf geprüft eine Partition zu sein. Dies wird mithilfe der os.path.exists-Methode realisiert. Ist ein Großbuchstabe tatsächliche eine Partition auf dem Computer, so wird er in der Liste gespeichert. Jedoch wird an den Großbuchstaben noch der String ":\" angehangen, damit die buildIndex-Methode mit den Elementen als Start-Verzeichnisse arbeiten kann.
+Die Methode \_getSartDirectories liefert eine Liste der Start-Verzeichnisse, abhängig vom Betriebssystem auf dem die Suchmaschine läuft. In diesen Verzeichnissen werden rekursiv nach PDF-Dateien gesucht, welche in den Index mit einfließen. Falls das zugrunde liegende Betriebssystem ein Linux-basiertes (Rückgabe Linux) oder Mac-basiertes (Rückgabe Darwin) System ist, wird die Liste [\"/"] zurückgegeben, da das Verzeichnis / immer das root-Verzeichnis ist. Bei auf Windows basierenden Systemen gibt es wiederum mehrere Partitionen, welche immer mit einem Großbuchstaben abgekürzt, und somit auch mehrere root-Verzeichnisse.
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
-		\begin{lstlisting}[language=Python]
-def _getStartDirectories(self):
-
-  if platform.system() == "Linux":
-    directories = ["/"]
-    
-  elif platform.system() == "Darwin":
-    directories = ["/"]
-     
-  elif platform.system() == "Windows":
-    directories = ['%s:\\' % d for d in string.ascii_uppercase
-    			   if os.path.exists('%s:' % d)]
-        
-  else:
-    raise EnvironmentError
-        
-  return directories
-
-Index._getStartDirectories = _getStartDirectories
-		\end{lstlisting}
+	\begin{lstlisting}[language=Python]
+	def _getStartDirectories(self):
+	
+	if platform.system() == "Linux":
+	directories = ["/"]
+	
+	elif platform.system() == "Darwin":
+	directories = ["/"]
+	
+	elif platform.system() == "Windows":
+	directories = ['%s:\\' % d for d in string.ascii_uppercase
+	if os.path.exists('%s:' % d)]
+	
+	else:
+	raise EnvironmentError
+	
+	return directories
+	
+	Index._getStartDirectories = _getStartDirectories
+	\end{lstlisting}
 	\rule{\textwidth}{0.4pt}
 	\caption{GetStartDirectories-Methode}
 	\label{fig:start}
 \end{figure}
+
+Zuerst wird geprüft welches Betriebssystem vorliegt. Bei einem auf Linux- oder Mac-basierenden System wird einfach eine List mit dem Element \"/\" erstellt. Bei einem auf Windows basierenden Betriebssystem ist das erstellen der Startverzeichnisse aufwändiger. Hierbei werden alle Großbuchstaben darauf geprüft eine Partition zu sein. Dies wird mithilfe der os.path.exists-Methode realisiert. Ist ein Großbuchstabe tatsächliche eine Partition auf dem Computer, so wird er in der Liste gespeichert. Jedoch wird an den Großbuchstaben noch der String ":\" angehangen, damit die buildIndex-Methode mit den Elementen als Start-Verzeichnisse arbeiten kann.
 
 \subsubsection{\_addToIndex}\label{addtoindex}
 
@@ -323,8 +316,8 @@ def retrieve(self, searchString):
     
   for document in result:
     doc = ind.docHashmap[document]
-    doc.tf_idf(processedStrings,df)
-    helpDict[doc.id] = doc.score
+    doc.tf_idf(processedStrings,df,self.fileCount)
+    helpDict[doc.docId] = doc.score
         
   sortedDict = sorted(helpDict.items(), key=operator.itemgetter(1))
     
@@ -339,6 +332,10 @@ Index.retrieve = retrieve
 	\caption{Retrieve-Methode}
 	\label{fig:retrieve}
 \end{figure}
+
+\section{Ausführung der Suchmaschine}
+
+In der Abbildung \ref{fig:execute} wird Index aufgebaut und der
 
 \begin{figure}[h]
 	\rule{\textwidth}{0.4pt}
@@ -356,5 +353,3 @@ if resultSet:
 	\caption{Execute}
 	\label{fig:execute}
 \end{figure}
-
-In der Abbildung \ref{fig:execute} wird Index aufgebaut und der

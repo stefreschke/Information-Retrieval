@@ -49,19 +49,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3.1}TF-IDF}{22}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Der Index}{22}{section.5.4}
+\contentsline {section}{\numberline {5.4}Der Index}{23}{section.5.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.4.1}buildIndex}{23}{subsection.5.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.2}Hilfsmethoden}{24}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.2}Hilfsmethoden}{25}{subsection.5.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{24}{section*.9}
+\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{25}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline \_addToIndex}{25}{section*.10}
+\contentsline {subsubsection}{\nonumberline \_addToIndex}{26}{section*.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\nonumberline \_preprocessText}{26}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline retrieve}{29}{section*.12}
+\contentsline {subsubsection}{\nonumberline retrieve}{28}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Ausführung der Suchmaschine}{29}{section.5.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Verbesserungen}{31}{chapter.6}
 \defcounter {refsection}{0}\relax 

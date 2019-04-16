@@ -25,9 +25,10 @@
 \BOOKMARK [1][-]{section.5.4}{Der Index}{chapter.5}% 25
 \BOOKMARK [2][-]{subsection.5.4.1}{buildIndex}{section.5.4}% 26
 \BOOKMARK [2][-]{subsection.5.4.2}{Hilfsmethoden}{section.5.4}% 27
-\BOOKMARK [0][-]{chapter.6}{Verbesserungen}{}% 28
-\BOOKMARK [1][-]{section.6.1}{Probleme der aktuellen Beispiel-Implementierung}{chapter.6}% 29
-\BOOKMARK [2][-]{subsection.6.1.1}{Analyse der Precision}{section.6.1}% 30
-\BOOKMARK [2][-]{subsection.6.1.2}{Analyse des Recalls}{section.6.1}% 31
-\BOOKMARK [2][-]{subsection.6.1.3}{Aufbaudauer des Index}{section.6.1}% 32
-\BOOKMARK [0][-]{chapter.7}{Fazit}{}% 33
+\BOOKMARK [1][-]{section.5.5}{Ausführung der Suchmaschine}{chapter.5}% 28
+\BOOKMARK [0][-]{chapter.6}{Verbesserungen}{}% 29
+\BOOKMARK [1][-]{section.6.1}{Probleme der aktuellen Beispiel-Implementierung}{chapter.6}% 30
+\BOOKMARK [2][-]{subsection.6.1.1}{Analyse der Precision}{section.6.1}% 31
+\BOOKMARK [2][-]{subsection.6.1.2}{Analyse des Recalls}{section.6.1}% 32
+\BOOKMARK [2][-]{subsection.6.1.3}{Aufbaudauer des Index}{section.6.1}% 33
+\BOOKMARK [0][-]{chapter.7}{Fazit}{}% 34
