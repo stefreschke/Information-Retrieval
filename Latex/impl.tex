@@ -1,24 +1,24 @@
 \section{Ziel der Beispiel-Implementierung}\label{ziel-der-beispiel-implementierung}
 
-Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutierten Inhalte vorgestellt. Dabei soll eine lokale Suchmaschine entwickelt werden, welche in der Lage ist, PDF-Dateien auf einem lokalen Computer-System zu parsen, in einen invertierten Index aufzunehmen, sowie Suchanfragen eines Benutzers sinnvoll zu beantworten. Zur Relevanz-Bestimmung der Dokumente wird das TF-IDF-Maß, welches bereits vorgestellt wurde, genutzt. Das Speichern des Index wird mit der von Python mitgelieferte Datenstruktur \textit{Dictionary}, welche im Grunde eine Hashmap ist, umgesetzt. Weiter werden Bibliotheken eingesetzt, welche einige Vorarbeit leisten und damit den Code der Beispiel-Implementierung auf das Wesentliche beschränken. Die Anwendung soll die grundlegende Arbeitsweise eines Information Retrieval-Systems darlegen.
+Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutierten Inhalte vorgestellt. Dabei wird eine lokale Suchmaschine entwickelt, welche in der Lage ist, PDF-Dateien auf einem lokalen Computer-System zu parsen, in einen invertierten Index aufzunehmen, sowie Suchanfragen eines Benutzers sinnvoll zu beantworten. Zur Relevanz-Bestimmung der Dokumente wird das TF-IDF-Maß, welches bereits vorgestellt wurde, genutzt. Das Speichern des Index wird mit der von Python mitgelieferte Datenstruktur \textit{Dictionary}, welche im Grunde eine Hashmap ist, umgesetzt. Weiter werden Bibliotheken eingesetzt, welche einige Vorarbeit leisten und damit den Code der Beispiel-Implementierung auf das Wesentliche beschränken. Die Anwendung soll die grundlegende Arbeitsweise eines Information Retrieval-Systems darlegen.
 
 \section{Genutzte Bibliotheken}\label{genutzte-bibliotheken}
 
 Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Folgend werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:
 \begin{itemize}
-	\item Apache Tika: parsen der Texte aus dem PDF-Dokument
+	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen
 	\item Math: Standard Python-Modul für mathematische Funktionen
-	\item OS: Betriebssystem-Funktionalitäten, um durch Verzeichnisse zu navigieren
-	\item Python Magic: Dateityp-Erkennung
-	\item RE: Regular Expressions werden in diesem Beispiel als Hilfe bei der Token-Erzeugung herangezogen
+	\item OS: Stellt Betriebssystem-Funktionalitäten bereit. Wird hier genutzt um durch Verzeichnisse zu navigieren
+	\item Python Magic: Stellt Funktionen zur Dateityp-Erkennung zur Verfügung
+	\item re: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt
 	\item Platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen
-	\item Operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlich Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode
-	\item NLTK: Token-Erzeugung, die mittels Regular Expressions Texte tokenisiert
+	\item Operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlichen Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode.
+	\item NLTK: Stellt Funktionen zur Verfügung, die es ermöglichen mit menschlichen Sprachdaten zu arbeiten.
 \end{itemize}
 
 \subsection*{Apache Tika}\label{apache-tika}
 
-Bei Apache Tika handelt es sich um ein Framework um Inhalte zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren. Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine PDF-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der PDF-Datei zugegriffen werden kann.
+Bei Apache Tika handelt es sich um ein Framework um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren. Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine PDF-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der PDF-Datei zugegriffen werden kann.
 
 \subsection*{python-magic}\label{python-magic}
 
