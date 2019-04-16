@@ -6,7 +6,7 @@ Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutiert
 
 Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Folgend werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:
 \begin{itemize}
-	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen
+	\item PyPDF2: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen
 	\item Math: Standard Python-Modul für mathematische Funktionen
 	\item OS: Betriebssystem-Funktionalitäten, um durch Verzeichnisse zu navigieren
 	\item filetype: Dateityp-Erkennung
@@ -16,9 +16,9 @@ Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Modu
 	\item NLTK: Stellt Funktionen zur Verfügung, die es ermöglichen mit menschlichen Sprachdaten zu arbeiten.
 \end{itemize}
 
-\subsection*{Apache Tika}\label{apache-tika}
+\subsection*{PyPDF2}\label{apache-tika}
 
-Bei Apache Tika handelt es sich um ein Framework um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus über tausend verschiedenen Arten von Dateien zu extrahieren. Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from}\_\emph{file(file)} kann eine PDF-Datei in reinen Text umgewandelt werden. Die Funktion liefert ein Dictionary zurück, welches einen Key \emph{content} besitzt, über den auf den Inhalt der PDF-Datei zugegriffen werden kann.
+Bei PyPDF2 handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus verschiedenen Arten von Dateien zu extrahieren. PyPDF2 liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{page.extractText()} kann eine Seite einer PDF-Datei in reinen Text umgewandelt werden. Um den gesamten Text eines PDF-Dokuments zu bekommen, muss über alle Seiten iteriert werden.
 
 \subsection*{filetype}\label{python-magic}
 
@@ -147,7 +147,7 @@ class Index:
 
 Die Methode \emph{buildIndex} baut - wie der Name bereits vermuten lässt - den Index auf. Dabei dient ein Dictionary als Basis-Datenstruktur.
 
-Der erste Schritt stellt das Iterieren über alle Directories dar. Gestartet wird bei Linux-Systemen im Root-Directory, unter Windows-Systemen muss über jede Partition iteriert werden. Als nächstes wird über alle Dateien in den Verzeichnissen iteriert. Für jede Datei wird durch filetype ermittelt, ob es sich um ein PDF-Dokument handelt. Ist ein Dokument vom Typ \emph{PDF}, wird mithilfe von Tika der Text aus dem PDF-Dokument extrahiert.
+Der erste Schritt stellt das Iterieren über alle Directories dar. Gestartet wird bei Linux-Systemen im Root-Directory, unter Windows-Systemen muss über jede Partition iteriert werden. Als nächstes wird über alle Dateien in den Verzeichnissen iteriert. Für jede Datei wird durch filetype ermittelt, ob es sich um ein PDF-Dokument handelt. Ist ein Dokument vom Typ \emph{PDF}, wird mithilfe von PyPDF2 der Text aus dem PDF-Dokument extrahiert.
 
 Für jede entdeckte PDF-Datei wird ein Zähler erhöht, welcher eine eindeutige Dokumenten-ID darstellt. Anschließend wird mittels der Hilfsmethode \_\_\emph{processText} der Text der PDF-Dateien normalisiert. Diese Methode wird weiter unten genauer betrachtet. 
 
