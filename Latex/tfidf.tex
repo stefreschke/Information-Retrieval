@@ -17,7 +17,7 @@ Da die Terme in einer Suchquery nicht alle von gleicher Bedeutung für die Suche
 	Die Document Frequency $df_t$ gibt die Anzahl der Dokumente $d$ in der genutzten Kollektion an, welche den Term $t$ besitzen.
 \end{defi}
 \newpage
-Durch die Document Frequency kann also festgestellt werden, wie viele Dokumente einen bestimmten Term beinhalten. Die Häufigkeit, in der Term in den Dokumenten vorkommt, bleibt dabei unbeachtet. Um aus der Document Frequency die einzelnen Terme sinnvoll zu gewichten, wird die Inverse Document Frequency gebildet. 
+Durch die Document Frequency kann also festgestellt werden, wie viele Dokumente einen bestimmten Term beinhalten. Die Häufigkeit, in der ein Term in den Dokumenten vorkommt, bleibt dabei unbeachtet, dafür ist die Term Frequency zuständig. Um aus der Document Frequency die einzelnen Terme sinnvoll zu gewichten, wird die Inverse Document Frequency gebildet. 
 
 \begin{defi}[Inverse Document Frequency]\label{def:IDF}
 	Die Inverse Document Frequency ist definiert als:
@@ -27,7 +27,7 @@ Durch die Document Frequency kann also festgestellt werden, wie viele Dokumente 
 	$df_t$ ist hierbei die Document Frequency und $N_D$ die Anzahl der Dokumente in der Kollektion.
 \end{defi}
 
-Das Dividieren der Gesamtzahl aller Dokument in der Kollektion ($N_D$) durch die Document Frequency hat zur Folge, dass das Gewicht eines seltenen Terms höher ist und das eines häufigen Terms niedrig. Der Logarithmus sorgt dafür, dass das resultierende Gewicht nicht zu groß wird.
+Das Dividieren der Gesamtzahl aller Dokument in der Kollektion ($N_D$) durch die Document Frequency hat zur Folge, dass das Gewicht eines seltenen Terms höher ist und das eines häufigen Terms niedrig. Der Logarithmus sorgt dafür, dass das resultierende Gewicht nicht zu groß wird, wenn die Kollektion sehr groß und der Term selten ist.
 
 \section{Das TF-IDF-Maß}
 
