@@ -6,11 +6,11 @@ Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutiert
 
 Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Im Folgenden werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:\newpage
 \begin{itemize}
-	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen
+	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen \cite{Apache_Tika}
 	\item Math: Standard Python-Modul für mathematische Funktionen
 	\item OS: Stellt Betriebssystem-Funktionalitäten bereit. Wird hier genutzt, um durch Verzeichnisse zu navigieren
-	\item filetype: Wird zur Dateityp-Erkennung genutzt
-	\item re: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt.
+	\item filetype: Wird zur Dateityp-Erkennung genutzt \cite{filetype}
+	\item re: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt. \cite{python_re}
 	\item Platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen
 	\item Operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlichen Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode.
 	\item NLTK: Stellt Funktionen zur Verfügung, die es ermöglichen mit menschlichen Sprachdaten zu arbeiten.
