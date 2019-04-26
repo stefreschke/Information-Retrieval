@@ -39,8 +39,16 @@ In der NPL-Collection sind $11.429$ Dokumente vorhanden, zudem sind $93$ Queries
 Liefert der Bruch $\frac{r_1}{r_2}$ $\ge$ $0,8$, ist das Ergebnis bereits ausreichend gut.
 
 \subsubsection{Test und Auswertung der Ergebnisse}
+Zunächst werden 10 Queries getestet und auf deren Basis wird ein Wert für die Precision gemessen. 
+Der durchschnittliche Wert der Precision wird mit $\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ berechnet.
+
+\\
+
+Der Wert der Precision ist $< 0,1$. Dieser Wert ist sehr niedrig. Dies hat den Grund, dass die Suchmaschine für jedes Wort der Query die Menge der Dokumente zurückliefert, in der das Wort steht. Durch den Union-Operator werden die Ergebnis-Mengen der einzelnen Wörter lediglich vereinigt. Dadurch reicht es aus, dass ein Wort der Query in nur einem Dokument vorkommt, um in der Ergebnis-Menge zu stehen. 
 
 \subsubsection{Lösungsvorschläge}
+Das Bilden von N-Grammen ist ein Weg dieses Problem anzugehen. Um das Konzept des N-Gramms zu verstehen, wird ein Beispiel gegeben:
+
 
 \subsection{Analyse des Recalls}
 Der Recall ist definiert als
@@ -52,8 +60,13 @@ Der $recall$ wird $1$, wenn die Menge der zurückgegebenen Dokumente genau der M
 Gilt $recall$ $\ge$ $0,8$, ist der Wert ausreichend gut.
 
 \subsubsection{Test und Auswertung der Ergebnisse}
-
-\subsubsection{Lösungsvorschläge}
+Auch hier 10 Queries getestet und auf deren Basis wird ein Wert für den Recall gemessen. 
+Der durchschnittliche Wert des Recalls wird mit $\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ berechnet.
+\\
+Im Gegensatz zur Precision liefert der Recall einen Wert $\gg 0,95$. Diese Tatsache ist wenig überraschend, da - wie im letzten Abschnitt gesehen - nahezu alle Dokumente zurückgeliefert werden. Daher sind in den meisten Fällen alle Dokumente, die für die Query relevant sind, in der Ergebnis-Menge.
+\\
+\\
+Da der Recall für sich gesehen einen sehr guten Wert liefert, muss hier keine Verbesserung vorgenommen werden.
 
 \section{Aufbaudauer des Index}
 Eine Verbesserung betrifft die Geschwindigkeit, in der der Index aufgebaut wird. Für 189 pdf-Dokumente benötigt die Beispiel-Implementierung ca 1 Minute und 17 Sekunden.
