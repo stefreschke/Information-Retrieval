@@ -9,22 +9,25 @@ Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Modu
 	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen \cite{Apache_Tika}
 	\item Math: Standard Python-Modul für mathematische Funktionen
 	\item OS: Stellt Betriebssystem-Funktionalitäten bereit. Wird hier genutzt, um durch Verzeichnisse zu navigieren
-	\item filetype: Wird zur Dateityp-Erkennung genutzt \cite{filetype}
-	\item re: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt. \cite{python_re}
+	\item Filetype: Wird zur Dateityp-Erkennung genutzt \cite{filetype}
+	\item RE: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt. \cite{python_re}
 	\item Platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen
 	\item Operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlichen Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode.
 	\item NLTK: Stellt Funktionen zur Verfügung, die es ermöglichen mit menschlichen Sprachdaten zu arbeiten.
 \end{itemize}
 
+Die Module Apache Tika, Filetype sowie NLTK müssen per pip installiert werden und sind damit nicht standardmäßig in Python integriert.
+
+
 \subsection{Apache Tika}\label{apache-tika}
-Bei Apache Tika handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus verschiedenen Arten von Dateien zu extrahieren. Apache Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \emph{parser.from\_\\file(file)} kann ein PDF-Dokument in Text umgewandelt werden.
+Bei Apache Tika handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus verschiedenen Arten von Dateien zu extrahieren. Apache Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \\ \emph{parser.from\_\\file(file)} kann ein PDF-Dokument in Text umgewandelt werden.
 
 \subsection{filetype}\label{python-magic}
 Mittels filetype ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle PDF-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
 
 \subsection{NLTK}\label{nltk}
-NLTK (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenization und Stemming.
-In diesem Beispiel wird nltk verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von Regular Expressions arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
+NLTK (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenisierung und Stemming.
+In diesem Beispiel wird NLTK verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von Regular Expressions arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
 
 \subsection{Platform}
 Das Platform-Modul wird in dieser Implementierung dazu verwendet, festzustellen, auf welchem Betriebssystem die lokale Suchmaschine ausgeführt wird. Dies muss ermittelt werden, da auf Windows und Linux unterschiedliche Dateisysteme arbeiten. In Linux ist das Startverzeichnis immer das Root-Verzeichnis (\glqq /\grqq). Unter Windows gibt meist mehrere Partitionen, die alle durchsucht werden müssen.
