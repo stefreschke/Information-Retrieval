@@ -1,21 +1,21 @@
 \section{Was ist Information-Retrieval?}
-Information-Retrieval (IR) beschreibt das Bereitstellen spezieller Informationen aus einer großen und unsortierten Datenmengen. Dieses Themengebiet fällt unter Informatik, Informationswissenschaften sowie Computerlinguistik und ist ein wesentlicher Bestandteil von Suchmaschinen wie zum Beispiel Google.
+Information-Retrieval (IR) beschreibt das Bereitstellen spezieller Informationen aus einer großen und unsortierten Datenmengen. Dieses Themengebiet fällt unter Informatik, Informationswissenschaften sowie Computerlinguistik und ist ein wesentlicher Bestandteil von Suchmaschinen wie zum Beispiel Google \cite{ir_wiki}.
 \\
 Das Thema besitzt bereits seit einigen Jahren eine hohe, aber dennoch steigende Relevanz. Die Gründe der hohen Relevanz von IR liegen vor allem beim Einsatz von Suchmaschinen. Diese sind in Zeiten des Internets die wohl wichtigste Form der Informationsbeschaffung. Aufgrund der immer schneller steigenden Informationsmengen wird das Thema künftig weiter an Relevanz gewinnen. Unternehmen und Privatanwendern wird eine immer wachsende Menge von Informationen zugänglich, die organisiert werden muss, damit relevante bzw. spezifisch gesuchte Informationen jederzeit und ohne Verzögerung gefunden werden.
 \\
-Um das Ziel der Bereitstellung von Informationen gewährleisten zu können, wird erst eine Durchsuchung und Gewichtung sämtlicher Informationen bzw. Dokumente, die später gefunden werden sollen, durchgeführt. Das zentrale Objekt der Informationsrückgewinnung stellt der invertierte Index dar, dessen Aufbau und Funktionsweise in Kapitel \ref{invertindex} ausführlich erläutert wird. Im Verlauf dieser Arbeit wird die Komprimierung des Indexes sowie das TF-IDF-Maß, welches zur Beurteilung der Relevanz eines Dokumentes genutzt wird, im Fokus stehen.
+Um das Ziel der Bereitstellung von Informationen gewährleisten zu können, wird erst eine Durchsuchung und Gewichtung sämtlicher Informationen bzw. Dokumente, die später gefunden werden sollen, durchgeführt. Das zentrale Objekt der Informationsrückgewinnung stellt der invertierte Index dar \cite[S. 6]{IR_Intro_Cambridge}, dessen Aufbau und Funktionsweise in den nächsten Kapiteln ausführlich erläutert wird. Im Verlauf dieser Arbeit wird das TF-IDF-Maß, welches zur Beurteilung der Relevanz eines Dokumentes genutzt wird, im Fokus stehen.
 \\
-Die theoretischen Hintergründe des invertierten Index, der Komprimierung und des TF-IDF-Maßes werden durch eine Beispiel-Implementierung einer lokalen Suchmaschine in der Programmiersprache Python veranschaulicht.
+Die theoretischen Hintergründe des invertierten Index und des TF-IDF-Maßes werden durch eine Beispiel-Implementierung einer lokalen Suchmaschine in der Programmiersprache Python veranschaulicht.
 
 \section{Ziel der Arbeit}
 Ziel der Arbeit ist es, ein grundlegendes Verständnis des Themenkomplexes Information-Retrieval zu vermitteln. Das umfasst auch die theoretischen Hintergründe, die für die später vorgestellten Beispiel-Implementierungen notwendig sind.
 \\
 Die Beispiel-Implementierung soll hauptsächlich die folgenden Themengebiete umfassen:\\
 \begin{itemize}
-	\item  Tokenization von Texten (Kapitel \ref{token} und \ref{preprocess})
+	\item Tokenization von Texten (Kapitel \ref{token} und \ref{preprocess})
 	\item Aufbau eines invertierten Indexes (Kapitel \ref{invertindex} und \ref{der-index})
 	\item Approximierende Beurteilung der Relevanz eines gefundenen Dokuments mittels TF-IDF (Kapitel \ref{tfidf} und \ref{tf-idf})
-	\item Komprimierung des invertierten Indexes
+	\item Mögliche Verbesserungen der Implementierung (Kapitel \ref{improvements})
 \end{itemize}
 Die in dieser Arbeit vorgestellte Implementierung hat nicht den Anspruch auf eine hohe Performance, vielmehr dient diese dem Zwecke der praxisnahen Veranschaulichung der Funktionsweise von IR-Systemen.
 
@@ -27,7 +27,7 @@ Dieser Abschnitt umreißt kurz den aktuellen Stand der Forschung. Dazu werden zw
 Das Vector Space Model, zu deutsch Vektorraummodell, repräsentiert Dokumente und Anfragen als hochdimensionale, metrische Vektoren \cite{VR_Retrieval}.
 Der Anfrage-Vektor wird beim Retrieval-Prozess mit den Dokumenten-Vektoren verglichen. Dabei werden jedoch nur Dokumente betrachtet, welche mit der Anfrage in Verbindung stehen \cite{klass_IR}. Welche Dokumente betrachtet werden, wird mithilfe des invertierten Index ermittelt.
 \\
-Es gibt verschiedene Maße, mit denen die Vektoren miteinander verglichen werden. Der einfachste Ansatz besteht darin, den Abstand zwischen Anfrage-Vektor und Dokumenten-Vektor zu berechnen, jedoch ist dies kein sehr gutes Maß. Besser und weit verbreitet ist deshalb das Cosinus-Maß (oder Cosinus-Ähnlichkeit), welches den Winkel zwischen Anfrage-Vektor und Dokumenten-Vektor angibt. Je kleiner der Winkel zwischen den Vektoren, desto höher ist die Relevanz des Dokuments \cite{IR_Uni_Duisburg}.
+Es gibt verschiedene Maße, mit denen die Vektoren miteinander verglichen werden. Der einfachste Ansatz besteht darin, den Abstand zwischen Anfrage-Vektor und Dokumenten-Vektor zu berechnen. Weiter verbreitet ist das Cosinus-Maß (oder Cosinus-Ähnlichkeit), welches den Winkel zwischen Anfrage-Vektor und Dokumenten-Vektor angibt. Je kleiner der Winkel zwischen den Vektoren, desto höher ist die Relevanz des Dokuments \cite{IR_Uni_Duisburg}.
 \\
 Dieses Modell wir im Rahmen dieser Arbeit genauer beleuchtet und als Grundlage für die Beispiel-Implementierung genutzt.
 

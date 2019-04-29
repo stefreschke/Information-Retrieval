@@ -1,21 +1,21 @@
 \section{Problemstellung}
-Im Rahmen dieser Arbeit soll beschrieben werden, wie mithilfe von \glqq Information Retrieval\grqq\ Informationen aus einer großen, unsortierten Datenmenge - nach Relevanz sortiert - bereitgestellt werden kann. Dabei bekommt das System eine vom Nutzer gestellte Abfrage, auch Query genannt, und versucht auf deren Basis, Daten, die meist als Dokumente vorliegen, zurückzuliefern. Im Gegensatz zu Abfragen im Datenbankumfeld beinhaltet die Query jedoch unzureichende Informationen, um ein spezielles Element eindeutig identifizieren zu können. Dies soll ein IR-System auch nicht leisten. Vielmehr sollen Ergebnisse zurückgeliefert werden, die mit hoher Wahrscheinlichkeit Relevanz bzgl. der gestellten Query besitzen. Der Nutzer selektiert dann die für diesen nötigen Dokumente.
-
+Im Rahmen dieser Arbeit soll beschrieben werden, wie mithilfe von \glqq Information Retrieval\grqq\ Informationen aus einer großen, unsortierten Datenmenge - nach Relevanz sortiert - bereitgestellt werden kann. Dabei bekommt das System eine vom Nutzer gestellte Abfrage, auch Query genannt, und versucht auf deren Basis, Daten, die meist als Dokumente vorliegen, zurückzuliefern. Im Gegensatz zu Abfragen im Datenbankumfeld beinhaltet die Query jedoch unzureichende Informationen, um ein spezielles Element eindeutig identifizieren zu können \cite[S. 1 f.]{IR_Intro_Cambridge}. Dies soll ein IR-System auch nicht leisten. Vielmehr sollen Ergebnisse zurückgeliefert werden, die mit hoher Wahrscheinlichkeit Relevanz bzgl. der gestellten Query besitzen. Der Nutzer selektiert dann die für diesen nötigen Dokumente \cite[S. 1 f.]{IR_Intro_Cambridge}.
+\\
 Mathematisch lässt sich dies folgendermaßen formulieren: Aus einer Dokumentenmenge $D$ soll mithilfe einer Funktion eine Teilmenge $D_1$ von $D$ ermittelt werden, die relevant für eine Abfrage $q$ ist.
 \\
 Um diese Funktion sinnvoll definieren zu können, muss jedoch zuvor die Menge aller Queries, sowie die Menge aller Tokens definiert werden. Zuvor sollen jedoch die Vokabeln \glqq Token\grqq, \glqq Typ\grqq\ und \glqq Term\grqq\ geklärt werden:
 
 \begin{defi}[Token]\label{def:Token}
-	Unter einem Token wird eine zusammenhängende Zeichenkette verstanden, die innerhalb eines Dokuments vorkommt \cite{IR_Intro_Cambridge}.
+	Unter einem Token wird eine zusammenhängende Zeichenkette verstanden, die innerhalb eines Dokuments vorkommt \cite[S. 22]{IR_Intro_Cambridge}.
 \end{defi}
 
 Tokens werden häufiger auch als \glqq Wörter\grqq\ bezeichnet, dies wird auch im Rahmen dieser Arbeit so gehandhabt.
 
 \begin{defi}[Typ]\label{def:Typ}
-	Ein Typ bezeichnet eine Klasse von Tokens, die dieselben Zeichen in derselben Reihenfolge enthalten \cite{IR_Intro_Cambridge}.
+	Ein Typ bezeichnet eine Klasse von Tokens, die dieselben Zeichen in derselben Reihenfolge enthalten \cite[S. 22]{IR_Intro_Cambridge}.
 \end{defi}
 \begin{defi}[Term]\label{def:Term}
-	Ein Term ist ein Typ, welcher im Dictionary eines IR-Systems vorkommt \cite{IR_Intro_Cambridge}.
+	Ein Term ist ein Typ, welcher im Dictionary eines IR-Systems vorkommt \cite[S. 22]{IR_Intro_Cambridge}.
 \end{defi}
 
 Ein Beispiel, wie Tokens, Typen und Terme aussehen können, folgt in \ref{sub:tokenerzeugung}.
@@ -41,13 +41,11 @@ Dieser Abschnitt bietet eine Übersicht, wie das (im Folgenden vorgestellte) IR-
 Als Vorarbeit werden alle Dokumente, die im Index aufgenommen werden, in eine Codierung wie ASCII oder Unicode umgewandelt. Dazu wird ein Tool genutzt, das hier nicht weiter von Relevanz sein wird.
 Es sollen mindestens all diejenigen Dokumente in den Index aufgenommen werden, die im PDF-Format vorliegen.
 \\
-Der erste Schritt, der das IR-System an sich leisten muss, ist das Erstellen von Tokens (siehe \cref{def:Token}). Dazu wird jedes Dokument in Tokens aufgespalten. Ein Token ist in den meisten Fällen ein Wort. Satzzeichen wie Leerzeichen, Kommata usw. sollen nicht als Tokens behandelt und dementsprechend ignoriert werden.
+Der erste Schritt, der das IR-System an sich leisten muss, ist das Erstellen von Tokens (siehe \cref{def:Token}). Dazu wird jedes Dokument in Tokens aufgespalten. Ein Token ist in den meisten Fällen ein Wort. Satzzeichen wie Punkte, Kommata usw. sollen nicht als Tokens behandelt und dementsprechend ignoriert werden, dies gilt ebenso für Leerzeichen und Tabs.
 \\
 Für jedes Token wird es später im Index einen Eintrag geben, der eine Liste mit weiteren Informationen hält. Diese Liste muss mindestens die Dokument-IDs speichern, in welchen das Token steht. In diesen Listen werden häufig noch weitere Informationen hinterlegt, beispielsweise die Häufigkeit eines Tokens.
 \\
 Der zweite Schritt besteht darin, einen Algorithmus zu entwerfen, der eine Query entgegennimmt und auf Basis der Query und des Index eine Liste von relevanten Dokumenten ausgibt. Dieser Algorithmus wird das in der Einleitung kurz vorgestellte Vektorraummodell verwenden. Weiter wird dieser für die Ermittlung der Relevanz die sogenannte TF-IDF-Gewichtung nutzen. Diese wird später noch ausführlich vorgestellt.
-\\
-Neben diesen beiden Punkten wird der Index komprimiert, um Speicherplatz zu sparen (und die Performance zu erhöhen).
 
 \section{Tokenization}\label{token}
 \subsection{Vorarbeiten}
