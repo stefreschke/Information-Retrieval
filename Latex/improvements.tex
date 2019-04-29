@@ -33,16 +33,13 @@ Die Precision ist wie folgt definiert:
 \begin{center}
 	$precision = \frac{r_1}{r_2}$,
 \end{center}
-wobei $r_1$ die Anzahl der ermittelten, relevanten Dokumente ist und $r_2$ die Anzahl aller ermittelten Dokumente.
-\\
+wobei $r_1$ die Anzahl der ermittelten, relevanten Dokumente ist und $r_2$ die Anzahl aller ermittelten Dokumente.\\
 In der NPL-Collection sind $11.429$ Dokumente vorhanden, zudem sind $93$ Queries mitgeliefert. Den Queries liegen darüber hinaus alle Dokumenten-IDs bei, die für die Query relevant sind. Falls die Suchmaschine genau die einer Query zugeordneten Dokumenten zurückliefert, wird die $precision$ $1$.
 Liefert der Bruch $\frac{r_1}{r_2}$ $\ge$ $0,8$, ist das Ergebnis bereits ausreichend gut.
 
 \subsubsection{Test und Auswertung der Ergebnisse}
 Zunächst werden 10 Queries getestet und auf deren Basis wird ein Wert für die Precision gemessen. 
-Der durchschnittliche Wert der Precision wird mit $\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ berechnet.
-
-\\
+Der durchschnittliche Wert der Precision wird mit $\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ berechnet.\\
 
 Der Wert der Precision ist $< 0,1$. Dieser Wert ist sehr niedrig. Dies hat den Grund, dass die Suchmaschine für jedes Wort der Query die Menge der Dokumente zurückliefert, in der das Wort steht. Durch den Union-Operator werden die Ergebnis-Mengen der einzelnen Wörter lediglich vereinigt. Dadurch reicht es aus, dass ein Wort der Query in nur einem Dokument vorkommt, um in der Ergebnis-Menge zu stehen. 
 

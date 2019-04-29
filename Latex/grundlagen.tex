@@ -1,6 +1,6 @@
 \section{Problemstellung}
 Im Rahmen dieser Arbeit soll beschrieben werden, wie mithilfe von \glqq Information Retrieval\grqq\ Informationen aus einer großen, unsortierten Datenmenge - nach Relevanz sortiert - bereitgestellt werden kann. Dabei bekommt das System eine vom Nutzer gestellte Abfrage, auch Query genannt, und versucht auf deren Basis, Daten, die meist als Dokumente vorliegen, zurückzuliefern. Im Gegensatz zu Abfragen im Datenbankumfeld beinhaltet die Query jedoch unzureichende Informationen, um ein spezielles Element eindeutig identifizieren zu können. Dies soll ein IR-System auch nicht leisten. Vielmehr sollen Ergebnisse zurückgeliefert werden, die mit hoher Wahrscheinlichkeit Relevanz bzgl. der gestellten Query besitzen. Der Nutzer selektiert dann die für diesen nötigen Dokumente.
-\\
+
 Mathematisch lässt sich dies folgendermaßen formulieren: Aus einer Dokumentenmenge $D$ soll mithilfe einer Funktion eine Teilmenge $D_1$ von $D$ ermittelt werden, die relevant für eine Abfrage $q$ ist.
 \\
 Um diese Funktion sinnvoll definieren zu können, muss jedoch zuvor die Menge aller Queries, sowie die Menge aller Tokens definiert werden. Zuvor sollen jedoch die Vokabeln \glqq Token\grqq, \glqq Typ\grqq\ und \glqq Term\grqq\ geklärt werden:
@@ -49,7 +49,7 @@ Der zweite Schritt besteht darin, einen Algorithmus zu entwerfen, der eine Query
 \\
 Neben diesen beiden Punkten wird der Index komprimiert, um Speicherplatz zu sparen (und die Performance zu erhöhen).
 
-\section{Tokenization}
+\section{Tokenization}\label{token}
 \subsection{Vorarbeiten}
 Bevor aus Dokumenten Tokens erzeugt werden können, müssen einige Fragen beantwortet werden.
 Eine Frage ist, welche Dokumente betrachtet werden sollen und wie man ein Dokument definiert. Ein Beispiel soll das Problem veranschaulichen:
