@@ -31,7 +31,7 @@ Dieser Abschnitt wird eine kurze Problemanalyse der aktuellen Implementierung de
 \subsection{Analyse der Precision}
 Die Precision ist wie folgt definiert:
 \begin{center}
-	$precision = \frac{r_1}{r_2}$,
+	$\displaystyle precision = \frac{r_1}{r_2}$,
 \end{center}
 wobei $r_1$ die Anzahl der ermittelten, relevanten Dokumente ist und $r_2$ die Anzahl aller ermittelten Dokumente.\\
 In der NPL-Collection sind $11.429$ Dokumente vorhanden, zudem sind $93$ Queries mitgeliefert. Den Queries liegen darüber hinaus alle Dokumenten-IDs bei, die für die Query relevant sind. Falls die Suchmaschine genau die einer Query zugeordneten Dokumenten zurückliefert, wird die $precision$ $1$.
@@ -50,7 +50,7 @@ Das Bilden von N-Grammen ist ein Weg dieses Problem anzugehen. Um das Konzept de
 \subsection{Analyse des Recalls}
 Der Recall ist definiert als
 \begin{center}
-	$recall = \frac{r_1}{r_2}$, 
+	$\displaystyle recall = \frac{r_1}{r_2}$,
 \end{center}
 wobei $r_1$ die Anzahl der ermittelten, relevanten Dokumente ist und $r_2$ die Anzahl relevanter Dokumente ist.
 Der $recall$ wird $1$, wenn die Menge der zurückgegebenen Dokumente genau der Menge der relevanten Dokumenten in der Collection entspricht.
@@ -66,11 +66,11 @@ Im Gegensatz zur Precision liefert der Recall einen Wert $\gg 0,95$. Diese Tatsa
 Da der Recall für sich gesehen einen sehr guten Wert liefert, muss hier keine Verbesserung vorgenommen werden.
 
 \section{Aufbaudauer des Index}
-Eine Verbesserung betrifft die Geschwindigkeit, in der der Index aufgebaut wird. Für 189 pdf-Dokumente benötigt die Beispiel-Implementierung ca 1 Minute und 17 Sekunden.
-Wird ein System mit ca. 105GB nach pdf-Dateien durchsucht und in den Index aufgenommen, werden auf einem System mit einem Intel Core i5 der 8. Generation und 8 Gigabyte RAM ca. 40 Minuten benötigt. Für einen sinnvollen Einsatz die Suchmaschine somit nicht geeignet. Zwei Ideen, diese Zeit zu senken, sind Parallelisierung und Persistierung.
+Eine Verbesserung betrifft die Geschwindigkeit, in der der Index aufgebaut wird. Für 189 PDF-Dokumente benötigt die Beispiel-Implementierung ca 1 Minute und 17 Sekunden.
+Wird ein System mit ca. 105GB nach PDF-Dateien durchsucht und in den Index aufgenommen, werden auf einem System mit einem Intel Core i5 der 8. Generation und 8 Gigabyte RAM ca. 40 Minuten benötigt. Für einen sinnvollen Einsatz die Suchmaschine somit nicht geeignet. Zwei Ideen, diese Zeit zu senken, sind Parallelisierung und Persistierung.
 
 \subsection{Persistierung}
-Die Idee, die wahrscheinlich am wirksamsten ist, besteht darin, den Index nach oder bereits während des Aufbaus,  zu persistieren. Durch die Persistierung kann bei einem Neustart der Suchmaschine eine Datei eingelesen werden, welche die Index-Daten beinhaltet. Dadurch ist es nicht nötig, beim Start durch alle Pfade zu gehen und jede Datei zu öffnen, um festzustellen, ob es sich um eine pdf-Datei handelt. Pro Öffnen einer Datei werden mindestens zwei Systemaufrufe benötigt (öffnen und schließen der Datei). Zudem werden weitere Systemaufrufe benötigt, wenn Verzeichnisse geöffnet werden, da diese in der Regel ebenfalls als spezielle Dateien behandelt werden. Das hat zur Folge, dass viele Kontextwechsel stattfinden und das Programm bei jedem Systemaufruf blockiert wird.
+Die Idee, die wahrscheinlich am wirksamsten ist, besteht darin, den Index nach oder bereits während des Aufbaus,  zu persistieren. Durch die Persistierung kann bei einem Neustart der Suchmaschine eine Datei eingelesen werden, welche die Index-Daten beinhaltet. Dadurch ist es nicht nötig, beim Start durch alle Pfade zu gehen und jede Datei zu öffnen, um festzustellen, ob es sich um eine PDF-Datei handelt. Pro Öffnen einer Datei werden mindestens zwei Systemaufrufe benötigt (öffnen und schließen der Datei). Zudem werden weitere Systemaufrufe benötigt, wenn Verzeichnisse geöffnet werden, da diese in der Regel ebenfalls als spezielle Dateien behandelt werden. Das hat zur Folge, dass viele Kontextwechsel stattfinden und das Programm bei jedem Systemaufruf blockiert wird.
 \\
 Dadurch, dass bei einem persistenten Index initial nur eine Datei geöffnet werden muss, kann ein Großteil der Systemaufrufe und Kontextwechsel gespart werden. Damit kann die benötigte Zeit zum Aufbau des Index gesenkt werden.
 \\

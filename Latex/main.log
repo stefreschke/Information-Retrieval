@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.27)  29 APR 2019 09:11
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6630 64-bit)  (format=lualatex 2018.5.27)  29 APR 2019 11:11
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.537 seconds
+luaotfload | main : initialization completed in 0.519 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scr
@@ -1631,6 +1631,25 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 103.
 [2.2] (./abstract.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--107
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 107.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1639,7 +1658,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 107.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 107.
- [3.3
+[3.3
 
 
 ]
@@ -1856,7 +1875,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
-<../Abbildungen/index.png, id=279, 269.005pt x 396.48125pt>
+<../Abbildungen/index.png, id=287, 269.005pt x 396.48125pt>
 File: ../Abbildungen/index.png Graphic file (type png)
 <use ../Abbildungen/index.png>
 Package luatex.def Info: ../Abbildungen/index.png  used on input line 9.
@@ -1890,7 +1909,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 31.
 [10.17<../Abbildungen/index.png>]
-<../Abbildungen/trie.png, id=295, 303.1325pt x 306.14375pt>
+<../Abbildungen/trie.png, id=303, 303.1325pt x 306.14375pt>
 File: ../Abbildungen/trie.png Graphic file (type png)
 <use ../Abbildungen/trie.png>
 Package luatex.def Info: ../Abbildungen/trie.png  used on input line 34.
@@ -1962,6 +1981,11 @@ Package babel Info: Redefining ngerman shorthand "~
  [14.21
 
 ]
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 9.
+
+("C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1974,7 +1998,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 19.
- [15.22]
+[15.22]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2318,41 +2342,43 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 31567 strings out of 494447
+ 31612 strings out of 494447
  100000,1144653 words of node,token memory allocated
  651 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 14 attribute, 70 glue_spec, 14 attr
 ibute_list, 2 write, 6 pdf_action nodes
-   avail lists: 1:5,2:1338,3:182,4:94,5:526,6:43,7:4773,8:183,9:860,10:22,11:466
+   avail lists: 1:5,2:1338,3:187,4:94,5:526,6:43,7:4773,8:183,9:860,10:22,11:466
 
- 34557 multiletter control sequences out of 65536+200000
- 57 fonts using 11729247 bytes
+ 34592 multiletter control sequences out of 65536+200000
+ 60 fonts using 11975799 bytes
  54i,12n,77p,9084b,2794s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/lm
 mono12-regular.otf><c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/op
 entype/public/lm/lmromancaps10-regular.otf><c:/users/marletin/appdata/local/prog
 rams/miktex 2.9/fonts/opentype/public/lm/lmmono10-regular.otf>{C:/Users/Marletin
-/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Ma
-rletin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Us
-ers/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/
-Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.en
-c}<c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/opentype/public/lm/
-lmsans12-oblique.otf><c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/
-opentype/public/lm/lmsans12-regular.otf><c:/users/marletin/appdata/local/program
-s/miktex 2.9/fonts/opentype/public/lm/lmsans10-bold.otf><C:/Users/Marletin/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Marletin
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Ma
-rletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Use
-rs/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C
-:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.p
-fb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
-r6.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
-m/lmr8.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmsy10.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/lm/lmsy8.pfb>
-Output written on main.pdf (45 pages, 294509 bytes).
+/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Users/Marl
+etin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/User
+s/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C
+:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}
+{C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}<c:/users/marletin/appdata/local/programs/miktex 2.9/fonts/opentype/public
+/lm/lmsans12-oblique.otf><c:/users/marletin/appdata/local/programs/miktex 2.9/fo
+nts/opentype/public/lm/lmsans12-regular.otf><c:/users/marletin/appdata/local/pro
+grams/miktex 2.9/fonts/opentype/public/lm/lmsans10-bold.otf><C:/Users/Marletin/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Marl
+etin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/User
+s/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:
+/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pf
+b><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr
+12.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
+m/lmr6.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmr8.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/lm/lmsy10.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/lm/lmsy8.pfb><C:/Users/Marletin/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (45 pages, 317437 bytes).
 
-PDF statistics: 727 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 746 PDF objects out of 1000 (max. 8388607)
  287 named destinations out of 1000 (max. 131072)
  193 words of extra memory for PDF output out of 10000 (max. 100000000)
 

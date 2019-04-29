@@ -49,13 +49,13 @@ from nltk.tokenize import RegexpTokenizer
 
 \section{Die Document-Klasse}\label{die-document-klasse}
 
-Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse. Diese Klasse hält unter anderem alle Member-Variablen, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Die Member-Variablen der Klasse sind:
+Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse (siehe Abbildung \ref{fig:document}). Diese Klasse hält unter anderem alle Member-Variablen, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Die Member-Variablen der Klasse sind:
 \begin{itemize}
-	\item url: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird
-	\item length: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt
-	\item docId: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt
-	\item score: Float, welcher die Gewichtung der Dokument-Instanz zu einer Anfrage angibt
-	\item termList: Eine Liste von Strings, die die Terme des Dokumentes entsprechen. Diese wird durch die Methode \textit{\_preprocess} erzeugt (siehe Abschnitt \ref{preprocess})
+	\item \textit{url}: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird
+	\item \textit{length}: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt
+	\item \textit{docId}: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt
+	\item \textit{score}: Float, welcher die Gewichtung der Dokument-Instanz zu einer Anfrage angibt
+	\item \textit{termList}: Eine Liste von Strings, die die Terme des Dokumentes entsprechen. Diese wird durch die Methode \textit{\_preprocess} erzeugt (siehe Abschnitt \ref{preprocess})
 \end{itemize} 
 
 \begin{figure}
@@ -79,23 +79,23 @@ Die Member-Variable \textit{url} soll am Ende des Retrievalprozesses zurückgege
 
 \subsection{TF-IDF}\label{tf-idf}
 
-Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf}. Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchquery. Hierbei benötigt die Funktion die Terme der Suchquery, welche über das Attribut \textit{terms} übergeben werden. Das Attribut \textit{df} steht für die Document Frequency, welches für jeden Term die Anzahl der gefunden Dokumente in Form eines Dictionaries beinhaltet. Über das Attribut \textit{fileCount} wird die Anzahl der Dokumente in der Kollektion, hier die Dateien die im invertierten Index aufgenommen wurden, übergeben.
+Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf} (siehe Abbildung \ref{fig:tfidf}). Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchquery. Hierbei benötigt die Funktion die Terme der Suchquery, welche über das Attribut \textit{queryTerms} übergeben werden. Das Attribut \textit{df} steht für die Document Frequency, welches für jeden Term die Anzahl der gefunden Dokumente in Form eines Dictionaries beinhaltet. Über das Attribut \textit{fileCount} wird die Anzahl der Dokumente in der Kollektion, hier die Dateien die im invertierten Index aufgenommen wurden, übergeben.
 
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
-def tf_idf(self, terms, df, fileCount):
+def tf_idf(self, queryTerms, df, fileCount):
 
   tfDict = {}
-  for term in terms:
+  for term in queryTerms:
     tfDict[term] = 0  
   
   for term in self.termList:
-    if term in terms:
-      tfDict[term] = tfDict[term]+1
+    if term in queryTerms:
+      tfDict[term] += 1
 
   for key, value in df.items():
-    idf = math.log((fileCount/value+1),10)
+    idf = math.log(fileCount/value+1)
     tfDict[key] = tfDict[key]*idf
 
   self.score = sum(tfDict.values())
@@ -107,7 +107,7 @@ Document.tf_idf = tf_idf
 	\label{fig:tfidf}
 \end{figure}
 
-Als erstes wird das Dictionary \textit{tfDict} für die Term Frequency erstellt und mit den Termen der Query als Schlüssel und den Werten 0 initialisiert. In der nächsten For-Schleife wird über \textit{self.termList} iteriert, welches die Liste der Terme des Dokumentes ist. Wenn ein Term auch in der Suchquery enthalten ist, also \textit{term in terms} zu true evaluiert wird, wird im \textit{tfDict} der Wert des gefunden Terms um eins aufaddiert. Am Ende enthält das \textit{tfDict} die Terme der Suchquery als Schlüssel und die Anzahl ihrer Vorkommnisse im Dokument als Wert, also die Term Frequency. Als letztes muss jede Term Frequency mit der Inverse Document Frequency multipliziert werden. Dafür wird über das Dictionary \textit{df} iteriert und für jedes Key-Value-Paar die Inverse Document Frequency ausgerechnet und auf die jeweilige Term Frequency multipliziert. Am Ende wird die Summe aller TF-IDF-Maße der \textit{score}-Variable zugeordnet und bilden so die finale Gewichtung für die gegebene Suche.
+Als erstes wird das Dictionary \textit{tfDict} für die Term Frequency erstellt und mit den Termen der Query als Schlüssel und den Werten 0 initialisiert. In der nächsten For-Schleife wird über \textit{self.termList} iteriert, welches die Liste der Terme des Dokumentes ist. Wenn ein Term auch in der Suchquery enthalten ist, also \textit{term in queryTerms} zu true evaluiert wird, wird im \textit{tfDict} der Wert des gefunden Terms um eins aufaddiert. Am Ende enthält das \textit{tfDict} die Terme der Suchquery als Schlüssel und die Anzahl ihrer Vorkommnisse im Dokument als Wert, also die Term Frequency. Als letztes muss jede Term Frequency mit der Inverse Document Frequency multipliziert werden. Dafür wird über das Dictionary \textit{df} iteriert und für jedes Key-Value-Paar die Inverse Document Frequency ausgerechnet und auf die jeweilige Term Frequency multipliziert. Am Ende wird die Summe aller TF-IDF-Maße der \textit{score}-Variable zugeordnet und bilden so die finale Gewichtung für die gegebene Suche.
 
 \section{Der Index}\label{der-index}
 
