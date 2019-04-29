@@ -14,7 +14,7 @@ Die Beispiel-Implementierung soll hauptsächlich die folgenden Themengebiete umf
 \begin{itemize}
 	\item Aufbau eines invertierten Indexes
 	\item Approximierende Beurteilung der Relevanz eines gefundenen Dokuments mittels TF-IDF
-	\item Komprimierung des invertierten Indexes
+	\item Mögliche Verbesserungen der Implementierung
 \end{itemize}
 Die in dieser Arbeit vorgestellte Implementierung hat nicht den Anspruch auf eine hohe Performance, vielmehr dient diese dem Zwecke der praxisnahen Veranschaulichung der Funktionsweise von IR-Systemen.
 
@@ -26,7 +26,7 @@ Dieser Abschnitt umreißt kurz den aktuellen Stand der Forschung. Dazu werden zw
 Das Vector Space Model, zu deutsch Vektorraummodell, repräsentiert Dokumente und Anfragen als hochdimensionale, metrische Vektoren \cite{VR_Retrieval}.
 Der Anfrage-Vektor wird beim Retrieval-Prozess mit den Dokumenten-Vektoren verglichen. Dabei werden jedoch nur Dokumente betrachtet, welche mit der Anfrage in Verbindung stehen \cite{klass_IR}. Welche Dokumente betrachtet werden, wird mithilfe des invertierten Index ermittelt.
 \\
-Es gibt verschiedene Maße, mit denen die Vektoren miteinander verglichen werden. Der einfachste Ansatz besteht darin, den Abstand zwischen Anfrage-Vektor und Dokumenten-Vektor zu berechnen, jedoch ist dies kein sehr gutes Maß. Besser und weit verbreitet ist deshalb das Cosinus-Maß (oder Cosinus-Ähnlichkeit), welches den Winkel zwischen Anfrage-Vektor und Dokumenten-Vektor angibt. Je kleiner der Winkel zwischen den Vektoren, desto höher ist die Relevanz des Dokuments \cite{IR_Uni_Duisburg}.
+Es gibt verschiedene Maße, mit denen die Vektoren miteinander verglichen werden. Der einfachste Ansatz besteht darin, den Abstand zwischen Anfrage-Vektor und Dokumenten-Vektor zu berechnen. Weiter verbreitet ist das Cosinus-Maß (oder Cosinus-Ähnlichkeit), welches den Winkel zwischen Anfrage-Vektor und Dokumenten-Vektor angibt. Je kleiner der Winkel zwischen den Vektoren, desto höher ist die Relevanz des Dokuments \cite{IR_Uni_Duisburg}.
 \\
 Dieses Modell wir im Rahmen dieser Arbeit genauer beleuchtet und als Grundlage für die Beispiel-Implementierung genutzt.
 
