@@ -4,7 +4,7 @@ Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutiert
 
 \section{Genutzte Bibliotheken}\label{genutzte-bibliotheken}
 
-Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden, welche die Implementierung unterstützen. Im Folgenden werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:\newpage
+Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden (siehe Abbildung \ref{fig:import}), welche die Implementierung unterstützen. Im Folgenden werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:\newpage
 \begin{itemize}
 	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen \cite{Apache_Tika}
 	\item Math: Standard Python-Modul für mathematische Funktionen
@@ -20,7 +20,7 @@ Die Module Apache Tika, Filetype sowie NLTK müssen per pip installiert werden u
 
 
 \subsection{Apache Tika}\label{apache-tika}
-Bei Apache Tika handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus verschiedenen Arten von Dateien zu extrahieren. Apache Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \\ \emph{parser.from\_\\file(file)} kann ein PDF-Dokument in Text umgewandelt werden.
+Bei Apache Tika handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus verschiedenen Arten von Dateien zu extrahieren. Apache Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \textit{parser.from\_file(file)} kann ein PDF-Dokument in Text umgewandelt werden.
 
 \subsection{filetype}\label{python-magic}
 Mittels filetype ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle PDF-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
@@ -99,7 +99,7 @@ def tf_idf(self, queryTerms, df, fileCount):
 
   for key, value in df.items():
     idf = math.log(fileCount/value+1)
-    tfDict[key] = tfDict[key]*idf
+    tfDict[key] *= idf
 
   self.score = sum(tfDict.values())
 
@@ -114,12 +114,12 @@ Als erstes wird das Dictionary \textit{tfDict} für die Term Frequency erstellt 
 
 \section{Der Index}\label{der-index}
 
-Die Index-Klasse beinhaltet alle Methoden um den invertierten Index aufzubauen und die \textit{retrieve}-Methode, welche die Dokumente, sortiert nach deren Gewicht, zu einer gegebenen Query zurückgibt. Folgenden Member-Variablen werden für den invertierten Indexaufbau und die \textit{retrieve}-Methode benötigt:
+Die Index-Klasse beinhaltet alle Methoden um den invertierten Index aufzubauen und die \textit{retrieve}-Methode, welche die Dokumente, sortiert nach deren Gewicht, zu einer gegebenen Query zurückgibt (siehe Abbildung \ref{fig:index}). Folgenden Member-Variablen werden für den invertierten Indexaufbau und die \textit{retrieve}-Methode benötigt:
 
 \begin{itemize}
-	\item invIndex: Ist ein Dictionary mit einem Term als Schlüssel und einer Menge von Dokumenten-IDs als Wert
-	\item fileCount: Zählt beim Aufbau des invertierten Indexes die Dokumente, die in diesem aufgenommen wurden
-	\item docHashmap: Ist ein Dictionary welches eine Dokumenten-ID ihrer zugehörige Document-Klasseninstanz zuordnet
+	\item \textit{invIndex}: Ist ein Dictionary mit einem Term als Schlüssel und einer Menge von Dokumenten-IDs als Wert
+	\item \textit{fileCount}: Zählt beim Aufbau des invertierten Indexes die Dokumente, die in diesem aufgenommen wurden
+	\item \textit{docHashmap}: Ist ein Dictionary welches eine Dokumenten-ID ihrer zugehörige Document-Klasseninstanz zuordnet
 \end{itemize}
 
 Die Member-Variable \textit{invIndex} ist der invertierte Index welcher bei der \textit{retrieve}-Methode die Dokumenten-IDs zu einen gegebenen Term aus der Suchquery zurückgibt. Des Weiteren wird die Member-Variable \textit{docHashmap} dafür genutzt, um über die Dokumenten-IDs auf die jeweiligen Dokumentinstanzen zuzugreifen und so auf ihren Inhalt und die Scoringfunktion \textit{tf\_idf}. Die Member-Variable \textit{fileCount} gibt die Größe der Kollektion wieder und wird bei der Berechnung des TF-IDF-Maßes benötigt.
@@ -174,7 +174,7 @@ def buildIndex(self, startDirectories=[]):
             processedText = self._preprocessText(rawText)
             document = Document(path, len(processedText),
                          self.fileCount, processedText)
-            self.docHashmap.update({self.fileCount : document})
+            self.docHashmap[self.fileCount] = document
             self._addToIndex(self.fileCount, processedText)
         except:
           continue
@@ -244,8 +244,7 @@ def _addToIndex(self, documentID, terms):
       self.invIndex.update({term : docSet})
             
     except KeyError:
-      docSet = {documentID}
-      self.invIndex.update({term : docSet})
+      self.invIndex[term] = {documentID}
     
 Index._addToIndex = _addToIndex
 		\end{lstlisting}
@@ -298,13 +297,13 @@ Index._preprocessText = _preprocessText
 
 \subsection{retrieve}\label{retrieve}
 
-Die \textit{retrieve}-Methode dient der Suche nach Dokumenten anhand einer eingegebenen Suchquery und stellt die Schnittstelle zum Nutzer dar. Die Idee dabei ist, dass der Nutzer ein oder mehrere Schlagworte, in Form eines Strings, der Methode übergeben kann. Auf deren Basis werden die gefundenen Dokumente, nach Relevanz sortiert, zurückgeliefert. 
+Die \textit{retrieve}-Methode dient der Suche nach Dokumenten anhand einer eingegebenen Suchanfrage und stellt die Schnittstelle zum Nutzer dar. Die Idee dabei ist, dass der Nutzer ein oder mehrere Schlagworte, in Form eines Strings, der Methode übergeben kann. Auf deren Basis werden die gefundenen Dokumente, nach Relevanz sortiert, zurückgeliefert. 
 
 Zunächst wird der Suchstring des Nutzers mittels der bereits bekannten Methode \textit{\_preprocessText} normalisiert und in eine Liste von Termen zerteilt. Das Ergebnis wird in der Variable \textit{processedStrings} abgespeichert. Im zweiten Schritt werden alle genutzten Variablen deklariert. Mithilfe der For-Schleife wird über die Liste von Termen \textit{processedStrings} iteriert, um über den invertierten Index für jeden Term die Menge der Dokumenten-IDs zu beschaffen. Des Weiteren wird für jeden Term die Länge seiner Menge von Dokumenten-IDs im Dictionary \textit{df} abgespeichert und repräsentiert so die Document Frequency. Die Variable \textit{result} stellt die Menge da, die alle zur Suchquery gefundenen Dokumenten-IDs enthält. So wird diese Variable mit jeder Menge von Dokumenten-IDs vereinigt. Da es sich hier um eine Menge handelt kann ausgeschlossen werden, dass Dokumenten-IDs doppelt vorkommen. Existiert der Term \textit{word} nicht als Key im Index, da der Nutzer ein Wort eingegeben hat, welches kein Dokument beinhaltet, wird beim nächsten Term der Liste \emph{processedStrings} fortgefahren.
 
-In der nächsten For-Schleife wird für jede Dokumenten-ID in der Liste \textit{result}, mithilfe der \textit{docHashmap}, die passende Documentinstanz geholt, um für jedes Dokument das TF-IDF-Maß auszurechnen. Wurde dies mithilfe der \textit{tf\_idf}-Methode getan, wird das Gewicht zu der jeweiligen Dokumenten-ID in dem Dictionary \textit{weightedDocs} gespeichert. Dieses wird mit der \textit{sorted}-Funktion von Python nach den Gewichten sortiert. Die Sortierung ist jedoch aufsteigend, obwohl es gewünscht  ist, die Dokumente mit einem höheren Gewicht oben zu haben. Dafür wird die Liste am Ende einfach invertiert.
+In der nächsten For-Schleife wird für jede Dokumenten-ID in der Liste \textit{result}, mithilfe der \textit{docHashmap}, die passende Documentinstanz geholt, um für jedes Dokument das TF-IDF-Maß auszurechnen. Wurde dies mithilfe der \textit{tf\_idf}-Methode getan, wird das Gewicht zu der jeweiligen Dokumenten-ID in dem Dictionary \textit{weightedDocs} gespeichert. Dieses wird mit der \textit{sorted}-Funktion von Python nach den Gewichten sortiert. Die Sortierung ist jedoch aufsteigend, obwohl es gewünscht  ist, die Dokumente mit einem höheren Gewicht oben zu haben. Dafür wird die Variable \textit{reverse} auf True gesetzt, damit die Einträge absteigend sortiert werden.
 
-In der letzten For-Schleife werden die absoluten Pfade (\textit{ind.docHashmap[Key].url}), in der sortierten Reihenfolge, in die Liste \textit{resultList} gespeichert. Diese wird dann invertiert, wegen des oben genannten Grundes, und zurückgegeben.
+In der letzten For-Schleife werden die absoluten Pfade (\textit{ind.docHashmap[Key].url}), in der sortierten Reihenfolge, und die Gewichte der Dokumente für die Query in die Liste \textit{resultList} gespeichert. Diese wird am Ende zurückgegeben.
 
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
@@ -329,12 +328,13 @@ def retrieve(self, searchString):
     doc.tf_idf(processedStrings,df,self.fileCount)
     weightedDocs[doc.docId] = doc.score
         
-  sortedDocs = sorted(weightedDocs.items(), key=operator.itemgetter(1))
+  sortedDocs = sorted(weightedDocs.items(), key=operator.itemgetter(1),
+                      reverse=True)
     
-  for key,_ in sortedDocs:
-    resultList.append(ind.docHashmap[key].url)
+  for key, value in sortedDocs:
+    resultList.append([ind.docHashmap[key].url, value])
         
-  return resultList[::-1]
+  return resultList
 
 Index.retrieve = retrieve
 		\end{lstlisting}
@@ -355,8 +355,9 @@ ind.buildIndex([r"Opt\Start\1",r"Opt\Start\2",...])
 
 resultSet = ind.retrieve("This is a test")
 if resultSet:
-  for elem in resultSet:
-    print(elem)
+  print('Pfad, \t Gewicht')
+  for url, score in resultSet:
+    print(url, '\t', score)
 		\end{lstlisting}
 	\rule{\textwidth}{0.4pt}
 	\caption{Execute}

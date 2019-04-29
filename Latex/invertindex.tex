@@ -2,12 +2,15 @@ Dieser Abschnitt wird die Idee des invertierten Index vorstellen sowie die Erzeu
 \section{Grundlegender Aufbau}
 Der invertierte Index kann als ein Dictionary betrachtet werden, welches für jeden Term, der in der Dokumentenmenge vorkommt, einen Eintrag hält \cite[S. 6 f.]{IR_Intro_Cambridge} \cite{IR_Uni_Bamberg}. Dieser Eintrag wiederum ist eine Liste. Diese hält mindestens eine eindeutige Dokumenten-ID, meist jedoch darüber hinaus weitere Informationen. Beispiele für solche weiteren Informationen sind Häufigkeit, in der ein Term in einem Dokument vorkommt, die Position und die umliegenden Wörter in der Nähe zum Term $t$.
 Die Listen, die zu jedem Term angelegt werden, heißen Posting-Listen \cite[S. 6]{IR_Intro_Cambridge}.
-\newline
-Den invertierten Index kann man folgendermaßen visualisieren:
-\begin{figure}[H]
+
+In Abbildung \ref{fig:invIndex} ist ein invertierter Index dargestellt.
+\begin{figure}
 	\centering
+	\rule{\textwidth}{0.4pt}
 	\includegraphics[scale=0.5]{../Abbildungen/index.png}
+	\rule{\textwidth}{0.4pt}
 	\caption{Beispiel für einen invertierten Index \cite{index_Uni_Munich}}
+	\label{fig:invIndex}
 \end{figure}
 
 \section{Umsetzung eines invertierten Index}
@@ -27,18 +30,19 @@ Da die Beispiel-Implementierung, die später vorgestellt wird, jedoch möglichst
 Ein Trie wird auf der Basis einer Menge von Zeichenketten aufgebaut. Jede Zeichenkette, die gefunden werden muss, ist innerhalb des Tries repräsentiert.
 \newline
 Erreicht wird dies dadurch, dass ein Knoten jeweils ein Zeichen repräsentiert und eine Liste mit Verweisen auf die nächsten möglichen Knoten hält, basierend auf einem weiteren Zeichen.
-Die folgende Abbildung zeigt einen Trie.
+Die Abbildung \ref{fig:trie} zeigt einen Trie.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
+	\rule{\textwidth}{0.4pt}
 	\includegraphics[scale=0.7]{../Abbildungen/trie.png}
+	\rule{\textwidth}{0.4pt}
 	\caption{Beispiel eines Tries \cite{trie_Abb}}
+	\label{fig:trie}
 \end{figure}
 
-\newpage
 Im Folgenden soll eine formale Definition eines Tries gegeben werden:
-\newline
-\begin{defi}
+\begin{defi}[Trie]\cite{Trie_wiki}
 	Sei $\sum$ eine endliche Menge von Zeichen (Alphabet) und $\sum^{*}$ die Menge aller Wörter, die über $\sum$ gebildet werden können und sei $S$ $\subseteq$ $\sum^{*}$. Sei $V$ die Menge aller Knoten und $E$ die Menge aller Kanten. Jeder Knoten $v \in V$ besitzt einen Wert $w$, eine Liste $C = [c_1, .., c_n]$, wobei $c_1, .., c_n \in \sum$, und eine Liste $K = [k_1, .., k_n]$ von Knoten. Jede Kante $e \in E$ ist eine Verbindung von zwei Knoten $v_1, v_2 \in V$. Dann ist $T = (V, E)$ ist ein Trie, wenn gilt:
 	
 	\begin{itemize}
@@ -50,8 +54,6 @@ Im Folgenden soll eine formale Definition eines Tries gegeben werden:
 	
 \end{defi}
 
-Definition 2.7 ist aus \cite{Trie_wiki} entnommen.
-\newline \newline
 Das Suchen nach gespeicherten Wörtern gestaltet sich nun verhältnismäßig einfach: Um das Wort \glqq Tree\grqq\ im, in der Abbildung gezeigten, Trie zu finden, wird wie folgt vorgegangen:
 \newline 
 Stellt der User die Anfrage \glqq Tree\grqq, wird diese Query nun Zeichen für Zeichen durchgegangen. Beginnend bei \glqq T\grqq\ wird im Wurzelknoten geprüft, ob es einen Verweis auf einen Knoten gibt, der ein \glqq T\grqq\ repräsentiert. Existiert ein solcher Knoten, wird in diesem geprüft, ob es einen Knoten gibt, der das nächste Zeichen in der Query (das \glqq r\grqq) repräsentiert. Ist dies der Fall, wird das Verfahren solange wiederholt, bis die Query komplett eingelesen ist oder in der Query ein Zeichen steht, das durch keinen Knoten im Trie repräsentiert ist \cite{trie_Abb} \cite{Trie_Blog}.

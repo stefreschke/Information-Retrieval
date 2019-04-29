@@ -157,6 +157,28 @@
     \field{year}{2018}
   \endentry
 
+  \entry{Apache_Tika}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o2}
+    \strng{fullhash}{o2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{Apache Tika - a content analysis toolkit}
+    \verb{url}
+    \verb https://tika.apache.org/
+    \endverb
+    \field{day}{22}
+    \field{month}{12}
+    \field{year}{2018}
+  \endentry
+
   \entry{nltk}{online}{}
     \name{author}{1}{}{%
       {{hash=o}{%
@@ -170,13 +192,35 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{2}
     \field{sortinithash}{2}
-    \field{title}{ource code for nltk.tokenize.regexp}
+    \field{title}{source code for nltk.tokenize.regexp}
     \verb{url}
     \verb https://www.nltk.org/_modules/nltk/tokenize/regexp.html
     \endverb
     \field{day}{17}
     \field{month}{11}
     \field{year}{2018}
+  \endentry
+
+  \entry{filetype}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o2}
+    \strng{fullhash}{o2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{title}{fieltype 1.0.5}
+    \verb{url}
+    \verb https://pypi.org/project/filetype/
+    \endverb
+    \field{day}{01}
+    \field{month}{03}
+    \field{year}{2019}
   \endentry
 
   \entry{trie_Abb}{online}{}
@@ -216,6 +260,27 @@
     \field{sortinit}{9}
     \field{sortinithash}{9}
     \field{title}{Klassische Information Retrieval Modelle Einführung}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{ir_wiki}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o2}
+    \strng{fullhash}{o2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{9}
+    \field{sortinithash}{9}
+    \field{title}{Information Retrieval}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Information_Retrieval
+    \endverb
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}
   \endentry
