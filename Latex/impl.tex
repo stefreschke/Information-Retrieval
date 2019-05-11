@@ -144,7 +144,12 @@ class Index:
 Die Methode \emph{buildIndex} baut den invertierten Index auf und nutzt dafür die\\
 \textit{\_getStartDirectories}- und die \textit{\_addToIndex}-Methode. Dabei kann der \textit{buildIndex}-Methode optional Startverzeichnisse in Form einer Liste mit raw Strings mitgegeben werden. In der ersten If-Abfrage wird geprüft, ob die Liste \textit{startDirectories} leer ist. Dies ist der Fall, wenn der Nutzer keine Startverzeichnisse mitgegeben hat. Dann werden die Startverzeichnisse mithilfe der \textit{\_getStartDirectories}-Methode ermittelt.
 
-Der erste Schritt stellt das Iterieren über alle Startverzeichnisse der Liste \textit{startDirectories} dar. Anschließend werden für das Startverzeichnis, und alle darunterliegenden Verzeichnisse, bis zur untersten Ebene, die Dateien mithilfe der \textit{os.walk}-Funktion geholt. Für jede Datei wird dann mit den Funktionen \textit{os.path.abspath} und \textit{os.path.join} der absolute Pfad gebildet. Danach wird durch das Modul \textit{filetype} ermittelt, ob es sich um ein PDF-Dokument handelt. Ist ein Dokument vom Typ PDF, wird mithilfe des \textit{Tika}-Moduls, genauer gesagt mit dem \textit{parser}-Objekt, der Text aus dem PDF-Dokument extrahiert. Dies geschieht in dem die Methode \textit{from\_file} des Parsers, mit dem Pfad der Datei als Argument, aufgerufen wird. Bei der Rückgabe kann mithilfe des Schlüssels \textit{content} auf den Text zugegriffen werden, welcher dann in der Variable \textit{rawText} gespeichert wird.
+Zuerst wird die Hilfsmetode \textit{cleanIndex}\ref{cleanIndex} aufgerufen. Diese löscht alle Dokumente aus dem Index, die nicht mehr auf dem System liegen.
+
+Der zweite Schritt stellt das Iterieren über alle Startverzeichnisse der Liste \textit{startDirectories} dar. Anschließend werden für das Startverzeichnis, und alle darunterliegenden Verzeichnisse, bis zur untersten Ebene, die Dateien mithilfe der \textit{os.walk}-Funktion geholt. Für jede Datei wird dann mit den Funktionen \textit{os.path.abspath} und \textit{os.path.join} der absolute Pfad gebildet. Danach wird durch das Modul \textit{filetype} ermittelt, ob es sich um ein PDF-Dokument handelt. Handelt es sich um ein PDF-Dokument, wird im Dictionary \textit{dateMap} nachgeschlagen, ob das Dokument bereits bekannt ist. Wird ein Eintrag gefunden, erfolgt eine Prüfung, ob das Dokument den gleichen Zeitstempel besitzt wie er in \textit{dateMap} gespeichert ist. Falls sich das Datum unterscheidet, ist das Dokument nicht mehr aktuell und muss neu eingelesen werden. Tritt beim Nachschlagen in \textit{dateMap} ein KeyError auf, ist das Dokument nicht bekannt und muss ebenfalls eingelesen werden. Dass ein Dokument beim Aufbau des Index bereits hinterlegt ist, ist möglich, da der Index persistiert wird. 
+
+
+ Die PDF-Dokumente werden mithilfe des \textit{Tika}-Moduls, genauer gesagt mit dem \textit{parser}-Objekt, der Text aus dem PDF-Dokument extrahiert. Dies geschieht, indem die Methode \textit{from\_file} des Parsers, mit dem Pfad der Datei als Argument, aufgerufen wird. Bei der Rückgabe kann mithilfe des Schlüssels \textit{content} auf den Text zugegriffen werden, welcher dann in der Variable \textit{rawText} gespeichert wird.
 
 Für jede entdeckte PDF-Datei wird die Member-Variable \textit{fileCount} um eins erhöht. Da die Zahl sich bei jedem gefunden Dokument ändert, wird diese gleich als Dokumenten-ID genutzt, da sie für jedes Dokument eindeutig ist. Im Folgenden Schritt wird der \textit{rawText} mithilfe der \textit{\_preprocessText}-Methode normalisiert, in eine Liste von Tokens geteilt und in der Liste \textit{processedText} gespeichert. Nun sind alle Daten vorhanden um eine Documentinstanz zu erstellen. Diese enthält, wie in Abschnitt \ref{die-document-klasse} schon beschrieben, den Pfad zum Dokument, die Anzahl der Wörter, die Dokumenten-ID und den Text als Liste von Tokens.
 
@@ -155,29 +160,47 @@ Im vorletztem Schritt wird die erstellte Document-Instanz seiner Dokumenten-ID i
 		\begin{lstlisting}[language=Python]
 def buildIndex(self, startDirectories=[]):
 
+  self._cleanIndex()
+ 
   if not startDirectories:
     startDirectories = self._getStartDirectories()
-    
+
   for directory in startDirectories:
     for root, _, files in os.walk(directory):
       for file in files:
-                
-        path = os.path.abspath(os.path.join(root, file))
-                
-        try:
-          if filetype.guess(path).mime == "application/pdf":
 
-            fileData = parser.from_file(path)
-            rawText = fileData['content']
-            self.fileCount += 1
-                    
-            processedText = self._preprocessText(rawText)
-            document = Document(path, len(processedText),
-                         self.fileCount, processedText)
-            self.docHashmap[self.fileCount] = document
-            self._addToIndex(self.fileCount, processedText)
-        except:
-          continue
+        path = os.path.abspath(os.path.join(root, file))
+
+        try:
+          if filetype.guess(path).mime == 'application/pdf':
+          if self.dateMap[path][1] != os.path.getmtime(path):
+
+          self.dateMap[path][1] = os.path.getmtime(path)
+          docID = slef.dateMap[path][0]
+          fileData = parser.from_file(path)
+          rawText = fileData['content']
+
+          processedText = self._preprocessText(rawText)
+          document = Document(path, len(processedText), docID, processedText)
+          self.docHashmap[docID] = document
+          self._addToIndex(docID, processedText)
+
+       except KeyError:
+         try:
+           fileData = parser.from_file(path)
+           rawText = fileData['content']
+           self.fileCount += 1
+           self.dateMap[path] = [self.fileCount, os.path.getmtime(path)]
+
+           processedText = self._preprocessText(rawText)
+           document = Document(path, len(processedText), self.fileCount, processedText)
+           self.docHashmap[self.fileCount] = document
+           self._addToIndex(self.fileCount, processedText)
+      except:
+        continue
+
+      except:
+        continue
 
 Index.buildIndex = buildIndex
 		\end{lstlisting}
@@ -251,6 +274,45 @@ Index._addToIndex = _addToIndex
 	\rule{\textwidth}{0.4pt}
 	\caption{AddToIndex-Methode}
 	\label{fig:addToIndex}
+\end{figure}
+
+
+\subsubsection{\_cleanIndex}\label{cleanIndex}
+Die Methode \textit{cleandIndex} dient dazu, alle PDF-Dokumente aus dem Index zu löschen, die nicht mehr auf dem System vorhanden sind. Dadurch kann es nicht mehr passieren, dass Dokumente in den Suchergebnissen erscheinen, die gar nicht mehr auf dem System existieren.
+
+Der erste Schritt der in \ref{fig:cleanIndex} dargestellten Methode, stellt das Iterieren über alle Einträge des Dictionarys \textit{dateMap} dar. Dadurch wird auf den Pfad sowie die eindeutige Dokumenten-ID für jedes Dokument zugegriffen.
+Für jedes Dokument erfolgt eine Prüfung, ob das Dokument noch auf dem System vorhanden ist, dies geschieht mittels der \textit{isfile} des \textit{os}-Moduls. Falls das Dokument nicht mehr vorhanden ist, muss das Dokument aus \textit{docHasmap}, \textit{invIndex} sowie aus \textit{dateMap} gelöscht werden. 
+Das Löschen erfolgt für \textit{docHashmap} in der ersten, für \textit{invIndex} in der zweiten und für \textit{dateMap} in der dritten for-Schleife.
+
+\begin{figure}
+	\rule{\textwidth}{0.4pt}
+	\begin{lstlisting}[language=Python]
+def _cleanIndex(self):
+
+  docIDs = set()
+  urls = []
+
+  for url, values in self.dateMap.items():
+    if not os.path.isfile(url):
+      docID = values[0]
+      urls.append(url)
+      del self.docHashmap[docID]
+      docIDs.add(docID)
+
+  for term in self.invIndex:
+    self.invIndex[term] -= docIDs
+
+  for url in urls:
+    del self.dateMap[url]
+
+  print('Removed {} elements from Index'.format(len(docIDs)))
+
+Index._cleanIndex = _cleanIndex
+
+	\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{CleanIndex-Methode}
+	\label{fig:cleanIndex}
 \end{figure}
 
 \subsubsection{\_preprocessText}\label{preprocess}
@@ -347,17 +409,49 @@ Index.retrieve = retrieve
 
 In diesem Abschnitt soll kurz erläutert werden, wie die oben erstellten Klassen genutzt werden. Als erstes muss eine neue Instanz der Indexklasse erstellt werden. Über diese Instanz wird dann die \textit{buildIndex}-Methode aufgerufen. Optional kann hier eine Liste der gewünschten Startverzeichnisse als raw Strings übergeben werden. Wenn der invertierte Index aufgebaut wurde, kann über die Indexinstanz die \textit{retrieve}-Methode mit der gewünschten Suchquery aufgerufen werden. Diese liefert eine nach Gewichten sortierte Liste, mit den Pfaden zu den gefundenen Dokumenten. Wenn diese nicht leer ist, können mithilfe einer For-Schleife die Elemente ausgegeben werden.
 
+\subsubsection{initIndex}\label{initIndex}
+Die Hilfs-Funktion \textit{initIndex}, welche in \ref{fig:initIndex} dargestellt ist, wird der Index aufgebaut und mittels \textit{pickle} persistiert.
+\\
+Zunächst wird geprüft, ob eine persistierte Version des Index gefunden werden kann, indem mittels der \textit{isfile}-Funktion des \textit{os}-Moduls geprüft wird, ob eine Index-Datei gefunden werden kann.
+Ist dies der Fall, wird der Index mithilfe der \textit{load}-Funktion des \textit{pickle}-Moduls geladen. Diese Funktion nimmt als Argument eine Datei und liefert als Rückgabewert ein Python-Objekt, welches aus der mitgelieferten Datei gelesen wird.
+\\
+Wird keine Index-Datei gefunden, wird eine neue Instanz der Index-Klasse erzeugt.
+
+Mithilfe der \textit{buildIndex}-Methode wird der Index aufgebaut bzw. aktualisiert, sofern dieser persistiert vorliegt.
+\\
+Zum Schluss wird der Index wieder persistiert. Dies wird von der \textit{dump}-Funktion von \textit{pickle} übernommen. Diese Funktion nimmt ein Python-Objekt sowie eine Datei als Argumente und schreibt das Objekt in diese Datei.
+
+\begin{figure}
+	\rule{\textwidth}{0.4pt}
+	\begin{lstlisting}[language=Python]
+def initIndex(startDictionaries):
+
+  if os.path.isfile('InvIndex'):
+    with open('InvIndex','rb') as invIndex:
+      index = pickle.load(invIndex)
+  else:
+    index = Index()
+
+  index.buildIndex(startDictionaries)
+
+  with open('InvIndex','wb') as invIndex:
+    pickle.dump(index,invIndex)
+  return index
+	\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Die InitIndex-Funktion}
+	\label{fig:initIndex}
+\end{figure}
+
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
 		\begin{lstlisting}[language=Python]
-ind = Index()
-ind.buildIndex([r"Opt\Start\1",r"Opt\Start\2",...])
-
-resultSet = ind.retrieve("This is a test")
-if resultSet:
-  print('Pfad, \t Gewicht')
-  for url, score in resultSet:
-    print(url, '\t', score)
+ind = initIndex([path])
+resultSet = ind.retrieve(query)
+  if resultSet:
+    print('Pfad, \t Gewicht')
+    for url, score in resultSet:
+      print(url, '\t', score)
 		\end{lstlisting}
 	\rule{\textwidth}{0.4pt}
 	\caption{Execute}
