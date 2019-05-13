@@ -70,13 +70,6 @@ Da der Recall für sich gesehen einen sehr guten Wert liefert, muss hier keine V
 Eine Verbesserung betrifft die Geschwindigkeit, in der der Index aufgebaut wird. Für 189 PDF-Dokumente benötigt die Beispiel-Implementierung ca 1 Minute und 17 Sekunden.
 Wird ein System mit ca. 105GB nach PDF-Dateien durchsucht und in den Index aufgenommen, werden auf einem System mit einem Intel Core i5 der 8. Generation und 8 Gigabyte RAM ca. 40 Minuten benötigt. Für einen sinnvollen Einsatz die Suchmaschine somit nicht geeignet. Zwei Ideen, diese Zeit zu senken, sind Parallelisierung und Persistierung.
 
-\subsection{Persistierung}
-Die Idee, die wahrscheinlich am wirksamsten ist, besteht darin, den Index nach oder bereits während des Aufbaus,  zu persistieren. Durch die Persistierung kann bei einem Neustart der Suchmaschine eine Datei eingelesen werden, welche die Index-Daten beinhaltet. Dadurch ist es nicht nötig, beim Start durch alle Pfade zu gehen und jede Datei zu öffnen, um festzustellen, ob es sich um eine PDF-Datei handelt. Pro Öffnen einer Datei werden mindestens zwei Systemaufrufe benötigt (öffnen und schließen der Datei). Zudem werden weitere Systemaufrufe benötigt, wenn Verzeichnisse geöffnet werden, da diese in der Regel ebenfalls als spezielle Dateien behandelt werden. Das hat zur Folge, dass viele Kontextwechsel stattfinden und das Programm bei jedem Systemaufruf blockiert wird.
-\\
-Dadurch, dass bei einem persistenten Index initial nur eine Datei geöffnet werden muss, kann ein Großteil der Systemaufrufe und Kontextwechsel gespart werden. Damit kann die benötigte Zeit zum Aufbau des Index gesenkt werden.
-\\
-Ein Problem, was hier gelöst werden muss ist, alle Dokumente ausfindig zu machen, die noch nicht im Index aufgenommen wurden. Für dieses Problem kann Parallelisierung genutzt werden, die im Folgenden Abschnitt behandelt wird.
-
 \subsection{Parallelisierung}
 Durch Nutzung von Parallelisierung kann der Aufbau des Index ebenfalls beschleunigt werden. Da die Beispiel-Implementierung auf Python basiert, ist jedoch zu beachten, dass Python-Threads keine Vorteile aus Multi-Prozessorsystemen ziehen kann. Das bedeutet, dass mehrere Python-Threads nicht parallel auf verschiedenen Kernen laufen können. Dennoch bringt Parallelisierung einen Geschwindigkeits-Vorteil.
 \\
