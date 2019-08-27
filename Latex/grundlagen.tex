@@ -39,11 +39,11 @@ Nachdem die Problemstellung formuliert ist, muss eine Strategie entwickelt werde
 Dieser Abschnitt bietet eine Übersicht, wie das (im Folgenden vorgestellte) IR-System arbeiten soll.
 \\
 Als Vorarbeit werden alle Dokumente, die im Index aufgenommen werden, in eine Codierung wie ASCII oder Unicode umgewandelt. Dazu wird ein Tool genutzt, das hier nicht weiter von Relevanz sein wird.
-Es sollen mindestens all diejenigen Dokumente in den Index aufgenommen werden, die im PDF-Format vorliegen.
+Es sollen mindestens all diejenigen Dokumente in den Index aufgenommen werden, die im PDF-Format vorliegen. Der Index kann wie ein Inhaltsverzeichnis in einem Buch gesehen werden, welches von einer Überschrift auf eine Seitenzahl verweist. Wie dieses Konzept in IR-Systemen verwendet wird, ist Gegenstand eines eigenen Kapitels im Verlauf der Arbeit.
 \\
 Der erste Schritt, der das IR-System an sich leisten muss, ist das Erstellen von Tokens (siehe \cref{def:Token}). Dazu wird jedes Dokument in Tokens aufgespalten. Ein Token ist in den meisten Fällen ein Wort. Satzzeichen wie Punkte, Kommata usw. sollen nicht als Tokens behandelt und dementsprechend ignoriert werden, dies gilt ebenso für Leerzeichen und Tabs.
 \\
-Für jedes Token wird es später im Index einen Eintrag geben, der eine Liste mit weiteren Informationen hält. Diese Liste muss mindestens die Dokument-IDs speichern, in welchen das Token steht. In diesen Listen werden häufig noch weitere Informationen hinterlegt, beispielsweise die Häufigkeit eines Tokens.
+Für jedes Token wird es später im Index einen Eintrag geben, der eine Liste mit weiteren Informationen hält. Diese Liste muss mindestens die Dokument-IDs der Dokumente speichern, in welchen das Token steht. In diesen Listen werden häufig noch weitere Informationen hinterlegt, beispielsweise die Häufigkeit eines Tokens.
 \\
 Der zweite Schritt besteht darin, einen Algorithmus zu entwerfen, der eine Query entgegennimmt und auf Basis der Query und des Index eine Liste von relevanten Dokumenten ausgibt. Dieser Algorithmus wird das in der Einleitung kurz vorgestellte Vektorraummodell verwenden. Weiter wird dieser für die Ermittlung der Relevanz die sogenannte TF-IDF-Gewichtung nutzen. Diese wird später noch ausführlich vorgestellt.
 
@@ -52,7 +52,7 @@ Der zweite Schritt besteht darin, einen Algorithmus zu entwerfen, der eine Query
 Bevor aus Dokumenten Tokens erzeugt werden können, müssen einige Fragen beantwortet werden.
 Eine Frage ist, welche Dokumente betrachtet werden sollen und wie man ein Dokument definiert. Ein Beispiel soll das Problem veranschaulichen:
 \\
-Angenommen das IR-System soll dazu dienen Dokumente auf der Festplatte eines Computers zu finden. In diesem Szenario kann jede in einem Ordner gelistete Datei als Dokument angesehen werden. Dies wäre der einfachste Fall. Jedoch ist dies meist nicht erwünscht. So sollen beispielsweise bestimmte Dateitypen von der Suche ausgeschlossen werden. In UNIX existiert ein Dateityp, welcher mehrere Mails pro Datei speichert. Hier wird jede Mail als einzelnes Dokument angesehen. Daraus folgt, dass die Maildatei in mehrere Dokumente aufgespalten werden muss \cite{IR_Intro_Cambridge}.
+Angenommen das IR-System soll dazu dienen, Dokumente auf der Festplatte eines Computers zu finden. In diesem Szenario kann jede in einem Ordner gelistete Datei als Dokument angesehen werden. Dies wäre der einfachste Fall. Jedoch ist dies meist nicht erwünscht. So sollen beispielsweise bestimmte Dateitypen von der Suche ausgeschlossen werden. In UNIX existiert ein Dateityp, welcher mehrere Mails pro Datei speichert. Hier wird jede Mail als einzelnes Dokument angesehen. Daraus folgt, dass die Maildatei in mehrere Dokumente aufgespalten werden muss \cite{IR_Intro_Cambridge}.
 Umgekehrt gibt es Szenarien, in denen mehrere Dokumente zu einem Dokument zusammengefasst werden müssen, um bei der Suche nutzbare Ergebnisse zu erzielen \cite{IR_Intro_Cambridge}. Auch hier dienen E-Mails wieder als Beispiel: In vielen Mails werden Anhänge versandt. Häufig sind dies PDF-Dateien und Dateien von Text-Bearbeitungsprogrammen. Die Anhänge sollen zu dem E-Mail-Dokument gezählt werden, an dem sie angehängt wurden.
 \\
 Ein weiteres Problem, das gelöst werden muss, um die Dokumente verarbeiten zu können, ist die Codierung der Inhalte der Dokumente. Hierbei müssen Dokumente, die meist in vielen unterschiedlichen Codierungen vorliegen, zu einer definierten Codierung überführt werden \cite{IR_Intro_Cambridge}.
