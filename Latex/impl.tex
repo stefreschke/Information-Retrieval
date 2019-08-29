@@ -6,31 +6,30 @@ Im Folgenden wird eine Beispiel-Implementierung der zuvor theoretisch diskutiert
 
 Vor der eigentlichen Implementierung der lokalen Suchmaschine werden einige Module eingebunden (siehe Abbildung \ref{fig:import}), welche die Implementierung unterstützen. Im Folgenden werden die Module aufgelistet und wichtige Module im jeweiligen Abschnitt genauer erläutert:\newpage
 \begin{itemize}
-	\item Apache Tika: Erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen \cite{Apache_Tika}
-	\item Math: Standard Python-Modul für mathematische Funktionen
-	\item OS: Stellt Betriebssystem-Funktionalitäten bereit. Wird hier genutzt, um durch Verzeichnisse zu navigieren
-	\item Filetype: Wird zur Dateityp-Erkennung genutzt \cite{filetype}
-	\item RE: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt. \cite{python_re}
-	\item Platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen
-	\item Operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlichen Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode.
-	\item Pickle: Ein Modul um Objekte zu serialisieren und zu speichern um diese später wieder zu laden und zu deserialisieren.
-	\item NLTK: Stellt Funktionen zur Verfügung, die es ermöglichen mit menschlichen Sprachdaten zu arbeiten.
+	\item tika: Apache Tika erkennt und extrahiert Metadaten und Texte aus über tausend Dateitypen \cite{Apache_Tika}.
+	\item math: Standard Python-Modul für mathematische Funktionen.
+	\item os: Stellt Betriebssystem-Funktionalitäten bereit. Wird hier genutzt, um durch Verzeichnisse zu navigieren.
+	\item filetype: Wird zur Dateityp-Erkennung genutzt \cite{filetype}.
+	\item re: Das re-Modul stellt Funktionen bereit, mit denen mit regulären Ausdrücken gearbeitet werden kann. In der Beispiel-Implementierung werden mit diesem Modul die Tokens ermittelt \cite{python_re}.
+	\item platform: Prüfung, auf welchem Betriebssystem das Programm läuft, da Windows- und Linux-Systeme verschiedene Dateisysteme nutzen.
+	\item operator: Dieses Modul exportiert effiziente Funktionen, die den eigentlichen Operatoren von Python entsprechen. Es findet nur Anwendung in der Sortierung der zu zurückgebenden Dokumente in der retrieve-Methode.
+	\item nltk: Stellt Funktionen zur Verfügung, die es ermöglichen mit menschlichen Sprachdaten zu arbeiten.
 \end{itemize}
 
-Die Module Apache Tika, Filetype sowie NLTK müssen per pip installiert werden und sind damit nicht standardmäßig in Python integriert.
+Die Module tika, filetype sowie nltk müssen per pip installiert werden und sind damit nicht standardmäßig in Python integriert.
 
 
-\subsection{Apache Tika}\label{apache-tika}
+\subsection{tika}\label{apache-tika}
 Bei Apache Tika handelt es sich um eine Bibliothek, um Inhalte aus Dateien zu erkennen und zu analysieren. Es ist in der Lage Text und Metadaten aus verschiedenen Arten von Dateien zu extrahieren. Apache Tika liefert einen Parser, mit dessen Hilfe der Text aus - unter anderem - PDF-Dateien extrahiert werden kann. Mit dem Aufruf \textit{parser.from\_file(file)} kann ein PDF-Dokument in Text umgewandelt werden.
 
 \subsection{filetype}\label{python-magic}
 Mittels filetype ist es möglich, unabhängig von der Dateiendung, den Typ einer Datei zu ermitteln. Dies hat den Vorteil, dass die Suchmaschine sowohl unter Windows, als auch unter Unix-Systemen, alle PDF-Dateien finden kann, da unter Unix die Dateiendung keine garantierten Rückschlüsse auf den Typ der Datei zulässt.
 
-\subsection{NLTK}\label{nltk}
+\subsection{nltk}\label{nltk}
 NLTK (natural language toolkit) ist eine Bibliothek für Python, die für die Verarbeitung natürlicher Sprachen eingesetzt wird. Dabei bietet die Bibliotheken Funktionen für unter anderem Textklassifikation, Tokenisierung und Stemming.
-In diesem Beispiel wird NLTK verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von Regular Expressions arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
+In diesem Beispiel wird NLTK verwendet, um die Eingabetexte der Dokumente und die Eingaben des Nutzers zu Tokens zu verarbeiten. Dazu wird eine Klasse verwendet, die auf Basis von regulären Ausdrücken arbeitet. Mehr dazu wird anhand der Implementierung gezeigt. %Zudem wird Stemming mithilfe von nltk durchgeführt, um Wörter auf ihren Wortstamm zurückzuführen. In den unteren Methoden wird näheres über die genutzten Operationen erläutert.
 
-\subsection{Platform}
+\subsection{platform}
 Das Platform-Modul wird in dieser Implementierung dazu verwendet, festzustellen, auf welchem Betriebssystem die lokale Suchmaschine ausgeführt wird. Dies muss ermittelt werden, da auf Windows und Linux unterschiedliche Dateisysteme arbeiten. In Linux ist das Startverzeichnis immer das Root-Verzeichnis (\glqq /\grqq). Unter Windows gibt meist mehrere Partitionen, die alle durchsucht werden müssen.
 
 \begin{figure}
@@ -54,13 +53,21 @@ from nltk.tokenize import RegexpTokenizer
 
 \section{Die Document-Klasse}\label{die-document-klasse}
 
-Das Speichern der für das Retrieval wichtigen Informationen, geschieht mittels einer Document-Klasse (siehe Abbildung \ref{fig:document}). Diese Klasse hält unter anderem alle Member-Variablen, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Die Member-Variablen der Klasse sind:
+Das Speichern der für das Retrieval wichtigen Informationen geschieht mittels einer Document-Klasse (siehe Abbildung \ref{fig:document}). Diese Klasse hält unter anderem alle Member-Variablen, die wichtig sind, um das TF-IDF-Maß berechnen zu können. Die Member-Variablen der Klasse sind:
 \begin{itemize}
+<<<<<<< HEAD
 	\item \textit{url}: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird
 	\item \textit{length}: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt
 	\item \textit{docId}: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt
 	\item \textit{score}: Float, welcher die Gewichtung der Dokument-Instanz zu einer Anfrage angibt
 	\item \textit{termList}: Eine Liste von Strings, die die Terme des Dokumentes entsprechen. Diese wird durch die Methode \textit{preprocess} erzeugt (siehe Abschnitt \ref{preprocess})
+=======
+	\item \textit{url}: String mit dem Pfad zum Dokument, welches von dieser Instanz repräsentiert wird.
+	\item \textit{length}: Integer, welcher die Anzahl der Wörter in diesem Dokument darstellt.
+	\item \textit{docId}: Integer, welcher dem Dokument einen eindeutigen Identifikator gibt.
+	\item \textit{score}: Float, welcher die Gewichtung der Dokument-Instanz zu einer Anfrage angibt.
+	\item \textit{termList}: Eine Liste von Strings, die den Termen des Dokumentes entsprechen. Diese wird durch die Methode \textit{\_preprocess} erzeugt (siehe Abschnitt \ref{preprocess}).
+>>>>>>> Jonas
 \end{itemize} 
 
 \begin{figure}
@@ -84,7 +91,7 @@ Die Member-Variable \textit{url} soll am Ende des Retrievalprozesses zurückgege
 
 \subsection{TF-IDF}\label{tf-idf}
 
-Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf} (siehe Abbildung \ref{fig:tfidf}). Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchquery. Hierbei benötigt die Funktion die Terme der Suchquery, welche über das Attribut \textit{queryTerms} übergeben werden. Das Attribut \textit{df} steht für die Document Frequency, welches für jeden Term die Anzahl der gefunden Dokumente in Form eines Dictionaries beinhaltet. Über das Attribut \textit{fileCount} wird die Anzahl der Dokumente in der Kollektion, hier die Dateien die im invertierten Index aufgenommen wurden, übergeben.
+Die Document-Klasse hält neben den benötigten Attributen auch die Scoringmethode \textit{tf\_idf} (siehe Abbildung \ref{fig:tfidf}). Dies ist die Implementierung des TF-IDF-Maßes und berechnet für jedes Dokument die Gewichtung für eine gegebene Suchanfrage. Hierbei benötigt die Funktion die Terme der Suchanfrage, welche über das Attribut \textit{queryTerms} übergeben werden. Das Attribut \textit{df} steht für die Document Frequency, welches für jeden Term der Anfrage die Anzahl der gefunden Dokumente in Form eines Dictionaries beinhaltet. Über das Attribut \textit{fileCount} wird die Anzahl der Dokumente in der Kollektion, hier die Dateien die im invertierten Index aufgenommen wurden, übergeben.
 
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
@@ -112,19 +119,19 @@ Document.tf_idf = tf_idf
 	\label{fig:tfidf}
 \end{figure}
 
-Als erstes wird das Dictionary \textit{tfDict} für die Term Frequency erstellt und mit den Termen der Query als Schlüssel und den Werten 0 initialisiert. In der nächsten For-Schleife wird über \textit{self.termList} iteriert, welches die Liste der Terme des Dokumentes ist. Wenn ein Term auch in der Suchquery enthalten ist, also \textit{term in queryTerms} zu true evaluiert wird, wird im \textit{tfDict} der Wert des gefunden Terms um eins aufaddiert. Am Ende enthält das \textit{tfDict} die Terme der Suchquery als Schlüssel und die Anzahl ihrer Vorkommnisse im Dokument als Wert, also die Term Frequency. Als letztes muss jede Term Frequency mit der Inverse Document Frequency multipliziert werden. Dafür wird über das Dictionary \textit{df} iteriert und für jedes Key-Value-Paar die Inverse Document Frequency ausgerechnet und auf die jeweilige Term Frequency multipliziert. Am Ende wird die Summe aller TF-IDF-Maße der \textit{score}-Variable zugeordnet und bilden so die finale Gewichtung für die gegebene Suche.
+Als erstes wird das Dictionary \textit{tfDict} für die Term Frequency erstellt und mit den Termen der Query als Schlüssel und den Werten 0 initialisiert. In der nächsten For-Schleife wird über \textit{self.termList} iteriert, welches die Liste der Terme des Dokumentes ist. Wenn ein Term auch in der Suchanfrage enthalten ist, also \textit{term in queryTerms} zu true evaluiert wird, wird im \textit{tfDict} der Wert des gefunden Terms um eins aufaddiert. Am Ende enthält das \textit{tfDict} die Terme der Suchanfrage als Schlüssel und die Anzahl ihrer Vorkommnisse im Dokument als Wert, also die Term Frequency. Als letztes muss jede Term Frequency mit der Inverse Document Frequency multipliziert werden. Dafür wird über das Dictionary \textit{df} iteriert und für jedes Key-Value-Paar die Inverse Document Frequency ausgerechnet und auf die jeweilige Term Frequency multipliziert. Am Ende wird die Summe aller TF-IDF-Maße der \textit{score}-Variable zugeordnet und bilden so die finale Gewichtung für die gegebene Suche.
 
 \section{Der Index}\label{der-index}
 
 Die Index-Klasse beinhaltet alle Methoden um den invertierten Index aufzubauen und die \textit{retrieve}-Methode, welche die Dokumente, sortiert nach deren Gewicht, zu einer gegebenen Query zurückgibt (siehe Abbildung \ref{fig:index}). Folgenden Member-Variablen werden für den invertierten Indexaufbau und die \textit{retrieve}-Methode benötigt:
 
 \begin{itemize}
-	\item \textit{invIndex}: Ist ein Dictionary mit einem Term als Schlüssel und einer Menge von Dokumenten-IDs als Wert
-	\item \textit{fileCount}: Zählt beim Aufbau des invertierten Indexes die Dokumente, die in diesem aufgenommen wurden
-	\item \textit{docHashmap}: Ist ein Dictionary welches eine Dokumenten-ID ihrer zugehörige Document-Klasseninstanz zuordnet
+	\item \textit{invIndex}: Ist ein Dictionary mit einem Term als Schlüssel und einer Menge von Dokumenten-IDs als Wert.
+	\item \textit{fileCount}: Zählt beim Aufbau des invertierten Indexes die Dokumente, die in diesem aufgenommen wurden.
+	\item \textit{docHashmap}: Ist ein Dictionary welches eine Dokumenten-ID ihrer zugehörige Document-Klasseninstanz zuordnet.
 \end{itemize}
 
-Die Member-Variable \textit{invIndex} ist der invertierte Index welcher bei der \textit{retrieve}-Methode die Dokumenten-IDs zu einen gegebenen Term aus der Suchquery zurückgibt. Des Weiteren wird die Member-Variable \textit{docHashmap} dafür genutzt, um über die Dokumenten-IDs auf die jeweiligen Dokumentinstanzen zuzugreifen und so auf ihren Inhalt und die Scoringfunktion \textit{tf\_idf}. Die Member-Variable \textit{fileCount} gibt die Größe der Kollektion wieder und wird bei der Berechnung des TF-IDF-Maßes benötigt.
+Die Member-Variable \textit{invIndex} ist der invertierte Index welcher bei der \textit{retrieve}-Methode die Dokumenten-IDs zu einen gegebenen Term aus der Suchanfrage zurückgibt. Des Weiteren wird die Member-Variable \textit{docHashmap} dafür genutzt, um über die Dokumenten-IDs auf die jeweiligen Dokumentinstanzen zuzugreifen und so auf ihren Inhalt und die Scoringfunktion \textit{tf\_idf}. Die Member-Variable \textit{fileCount} gibt die Größe der Kollektion wieder und wird bei der Berechnung des TF-IDF-Maßes benötigt.
 
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
@@ -213,13 +220,50 @@ Index.buildIndex = buildIndex
 	\label{fig:build}
 \end{figure}
 
+\subsection{Hilfsmethoden}\label{hilfsmethoden}
 
+In diesem Abschnitt werden die drei Hilfsmethoden \textit{\_getStartDirectories}, \textit{\_preprocessText} und \textit{\_addToIndex} vorgestellt, welche in der \textit{buildIndex}-Methode genutzt werden.
+
+\subsubsection{\_getStartDirectories}
+
+Die Methode \textit{\_getSartDirectories} liefert eine Liste der Start-Verzeichnisse, abhängig vom Betriebssystem auf dem die Suchmaschine läuft. In diesen Verzeichnissen wird dann in der \textit{buildIndex}-Methode rekursiv nach PDF-Dateien gesucht, welche in den Index mit einfließen. Falls das zugrunde liegende Betriebssystem ein Linux-basiertes oder Mac-basiertes System ist, wird die Liste [\glqq /\grqq\ ] zurückgegeben, da das Verzeichnis / immer das Root-Verzeichnis ist. Bei einem auf Windows basierenden Systemen gibt es wiederum mehrere Partitionen, welche immer mit einem Großbuchstaben abgekürzt werden. Dementsprechend gibt es unter Windows auch mehrere Start-Verzeichnisse.
+
+\begin{figure}
+	\rule{\textwidth}{0.4pt}
+	\begin{lstlisting}[language=Python]
+def _getStartDirectories(self):
+	
+  if platform.system() == "Linux":
+    directories = ["/"]
+	
+  elif platform.system() == "Darwin":
+    directories = ["/"]
+	
+  elif platform.system() == "Windows":
+    directories = ['%s:\\' % d for d in string.ascii_uppercase
+                   if os.path.exists('%s:' % d)]
+	
+  else:
+    raise EnvironmentError
+	
+  return directories
+	
+Index._getStartDirectories = _getStartDirectories
+	\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{GetStartDirectories-Methode}
+	\label{fig:start}
+\end{figure}
+
+Zuerst wird mithilfe der \textit{system}-Funktion des \textit{platform}-Moduls geprüft welches Betriebssystem vorliegt. Bei einem auf Linux- (Rückgabe \glqq Linux\grqq)oder Mac-basierenden System (Rückgabe \glqq Darwin\grqq) wird einfach eine List mit dem Element \glqq /\grqq\ erstellt.
+
+Bei einem auf Windows basierenden Betriebssystem (Rückgabe \glqq Windows\grqq) ist das Erstellen der Startverzeichnisse aufwändiger. Hierbei werden alle Großbuchstaben, im Code durch \textit{string.ascii\_uppercase} aufrufbar, darauf geprüft eine Partition zu sein. Dies wird mithilfe der \textit{os.path.exists}-Methode realisiert. Ist ein Großbuchstabe tatsächliche eine Partition auf dem Computer, so wird er in der Liste gespeichert. Jedoch wird an den Großbuchstaben noch der String \glqq :$\backslash$\grqq\ angehangen, damit die \textit{buildIndex}-Methode mit den Elementen der Liste als Start-Verzeichnisse arbeiten kann.
 
 \subsection{\_addToIndex}\label{addtoindex}
 
-Die Methode \textit{\_addToIndex} fügt dem Index für jeden Term $t$ die Dokumenten-ID an, in welchem der Term $t$ gefunden wurde.  Hierfür bekommt die Methode eine Liste von Termen die in einem PDF-Dokument vorkommen über den Parameter \textit{terms} und die zum Dokumente gehörige Dokumenten-ID als Parameter \textit{documentID} übergeben.
+Die Methode \textit{\_addToIndex} fügt dem Index für jeden Term $t$ die Dokumenten-ID an, in welchem der Term $t$ gefunden wurde.  Hierfür bekommt die Methode eine Liste von Termen, die in einem PDF-Dokument vorkommen, über den Parameter \textit{terms} und die zum Dokument gehörige Dokumenten-ID als Parameter \textit{documentID} übergeben.
 
-Für jeden Term in der Liste \emph{terms} wird dazu der zum Term gehörige Eintrag im invertierten Index nachgeschlagen. Schlägt der Versuch fehl, da noch kein Eintrag des Terms in dem invertierten Index vorhanden ist, wird ein neuer Eintrag für diesen Term und der übergebenen Dokumenten-ID erstellt. Wird ein Eintrag gefunden, wird die übergebende Dokumenten-ID der schon vorhandene Menge hinzugefügt und der invertierte Index wird geupdatet.
+Für jeden Term in der Liste \emph{terms} wird dazu der zum Term gehörige Eintrag im invertierten Index nachgeschlagen. Schlägt der Versuch fehl, da noch kein Eintrag des Terms in dem invertierten Index vorhanden ist, wird ein neuer Eintrag für diesen Term und der übergebenen Dokumenten-ID erstellt. Wird ein Eintrag gefunden, wird die übergebende Dokumenten-ID der schon vorhandene Menge hinzugefügt und der invertierte Index wird aktualisiert.
 
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
@@ -247,9 +291,15 @@ Index._addToIndex = _addToIndex
 \subsection{\_cleanIndex}\label{cleanIndex}
 Die Methode \textit{\_cleandIndex} dient dazu, alle PDF-Dokumente aus dem Index zu löschen, die nicht mehr auf dem System vorhanden sind. Dadurch kann es nicht mehr passieren, dass Dokumente in den Suchergebnissen erscheinen, die gar nicht mehr auf dem System existieren.
 
+<<<<<<< HEAD
 Der erste Schritt der in \ref{fig:cleanIndex} dargestellten Methode, stellt das Iterieren über alle Einträge des Dictionarys \textit{dateMap} dar. Dadurch wird auf den Pfad sowie die eindeutige Dokumenten-ID für jedes Dokument zugegriffen.
 Für jedes Dokument erfolgt eine Prüfung, ob das Dokument noch auf dem System vorhanden ist, dies geschieht mittels der \textit{isfile} des \textit{os}-Moduls. Falls das Dokument nicht mehr vorhanden ist, muss das Dokument aus \textit{docHasmap}, \textit{invIndex} sowie aus \textit{dateMap} gelöscht werden. 
 Das Löschen erfolgt für \textit{docHashmap} in der ersten, für \textit{invIndex} in der zweiten und für \textit{dateMap} in der dritten For-Schleife.
+=======
+Der erste Schritt der in \ref{fig:cleanIndex} dargestellten Methode stellt das Iterieren über alle Einträge des Dictionarys \textit{dateMap} dar. Dadurch wird auf den Pfad sowie die eindeutige Dokumenten-ID für jedes Dokument zugegriffen.
+Für jedes Dokument erfolgt eine Prüfung, ob das Dokument noch auf dem System vorhanden ist, dies geschieht mittels der \textit{isfile}-Methode des \textit{os}-Moduls. Falls das Dokument nicht mehr vorhanden ist, muss das Dokument aus \textit{docHasmap}, \textit{invIndex} sowie aus \textit{dateMap} gelöscht werden. 
+Das Löschen erfolgt für \textit{docHashmap} in der ersten, für \textit{invIndex} in der zweiten und für \textit{dateMap} in der dritten for-Schleife.
+>>>>>>> Jonas
 
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
@@ -282,6 +332,7 @@ Index._cleanIndex = _cleanIndex
 	\label{fig:cleanIndex}
 \end{figure}
 
+<<<<<<< HEAD
 \subsection{retrieve}\label{retrieve}
 
 Die \textit{retrieve}-Methode dient der Suche nach Dokumenten anhand einer eingegebenen Suchanfrage und stellt die Schnittstelle zum Nutzer dar. Die Idee dabei ist, dass der Nutzer ein oder mehrere Schlagworte, in Form eines Strings, der Methode übergeben kann. Auf deren Basis werden die gefundenen Dokumente, nach Relevanz sortiert, zurückgeliefert. 
@@ -370,6 +421,10 @@ Bei einem auf Windows basierenden Betriebssystem (Rückgabe \glqq Windows\grqq\ 
 
 \subsubsection{preprocessText}\label{preprocess}
 Diese Methode dient der Vorverarbeitung der Texte, die in den PDF-Dokumenten stehen, wird aber auch für die Suchquery genutzt. Hierfür wird der Text eines PDF-Dokumentes an den Parameter \textit{text} übergeben. Als erster Schritt wird der gesamte Text in Lower-Case (Kleinschreibung) gesetzt, damit später bei der Suche die Groß- bzw. Kleinschreibung irrelevant ist. Das Ergebnis wird in der Variable \textit{lowerText} gespeichert. Im nächsten Schritt werden alle Zahlen aus \textit{lowerText} entfernt und in \textit{prepText} gespeichert, da Zahlen für die Textsuche nicht von Bedeutung sind.
+=======
+\subsubsection{\_preprocessText}\label{preprocess}
+Diese Methode dient der Vorverarbeitung der Texte, die in den PDF-Dokumenten stehen, wird aber auch für die Suchanfrage genutzt. Hierfür wird der Text eines PDF-Dokumentes an den Parameter \textit{text} übergeben. Als erster Schritt wird der gesamte Text in Lower-Case (Kleinschreibung) gesetzt, damit später bei der Suche die Groß- bzw. Kleinschreibung irrelevant ist. Das Ergebnis wird in der Variable \textit{lowerText} gespeichert. Im nächsten Schritt werden alle Zahlen aus \textit{lowerText} entfernt, der Text ohne die Zahlen wird in \textit{prepText} gespeichert, da Zahlen für die Textsuche nicht von Bedeutung sind.
+>>>>>>> Jonas
 
 Als nächstes wird mithilfe der Klasse \textit{RegexpTokenizer}, die durch die NLTK-Bibliothek zur Verfügung gestellt wird, der String \textit{prepText} in eine Liste von Tokens aufgespalten. Was als Token gewertet wird, wird mithilfe einer \textit{regular expression} definiert, im Deutschen regulärer Ausdruck genannt. Ein regulärer Ausdruck ist eine Zeichenkette, welche eine Menge von bestimmten Zeichenketten beschreibt. Der gewünschte reguläre Ausdruck wird dem Konstruktor der \textit{RegexpTokenizer}-Klasse in Form eines raw Strings übergeben. Ein raw String ist ein String, welcher mit einem \textit{r} am Anfang gekennzeichnet ist und ein Backslash als ein Literal und kein Escape-Zeichen behandelt. Dies ist bei regulären Ausdrücken nützlich, da in diesen verstärkt mit Backslashs gearbeitet wird.
 
@@ -408,9 +463,60 @@ def preprocessText(text):
 	\label{fig:preprocess}
 \end{figure}
 
+<<<<<<< HEAD
+=======
+\subsection{retrieve}\label{retrieve}
+
+Die \textit{retrieve}-Methode dient der Suche nach Dokumenten anhand einer eingegebenen Suchanfrage und stellt die Schnittstelle zum Nutzer dar. Die Idee dabei ist, dass der Nutzer ein oder mehrere Schlagworte, in Form eines Strings, der Methode übergeben kann. Auf deren Basis werden die gefundenen Dokumente, nach Relevanz sortiert, zurückgeliefert. 
+
+Zunächst wird der Suchstring des Nutzers mittels der bereits bekannten Methode \textit{\_preprocessText} normalisiert und in eine Liste von Termen zerteilt. Das Ergebnis wird in der Variable \textit{processedStrings} abgespeichert. Im zweiten Schritt werden alle genutzten Variablen deklariert. Mithilfe der For-Schleife wird über die Liste von Termen \textit{processedStrings} iteriert, um über den invertierten Index für jeden Term die Menge der Dokumenten-IDs zu beschaffen. Des Weiteren wird für jeden Term die Länge seiner Menge von Dokumenten-IDs im Dictionary \textit{df} abgespeichert und repräsentiert so die Document Frequency. Die Variable \textit{result} stellt die Menge da, die alle zur Suchanfrage gefundenen Dokumenten-IDs enthält. So wird diese Variable mit jeder Menge von Dokumenten-IDs vereinigt. Da es sich hier um eine Menge handelt, kann ausgeschlossen werden, dass Dokumenten-IDs doppelt vorkommen. Existiert der Term \textit{word} nicht als Key im Index, da der Nutzer ein Wort eingegeben hat, welches kein Dokument beinhaltet, wird beim nächsten Term der Liste \emph{processedStrings} fortgefahren.
+
+In der nächsten For-Schleife wird für jede Dokumenten-ID in der Liste \textit{result}, mithilfe der \textit{docHashmap}, die passende Documentinstanz geholt, um für jedes Dokument das TF-IDF-Maß auszurechnen. Wurde dies mithilfe der \textit{tf\_idf}-Methode getan, wird das Gewicht zu der jeweiligen Dokumenten-ID in dem Dictionary \textit{weightedDocs} gespeichert. Dieses wird mit der \textit{sorted}-Funktion von Python nach den Gewichten sortiert. Die Sortierung ist jedoch aufsteigend, obwohl es gewünscht  ist, die Dokumente mit einem höheren Gewicht oben zu haben. Dafür wird die Variable \textit{reverse} auf True gesetzt, damit die Einträge absteigend sortiert werden.
+
+In der letzten For-Schleife werden die absoluten Pfade (\textit{ind.docHashmap[Key].url}), in der sortierten Reihenfolge, und die Gewichte der Dokumente für die Query in die Liste \textit{resultList} gespeichert. Diese wird am Ende zurückgegeben.
+
+\begin{figure}
+	\rule{\textwidth}{0.4pt}
+		\begin{lstlisting}[language=Python]
+def retrieve(self, searchString):
+ 
+  processedStrings = self._preprocessText(searchString)
+  result = set()
+  df, weightedDocs = {}, {}
+  resultList = []
+    
+  for word in processedStrings:
+    try:
+      documents = self.invIndex[word]
+      df[word] = len(documents)
+      result = result.union(documents)
+    except KeyError:
+      continue
+    
+  for document in result:
+    doc = ind.docHashmap[document]
+    doc.tf_idf(processedStrings,df,self.fileCount)
+    weightedDocs[doc.docId] = doc.score
+        
+  sortedDocs = sorted(weightedDocs.items(), key=operator.itemgetter(1),
+                      reverse=True)
+    
+  for key, value in sortedDocs:
+    resultList.append([ind.docHashmap[key].url, value])
+        
+  return resultList
+
+Index.retrieve = retrieve
+		\end{lstlisting}
+	\rule{\textwidth}{0.4pt}
+	\caption{Retrieve-Methode}
+	\label{fig:retrieve}
+\end{figure}
+
+>>>>>>> Jonas
 \section{Ausführung der Suchmaschine}
 
-In diesem Abschnitt soll kurz erläutert werden, wie die oben erstellten Klassen genutzt werden. Als erstes muss eine neue Instanz der Indexklasse erstellt werden. Über diese Instanz wird dann die \textit{buildIndex}-Methode aufgerufen. Optional kann hier eine Liste der gewünschten Startverzeichnisse als raw Strings übergeben werden. Wenn der invertierte Index aufgebaut wurde, kann über die Indexinstanz die \textit{retrieve}-Methode mit der gewünschten Suchquery aufgerufen werden. Diese liefert eine nach Gewichten sortierte Liste, mit den Pfaden zu den gefundenen Dokumenten. Wenn diese nicht leer ist, können mithilfe einer For-Schleife die Elemente ausgegeben werden.
+In diesem Abschnitt soll kurz erläutert werden, wie die oben erstellten Klassen genutzt werden. Als erstes muss eine neue Instanz der Indexklasse erstellt werden. Über diese Instanz wird dann die \textit{buildIndex}-Methode aufgerufen. Optional kann hier eine Liste der gewünschten Startverzeichnisse als raw Strings übergeben werden. Wenn der invertierte Index aufgebaut wurde, kann über die Indexinstanz die \textit{retrieve}-Methode mit der gewünschten Suchanfrage aufgerufen werden. Diese liefert eine nach Gewichten sortierte Liste, mit den Pfaden zu den gefundenen Dokumenten. Wenn diese nicht leer ist, können mithilfe einer For-Schleife die Elemente ausgegeben werden.
 
 \subsection{initIndex}\label{initIndex}
 In der Hilfs-Funktion \textit{initIndex}, welche in \ref{fig:initIndex} dargestellt ist, wird der Index aufgebaut und mittels \textit{pickle} persistiert.

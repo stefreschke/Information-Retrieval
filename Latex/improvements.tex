@@ -1,4 +1,4 @@
-In der Vorgestellten Implementierung gibt es einige Probleme und daraus folgende Verbesserungen, die in diesem Abschnitt besprochen werden.
+In der vorgestellten Implementierung gibt es einige Probleme und daraus folgende Verbesserungen, die in diesem Abschnitt besprochen werden.
 \begin{comment}
 Die folgende Liste dient nur zur Dokumentation der vorhanden Probleme und wird später durch ausführlichere Erläuterungen und Beispielen ersetzt.
 \begin{itemize}
@@ -23,7 +23,7 @@ Die folgende Liste dient nur zur Dokumentation der vorhanden Probleme und wird s
 \end{comment}
 
 \section{Probleme der aktuellen Beispiel-Implementierung}
-Dieser Abschnitt wird eine kurze Problemanalyse der aktuellen Implementierung der lokalen Suchmaschine liefern. Zu diesem Zweck soll die NPL-Test-Collection herangezogen werden. Mit deren Hilfe kann ermittelt werden, wie \glqq gut\grqq\ die Suchmaschine ist. Dazu werden zwei Messungen vorgenommen:
+Dieser Abschnitt wird eine kurze Problemanalyse der aktuellen Implementierung der lokalen Suchmaschine liefern. Zu diesem Zweck soll die NPL-Test-Collection herangezogen werden \cite{npl_test_collection}. Mit deren Hilfe kann ermittelt werden, wie \glqq gut\grqq\ die Suchmaschine ist. Dazu werden zwei Messungen vorgenommen:
 \begin{itemize}
 	\item Die $precision$ gibt den Anteil an, wie viele der gefundenen Dokumente relevant sind.
 	\item Der $recall$ gibt an, wie viele der relevanten Dokumente gefunden werden.
@@ -40,26 +40,30 @@ Liefert der Bruch $\frac{r_1}{r_2}$ $\ge$ $0,8$, ist das Ergebnis bereits ausrei
 
 \subsubsection{Test und Auswertung der Ergebnisse}
 Zunächst werden 10 Queries getestet und auf deren Basis wird ein Wert für die Precision gemessen. 
-Der durchschnittliche Wert der Precision wird mit $\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ berechnet.
+Der durchschnittliche Wert der Precision wird mit %$\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ 
+\begin{align}
+	\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}
+\end{align}
+berechnet.
 
 Der Wert der Precision ist $< 0,1$. Dieser Wert ist sehr niedrig. Dies hat den Grund, dass die Suchmaschine für jedes Wort der Query die Menge der Dokumente zurückliefert, in der das Wort steht. Durch den Union-Operator werden die Ergebnis-Mengen der einzelnen Wörter lediglich vereinigt. Dadurch reicht es aus, dass ein Wort der Query in nur einem Dokument vorkommt, um in der Ergebnis-Menge zu stehen. 
 
-\subsubsection{Lösungsvorschläge}
-Das Bilden von N-Grammen ist ein Weg dieses Problem anzugehen. Um das Konzept des N-Gramms zu verstehen, wird ein Beispiel gegeben:
-
-
 \subsection{Analyse des Recalls}
 Der Recall ist definiert als
-\begin{center}
-	$\displaystyle recall = \frac{r_1}{r_2}$,
-\end{center}
+\begin{align}
+	recall = \frac{r_1}{r_2},
+\end{align}
 wobei $r_1$ die Anzahl der ermittelten, relevanten Dokumente ist und $r_2$ die Anzahl relevanter Dokumente ist.
 Der $recall$ wird $1$, wenn die Menge der zurückgegebenen Dokumente genau der Menge der relevanten Dokumenten in der Collection entspricht.
 Gilt $recall$ $\ge$ $0,8$, ist der Wert ausreichend gut.
 
 \subsubsection{Test und Auswertung der Ergebnisse}
 Auch hier 10 Queries getestet und auf deren Basis wird ein Wert für den Recall gemessen. 
-Der durchschnittliche Wert des Recalls wird mit $\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}$ berechnet.
+Der durchschnittliche Wert des Recalls wird mit 
+\begin{align}
+	\frac{1}{10} * \sum_{1}^{10} \frac{r_{1_i}}{r_{2_i}}
+\end{align}
+berechnet.
 \\
 Im Gegensatz zur Precision liefert der Recall einen Wert $\gg 0,95$. Diese Tatsache ist wenig überraschend, da - wie im letzten Abschnitt gesehen - nahezu alle Dokumente zurückgeliefert werden. Daher sind in den meisten Fällen alle Dokumente, die für die Query relevant sind, in der Ergebnis-Menge.
 \\
@@ -71,10 +75,11 @@ Eine Verbesserung betrifft die Geschwindigkeit, in der der Index aufgebaut wird.
 Wird ein System mit ca. 105GB nach PDF-Dateien durchsucht und in den Index aufgenommen, werden auf einem System mit einem Intel Core i5 der 8. Generation und 8 Gigabyte RAM ca. 40 Minuten benötigt. Für einen sinnvollen Einsatz die Suchmaschine somit nicht geeignet. Zwei Ideen, diese Zeit zu senken, sind Parallelisierung und Persistierung.
 
 \subsection{Parallelisierung}
-Durch Nutzung von Parallelisierung kann der Aufbau des Index ebenfalls beschleunigt werden. Da die Beispiel-Implementierung auf Python basiert, ist jedoch zu beachten, dass Python-Threads keine Vorteile aus Multi-Prozessorsystemen ziehen kann. Das bedeutet, dass mehrere Python-Threads nicht parallel auf verschiedenen Kernen laufen können. Dennoch bringt Parallelisierung einen Geschwindigkeits-Vorteil.
+Durch Nutzung von Parallelisierung kann der Aufbau des Index ebenfalls beschleunigt werden. Da die Beispiel-Implementierung auf Python basiert, ist jedoch zu beachten, dass Python-Threads keine Vorteile aus Multi-Prozessorsystemen ziehen können. Das bedeutet, dass mehrere Python-Threads nicht parallel auf verschiedenen Kernen laufen können. Dennoch bringt Parallelisierung einen Geschwindigkeits-Vorteil.
 \\
 Wird ein Systemaufruf ausgelöst, um beispielsweise eine Datei zu öffnen, wird, sofern die Suchmaschine Single-Threaded ist, das komplette Programm blockiert. Werden jedoch Threads genutzt, kann nur der Thread blockiert werden, der den Systemaufruf verursacht hat. An dessen Stelle kann dann ein weiterer Thread treten, der in der Zwischenzeit rechnen kann. Dadurch wird weniger Zeit mit Warten verschwendet und der Index-Aufbau wird beschleunigt. 
 \\
+Alternativ zu Threads bietet Python die Möglichkeit, mehrere Prozesse zu starten, um eine echte Parallelisierung zu erreichen. Verschiedene Prozesse können dann parallel auf verschiedenen Kernen laufen. \\
 Ist der Index persistent gespeichert, ist es möglich, in regelmäßigen einen oder mehrere Threads zu starten und somit \glqq im Hintergrund\grqq\ nach neuen Dateien gesucht werden, die noch nicht im Index vorhanden sind. 
 \\
 Durch die Kombination beider Ideen, sollte der Aufbau des Index spürbar beschleunigt werden.
