@@ -1,6 +1,10 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{V}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Abkürzungstabelle}{VI}{chapter*.4}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Was ist Information-Retrieval?}{1}{section.1.1}
@@ -45,13 +49,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Genutzte Bibliotheken}{17}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Apache Tika}{18}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}tika}{18}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.2}filetype}{19}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}NLTK}{19}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}nltk}{19}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Platform}{19}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}platform}{19}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.3}Die Document-Klasse}{19}{section.5.3}
 \defcounter {refsection}{0}\relax 
@@ -61,36 +65,42 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.4.1}buildIndex}{23}{subsection.5.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.2}\_addToIndex}{24}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.2}Hilfsmethoden}{24}{subsection.5.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.3}\_cleanIndex}{26}{subsection.5.4.3}
+\contentsline {subsubsection}{\nonumberline \_getStartDirectories}{24}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.4}retrieve}{26}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.3}\_addToIndex}{26}{subsection.5.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.5}Hilfsmethoden}{29}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.4}\_cleanIndex}{27}{subsection.5.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline getStartDirectories}{29}{section*.5}
+\contentsline {subsection}{\numberline {5.4.5}retrieve}{28}{subsection.5.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline preprocessText}{30}{section*.6}
+\contentsline {subsection}{\numberline {5.4.6}Hilfsmethoden}{29}{subsection.5.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Ausführung der Suchmaschine}{32}{section.5.5}
+\contentsline {subsubsection}{\nonumberline getStartDirectories}{29}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.1}initIndex}{33}{subsection.5.5.1}
+\contentsline {subsubsection}{\nonumberline preprocessText}{31}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Verbesserungen}{35}{chapter.6}
+\contentsline {subsection}{\numberline {5.4.7}retrieve}{33}{subsection.5.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Probleme der aktuellen Beispiel-Implementierung}{35}{section.6.1}
+\contentsline {section}{\numberline {5.5}Ausführung der Suchmaschine}{34}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}Analyse der Precision}{35}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {5.5.1}initIndex}{36}{subsection.5.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Test und Auswertung der Ergebnisse}{36}{section*.7}
+\contentsline {chapter}{\numberline {6}Verbesserungen}{38}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Lösungsvorschläge}{36}{section*.8}
+\contentsline {section}{\numberline {6.1}Probleme der aktuellen Beispiel-Implementierung}{38}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}Analyse des Recalls}{36}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.1}Analyse der Precision}{38}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Test und Auswertung der Ergebnisse}{36}{section*.9}
+\contentsline {subsubsection}{\nonumberline Test und Auswertung der Ergebnisse}{39}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Aufbaudauer des Index}{37}{section.6.2}
+\contentsline {subsection}{\numberline {6.1.2}Analyse des Recalls}{39}{subsection.6.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.1}Parallelisierung}{37}{subsection.6.2.1}
+\contentsline {subsubsection}{\nonumberline Test und Auswertung der Ergebnisse}{40}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Aufbaudauer des Index}{40}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Parallelisierung}{40}{subsection.6.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Literatur}{i}{chapter*.10}

@@ -16,72 +16,7 @@
   {}
 \endgroup
 
-\datalist[entry]{ynt/global//global/global}
-  \entry{index_Uni_Munich}{online}{}
-    \name{author}{1}{}{%
-      {{hash=IN}{%
-         family={Istvan},
-         familyi={I\bibinitperiod},
-         given={Nagy},
-         giveni={N\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{IN1}
-    \strng{fullhash}{IN1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Indexierung mittels invertierter Dateien}
-    \verb{url}
-    \verb http://www.cis.uni-muenchen.de/people/Schulz/SeminarSoSe2001IR/Nagy/n
-    \verb ode4.html
-    \endverb
-    \field{year}{2001}
-  \endentry
-
-  \entry{IR_Uni_Duisburg}{online}{}
-    \name{author}{1}{}{%
-      {{hash=FI}{%
-         family={Frommholz},
-         familyi={F\bibinitperiod},
-         given={Ingo},
-         giveni={I\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{FI1}
-    \strng{fullhash}{FI1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Information Retrieval}
-    \verb{url}
-    \verb http://www.is.informatik.uni-duisburg.de/courses/ie_ss07/folien/folie
-    \verb n-ir.pdf
-    \endverb
-    \field{year}{2007}
-  \endentry
-
-  \entry{IR_Uni_Bamberg}{book}{}
-    \name{author}{1}{}{%
-      {{hash=HA}{%
-         family={Henrich},
-         familyi={H\bibinitperiod},
-         given={Andreas},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HA1}
-    \strng{fullhash}{HA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Information Retrieval 1}
-    \field{year}{2008}
-  \endentry
-
+\datalist[entry]{nty/global//global/global}
   \entry{IR_Intro_Cambridge}{book}{}
     \name{author}{1}{}{%
       {{hash=CDMHSPR}{%
@@ -98,129 +33,10 @@
     \strng{fullhash}{CDMPRHS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
     \field{title}{Introduction to Information Retrieval}
     \field{year}{2009}
-  \endentry
-
-  \entry{Trie_Blog}{online}{}
-    \name{author}{1}{}{%
-      {{hash=JV}{%
-         family={Joshi},
-         familyi={J\bibinitperiod},
-         given={Vaidehi},
-         giveni={V\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JV1}
-    \strng{fullhash}{JV1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Trying to Understand Tries}
-    \verb{url}
-    \verb https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
-    \endverb
-    \field{year}{2017}
-  \endentry
-
-  \entry{VR_Retrieval}{online}{}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Vektorraum-Retrieval}
-    \verb{url}
-    \verb https://de.wikipedia.org/wiki/Vektorraum-Retrieval
-    \endverb
-    \field{year}{2017}
-  \endentry
-
-  \entry{Trie_wiki}{online}{}
-    \name{author}{1}{}{%
-      {{hash=o}{%
-         family={o.A.},
-         familyi={o\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{o1}
-    \strng{fullhash}{o1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Trie}
-    \verb{url}
-    \verb https://de.wikipedia.org/wiki/Trie
-    \endverb
-    \field{year}{2018}
-  \endentry
-
-  \entry{Apache_Tika}{online}{}
-    \name{author}{1}{}{%
-      {{hash=o}{%
-         family={o.V.},
-         familyi={o\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{o2}
-    \strng{fullhash}{o2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{Apache Tika - a content analysis toolkit}
-    \verb{url}
-    \verb https://tika.apache.org/
-    \endverb
-    \field{day}{22}
-    \field{month}{12}
-    \field{year}{2018}
-  \endentry
-
-  \entry{nltk}{online}{}
-    \name{author}{1}{}{%
-      {{hash=o}{%
-         family={o.V.},
-         familyi={o\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{o2}
-    \strng{fullhash}{o2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{source code for nltk.tokenize.regexp}
-    \verb{url}
-    \verb https://www.nltk.org/_modules/nltk/tokenize/regexp.html
-    \endverb
-    \field{day}{17}
-    \field{month}{11}
-    \field{year}{2018}
-  \endentry
-
-  \entry{filetype}{online}{}
-    \name{author}{1}{}{%
-      {{hash=o}{%
-         family={o.V.},
-         familyi={o\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{o2}
-    \strng{fullhash}{o2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{2}
-    \field{sortinithash}{2}
-    \field{title}{fieltype 1.0.5}
-    \verb{url}
-    \verb https://pypi.org/project/filetype/
-    \endverb
-    \field{day}{01}
-    \field{month}{03}
-    \field{year}{2019}
   \endentry
 
   \entry{trie_Abb}{online}{}
@@ -234,14 +50,36 @@
     \strng{fullhash}{f1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{9}
-    \field{sortinithash}{9}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
     \field{title}{Introduction to Trie}
     \verb{url}
     \verb https://guide.freecodecamp.org/miscellaneous/data-structure-trie/
     \endverb
-    \warn{\item Invalid format of field 'date' \item Invalid format of field
-  'date'}
+    \field{year}{o.J.}
+  \endentry
+
+  \entry{IR_Uni_Duisburg}{online}{}
+    \name{author}{1}{}{%
+      {{hash=FI}{%
+         family={Frommholz},
+         familyi={F\bibinitperiod},
+         given={Ingo},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FI1}
+    \strng{fullhash}{FI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Information Retrieval}
+    \verb{url}
+    \verb http://www.is.informatik.uni-duisburg.de/courses/ie_ss07/folien/folie
+    \verb n-ir.pdf
+    \endverb
+    \field{year}{2007}
   \endentry
 
   \entry{klass_IR}{misc}{}
@@ -257,11 +95,120 @@
     \strng{fullhash}{HK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{9}
-    \field{sortinithash}{9}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
     \field{title}{Klassische Information Retrieval Modelle Einführung}
-    \warn{\item Invalid format of field 'date' \item Invalid format of field
-  'date'}
+    \field{day}{21}
+    \field{month}{10}
+    \field{year}{2012}
+  \endentry
+
+  \entry{IR_Uni_Bamberg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HA}{%
+         family={Henrich},
+         familyi={H\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HA1}
+    \strng{fullhash}{HA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Information Retrieval 1}
+    \field{year}{2008}
+  \endentry
+
+  \entry{index_Uni_Munich}{online}{}
+    \name{author}{1}{}{%
+      {{hash=IN}{%
+         family={Istvan},
+         familyi={I\bibinitperiod},
+         given={Nagy},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IN1}
+    \strng{fullhash}{IN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Indexierung mittels invertierter Dateien}
+    \verb{url}
+    \verb http://www.cis.uni-muenchen.de/people/Schulz/SeminarSoSe2001IR/Nagy/n
+    \verb ode4.html
+    \endverb
+    \field{year}{2001}
+  \endentry
+
+  \entry{Trie_Blog}{online}{}
+    \name{author}{1}{}{%
+      {{hash=JV}{%
+         family={Joshi},
+         familyi={J\bibinitperiod},
+         given={Vaidehi},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JV1}
+    \strng{fullhash}{JV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Trying to Understand Tries}
+    \verb{url}
+    \verb https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{Apache_Tika}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Apache Tika - a content analysis toolkit}
+    \verb{url}
+    \verb https://tika.apache.org/
+    \endverb
+    \field{day}{22}
+    \field{month}{12}
+    \field{year}{2018}
+  \endentry
+
+  \entry{filetype}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{filetype 1.0.5}
+    \verb{url}
+    \verb https://pypi.org/project/filetype/
+    \endverb
+    \field{day}{01}
+    \field{month}{03}
+    \field{year}{2019}
   \endentry
 
   \entry{ir_wiki}{online}{}
@@ -271,18 +218,112 @@
          familyi={o\bibinitperiod},
       }}%
     }
-    \strng{namehash}{o2}
-    \strng{fullhash}{o2}
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{9}
-    \field{sortinithash}{9}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
     \field{title}{Information Retrieval}
     \verb{url}
     \verb https://de.wikipedia.org/wiki/Information_Retrieval
     \endverb
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}
+  \endentry
+
+  \entry{re}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{re — Regular expression operations}
+    \verb{url}
+    \verb https://docs.python.org/3/library/re.html
+    \endverb
+    \field{year}{o.J.}
+  \endentry
+
+  \entry{nltk}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{source code for nltk.tokenize.regexp}
+    \verb{url}
+    \verb https://www.nltk.org/_modules/nltk/tokenize/regexp.html
+    \endverb
+    \field{day}{17}
+    \field{month}{11}
+    \field{year}{2018}
+  \endentry
+
+  \entry{npl_test_collection}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Test collections}
+    \verb{url}
+    \verb http://ir.dcs.gla.ac.uk/resources/test_collections/
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{Trie_wiki}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Trie}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Trie
+    \endverb
+    \field{year}{2018}
+  \endentry
+
+  \entry{VR_Retrieval}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{title}{Vektorraum-Retrieval}
+    \verb{url}
+    \verb https://de.wikipedia.org/wiki/Vektorraum-Retrieval
+    \endverb
+    \field{year}{2017}
   \endentry
 \enddatalist
 \endinput

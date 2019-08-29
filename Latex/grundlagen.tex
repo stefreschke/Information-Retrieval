@@ -1,9 +1,9 @@
 \section{Problemstellung}
-Im Rahmen dieser Arbeit soll beschrieben werden, wie mithilfe von \glqq Information Retrieval\grqq\ Informationen aus einer großen, unsortierten Datenmenge - nach Relevanz sortiert - bereitgestellt werden kann. Dabei bekommt das System eine vom Nutzer gestellte Abfrage, auch Query genannt, und versucht auf deren Basis, Daten, die meist als Dokumente vorliegen, zurückzuliefern. Im Gegensatz zu Abfragen im Datenbankumfeld beinhaltet die Query jedoch unzureichende Informationen, um ein spezielles Element eindeutig identifizieren zu können \cite[S. 1 f.]{IR_Intro_Cambridge}. Dies soll ein IR-System auch nicht leisten. Vielmehr sollen Ergebnisse zurückgeliefert werden, die mit hoher Wahrscheinlichkeit Relevanz bzgl. der gestellten Query besitzen. Der Nutzer selektiert dann die für diesen nötigen Dokumente \cite[S. 1 f.]{IR_Intro_Cambridge}.
-\\
+Im Rahmen dieser Arbeit soll beschrieben werden, wie mithilfe von \glqq Information Retrieval\grqq\ Informationen aus einer großen, unsortierten Datenmenge - nach Relevanz sortiert - bereitgestellt werden kann. Dabei bekommt das System eine vom Nutzer gestellte Abfrage, auch \textit{Query} genannt, und versucht auf deren Basis, Daten, die meist als Dokumente vorliegen, zurückzuliefern. Im Gegensatz zu Abfragen im Datenbankumfeld beinhaltet die Query jedoch unzureichende Informationen, um ein spezielles Element eindeutig identifizieren zu können \cite[S. 1 f.]{IR_Intro_Cambridge}. Dies soll ein IR-System auch nicht leisten. Vielmehr sollen Ergebnisse zurückgeliefert werden, die mit hoher Wahrscheinlichkeit Relevanz bzgl. der gestellten Query besitzen. Der Nutzer selektiert dann die für diesen nötigen Dokumente \cite[S. 1 f.]{IR_Intro_Cambridge}.
+
 Mathematisch lässt sich dies folgendermaßen formulieren: Aus einer Dokumentenmenge $D$ soll mithilfe einer Funktion eine Teilmenge $D_1$ von $D$ ermittelt werden, die relevant für eine Abfrage $q$ ist.
-\\
-Um diese Funktion sinnvoll definieren zu können, muss jedoch zuvor die Menge aller Queries, sowie die Menge aller Tokens definiert werden. Zuvor sollen jedoch die Vokabeln \glqq Token\grqq, \glqq Typ\grqq\ und \glqq Term\grqq\ geklärt werden:
+
+Um diese Funktion sinnvoll definieren zu können, muss jedoch zuvor die Menge aller Queries, sowie die Menge aller \textit{Tokens} definiert werden. Zuvor sollen jedoch die Vokabeln \glqq Token\grqq, \glqq Typ\grqq\ und \glqq Term\grqq\ geklärt werden:
 
 \begin{defi}[Token]\label{def:Token}
 	Unter einem Token wird eine zusammenhängende Zeichenkette verstanden, die innerhalb eines Dokuments vorkommt \cite[S. 22]{IR_Intro_Cambridge}.
@@ -14,6 +14,7 @@ Tokens werden häufiger auch als \glqq Wörter\grqq\ bezeichnet, dies wird auch 
 \begin{defi}[Typ]\label{def:Typ}
 	Ein Typ bezeichnet eine Klasse von Tokens, die dieselben Zeichen in derselben Reihenfolge enthalten \cite[S. 22]{IR_Intro_Cambridge}.
 \end{defi}
+
 \begin{defi}[Term]\label{def:Term}
 	Ein Term ist ein Typ, welcher im Dictionary eines IR-Systems vorkommt \cite[S. 22]{IR_Intro_Cambridge}.
 \end{defi}
@@ -22,66 +23,76 @@ Ein Beispiel, wie Tokens, Typen und Terme aussehen können, folgt in \ref{sub:to
 
 \begin{defi}[Menge aller Terme]\label{def:MaT}
 	Sei $d \in D$ ein Dokument. Die Menge $T_d$ ist nun die Menge aller Wörter, die in dem Dokument $d$ enthalten sind: $T_d$ = $\{$$t_1$, .., $t_n$$\}$.
-	\\
+	
 	Die Menge $T$ ist die Menge aller Terme, die in den Dokumenten aus $D$ vorkommen, also:
 	$T$ = $T_{d_1} \cup .. \cup T_{d_i}$ mit $i \in N$ und $d_i \in D$.
 \end{defi}
+
 Mithilfe der Definition \ref{def:MaT} kann nun die Menge aller möglichen Queries definiert werden:
+
 \begin{defi}[Menge aller möglichen Queries]\label{def:MamQ}
 	$Q \subseteq 2^T$
 \end{defi}
+
 \begin{defi}[Retrievalfunktion]\label{def:RFunktion}
 	Eine Funktion $f$: $Q \rightarrow 2^D$ heißt Retrievalfunktion, wobei $Q$ die Menge aller Queries ist.
 \end{defi}
+
 Nachdem die Problemstellung formuliert ist, muss eine Strategie entwickelt werden, wie die Retrievalfunktion nach \cref{def:RFunktion} dargestellt bzw. umgesetzt wird.
-\\
+
 \section{Strategiefindung}
 Dieser Abschnitt bietet eine Übersicht, wie das (im Folgenden vorgestellte) IR-System arbeiten soll.
-\\
-Als Vorarbeit werden alle Dokumente, die im Index aufgenommen werden, in eine Codierung wie ASCII oder Unicode umgewandelt. Dazu wird ein Tool genutzt, das hier nicht weiter von Relevanz sein wird.
-Es sollen mindestens all diejenigen Dokumente in den Index aufgenommen werden, die im PDF-Format vorliegen. Der Index kann wie ein Inhaltsverzeichnis in einem Buch gesehen werden, welches von einer Überschrift auf eine Seitenzahl verweist. Wie dieses Konzept in IR-Systemen verwendet wird, ist Gegenstand eines eigenen Kapitels im Verlauf der Arbeit.
-\\
+
+Als Vorarbeit werden alle Dokumente, die im \textit{Index} aufgenommen werden, in eine Codierung wie ASCII oder Unicode umgewandelt. Dazu wird ein Tool genutzt, das hier nicht weiter von Relevanz sein wird. Es sollen mindestens all diejenigen Dokumente in den Index aufgenommen werden, die im PDF-Format vorliegen. Der Index kann wie ein Inhaltsverzeichnis in einem Buch gesehen werden, welches von einer Überschrift auf eine Seitenzahl verweist. Wie dieses Konzept in IR-Systemen verwendet wird, ist Gegenstand eines eigenen Kapitels im Verlauf der Arbeit.
+
 Der erste Schritt, der das IR-System an sich leisten muss, ist das Erstellen von Tokens (siehe \cref{def:Token}). Dazu wird jedes Dokument in Tokens aufgespalten. Ein Token ist in den meisten Fällen ein Wort. Satzzeichen wie Punkte, Kommata usw. sollen nicht als Tokens behandelt und dementsprechend ignoriert werden, dies gilt ebenso für Leerzeichen und Tabs.
-\\
+
 Für jedes Token wird es später im Index einen Eintrag geben, der eine Liste mit weiteren Informationen hält. Diese Liste muss mindestens die Dokument-IDs der Dokumente speichern, in welchen das Token steht. In diesen Listen werden häufig noch weitere Informationen hinterlegt, beispielsweise die Häufigkeit eines Tokens.
-\\
+
 Der zweite Schritt besteht darin, einen Algorithmus zu entwerfen, der eine Query entgegennimmt und auf Basis der Query und des Index eine Liste von relevanten Dokumenten ausgibt. Dieser Algorithmus wird das in der Einleitung kurz vorgestellte Vektorraummodell verwenden. Weiter wird dieser für die Ermittlung der Relevanz die sogenannte TF-IDF-Gewichtung nutzen. Diese wird später noch ausführlich vorgestellt.
 
 \section{Tokenization}\label{token}
 \subsection{Vorarbeiten}
 Bevor aus Dokumenten Tokens erzeugt werden können, müssen einige Fragen beantwortet werden.
 Eine Frage ist, welche Dokumente betrachtet werden sollen und wie man ein Dokument definiert. Ein Beispiel soll das Problem veranschaulichen:
-\\
+
 Angenommen das IR-System soll dazu dienen, Dokumente auf der Festplatte eines Computers zu finden. In diesem Szenario kann jede in einem Ordner gelistete Datei als Dokument angesehen werden. Dies wäre der einfachste Fall. Jedoch ist dies meist nicht erwünscht. So sollen beispielsweise bestimmte Dateitypen von der Suche ausgeschlossen werden. In UNIX existiert ein Dateityp, welcher mehrere Mails pro Datei speichert. Hier wird jede Mail als einzelnes Dokument angesehen. Daraus folgt, dass die Maildatei in mehrere Dokumente aufgespalten werden muss \cite{IR_Intro_Cambridge}.
 Umgekehrt gibt es Szenarien, in denen mehrere Dokumente zu einem Dokument zusammengefasst werden müssen, um bei der Suche nutzbare Ergebnisse zu erzielen \cite{IR_Intro_Cambridge}. Auch hier dienen E-Mails wieder als Beispiel: In vielen Mails werden Anhänge versandt. Häufig sind dies PDF-Dateien und Dateien von Text-Bearbeitungsprogrammen. Die Anhänge sollen zu dem E-Mail-Dokument gezählt werden, an dem sie angehängt wurden.
-\\
+
 Ein weiteres Problem, das gelöst werden muss, um die Dokumente verarbeiten zu können, ist die Codierung der Inhalte der Dokumente. Hierbei müssen Dokumente, die meist in vielen unterschiedlichen Codierungen vorliegen, zu einer definierten Codierung überführt werden \cite{IR_Intro_Cambridge}.
-\\
+
 Diese Probleme der \glqq Vorarbeit\grqq\ werden in der später gezeigten Beispielimplementierung nicht behandelt, dies wird von anderen Tools übernommen.
 
 \subsection{Tokenerzeugung}\label{sub:tokenerzeugung}
 Sobald geklärt ist, in welcher einheitlichen Codierung die Dokumente vorliegen und was als Dokument, im Englischen auch \glqq document unit\grqq\ genannt, verstanden wird, kann ein Dokument in Tokens aufgeteilt werden.
-\\
+
 Eine wichtige Frage, die im Rahmen der Tokenerzeugung geklärt werden muss, ist, welche Zeichenketten als Token behandelt werden. Kommata, Punkte und sonstige Satzzeichen haben keine sinnvolle Bedeutung im Zusammenhang mit Information Retrieval. Diese Zeichen können somit aus Tokens entfernt bzw. während der Tokenerzeugung überlesen werden \cite{IR_Intro_Cambridge}. Nach der Definition \ref{def:Token}, erzeugt der Text
+
 \begin{center}
 	\textit{Beispielsatz, der ein Komma und ein Punkt hat.}
 \end{center}
+
 die Tokens:
+
 \begin{center}
 $[$\textit{Beispielsatz}, \textit{der}, \textit{ein}, \textit{Komma}, \textit{und}, \textit{ein}, \textit{Punkt}, \textit{hat}$]$
 \end{center}
+
 Die dazugehörige Menge von Typen sieht nach Definition \ref{def:Typ} so aus:
+
 \begin{center}
 	$Types$ = $\{$\textit{Beispielsatz}, \textit{der}, \textit{ein}, \textit{Komma}, \textit{und}, \textit{Punkt}, \textit{hat}$\}$
 \end{center}
+
 Die erzeugte Menge von Termen könnte nach Definition \ref{def:Term} - je nach Verarbeitung der Typen - wie folgt aussehen:
+
 \begin{center}
 	$Terms$ = $\{$\textit{beispielsatz}, \textit{der}, \textit{ein}, \textit{komma}, \textit{und}, \textit{punkt}, \textit{hat}$\}$
 \end{center}
 
-Einige Information Retrieval-Systeme nutzen darüber hinaus sogenannte \glqq stop words\grqq. Das sind Wörter, die in sehr vielen Dokumenten in großer Anzahl vorkommen und damit wenig Bedeutung für die Suche besitzen \cite{IR_Intro_Cambridge}. Beispiele für solche Wörter sind \glqq ist\grqq, \glqq sein\grqq\ und \glqq und\grqq. Jedoch funktioniert diese Technik später beim Suchen schlechter als zunächst angenommen. Das Wort \glqq sein\grqq\ kann beispielsweise als Verb oder als Pronomen in einem Dokument vorkommen. Als Pronomen kann dieses Wort durchaus wichtig sein für eine Suche (beispielsweise innerhalb eines Buchtitels), wird jedoch als stop word aussortiert. Daher werden in neuen IR-Systemen entweder gar keine stop words oder nur eine geringe Anzahl stop words genutzt\cite[S. 27]{IR_Intro_Cambridge}.
-\\
+Einige Information Retrieval-Systeme nutzen darüber hinaus sogenannte \glqq\textit{stop words}\grqq . Das sind Wörter, die in sehr vielen Dokumenten in großer Anzahl vorkommen und damit wenig Bedeutung für die Suche besitzen \cite{IR_Intro_Cambridge}. Beispiele für solche Wörter sind \glqq ist\grqq, \glqq sein\grqq\ und \glqq und\grqq. Jedoch funktioniert diese Technik später beim Suchen schlechter als zunächst angenommen. Das Wort \glqq sein\grqq\ kann beispielsweise als Verb oder als Pronomen in einem Dokument vorkommen. Als Pronomen kann dieses Wort durchaus wichtig sein für eine Suche (beispielsweise innerhalb eines Buchtitels), wird jedoch als stop word aussortiert. Daher werden in neuen IR-Systemen entweder gar keine stop words oder nur eine geringe Anzahl stop words genutzt\cite[S. 27]{IR_Intro_Cambridge}.
+
 Eine weitere Möglichkeit solche Wörter zu filtern, ist \glqq Stemming\grqq .
 Diese Methode führt Wörter auf ihren Wortstamm zurück \cite{IR_Intro_Cambridge} \cite{IR_Uni_Bamberg}. Dadurch wird die Anzahl der Terme, die im Index gespeichert werden, stark gesenkt. Allerdings bringt diese Methode eine Unschärfe mit sich. Damit ist gemeint, dass zwei nicht verwandte Wörter auf denselben Wortstamm zurückgeführt werden, wodurch bei der späteren Suche nach einem der beiden Urpsrungswörter auch Ergebnisse zurückgeliefert werden, die irrelevant für die Query sind \cite{IR_Intro_Cambridge}.
-\\
+
 Weiter existieren sprachspezifische Probleme. Beispielsweise wird im Englischen häufig mit Kurzformen von Wörtern gearbeitet, so wird \glqq are not\grqq\ zu \glqq aren't\grqq. Es muss geklärt werden wie mit solchen Formen umgegangen werden soll. Ein Ansatz ist Query Preprocessing. Hierbei werden Wörter dieser Art, die in der Query und in den Dokumenten stehen, in eine einheitliche Form gebracht \cite{IR_Intro_Cambridge}. Darüber hinaus gilt es zu beachten, dass Eigennamen wie \glqq Hewlett-Packard\grqq\ nicht oder nur nach bestimmten Regeln prozessiert werden dürfen. Welche Wörter als Eigenname behandelt werden und welche nicht, kann mittels Machine Learning-Verfahren oder auf Basis eines großen Vokabulars gelöst werden.

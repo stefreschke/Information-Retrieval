@@ -7,6 +7,8 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Beispiel für einen invertierten Index \cite {index_Uni_Munich}}}{10}{figure.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Beispiel eines Tries \cite {trie_Abb}}}{11}{figure.3.2}
@@ -25,18 +27,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.5}{\ignorespaces BuildIndex-Methode}}{25}{figure.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces AddToIndex-Methode}}{26}{figure.5.6}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces GetStartDirectories-Methode}}{26}{figure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces CleanIndex-Methode}}{27}{figure.5.7}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces AddToIndex-Methode}}{27}{figure.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Retrieve-Methode}}{28}{figure.5.8}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces CleanIndex-Methode}}{28}{figure.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces GetStartDirectories-Methode}}{29}{figure.5.9}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Retrieve-Methode}}{30}{figure.5.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces PreprocessText-Methode}}{32}{figure.5.10}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces GetStartDirectories-Methode}}{30}{figure.5.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Die InitIndex-Funktion}}{33}{figure.5.11}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces PreprocessText-Methode}}{33}{figure.5.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Execute}}{34}{figure.5.12}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Retrieve-Methode}}{35}{figure.5.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Die InitIndex-Funktion}}{36}{figure.5.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Execute}}{37}{figure.5.14}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
