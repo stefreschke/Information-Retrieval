@@ -47,7 +47,7 @@
 %Variablen
 \newcommand{\Titel}{Information Retrieval}
 \newcommand{\Autor}{Jesse-Jermaine Richter und Jonas Seng}
-\newcommand{\TotPages}{41}
+\newcommand{\TotPages}{40}
 \newcommand{\Date}{29.04.2019}
 
 %Literaturverzeichnis
@@ -123,6 +123,12 @@
 	\begin{spacing}{1.5}	
 %---------------------------------------------------------------------------------
 		\chapter{Einleitung}\pagenumbering{arabic}
+		\fancypagestyle{plain}{
+			\fancyhf{}
+			\renewcommand{\headrulewidth}{0pt}
+			\lfoot{}
+			\rfoot{Seite \thepage\ von \TotPages}
+		}
 		\label{einleitung}
 		\input{einleitung}
 %---------------------------------------------------------------------------------

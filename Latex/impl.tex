@@ -142,8 +142,7 @@ class Index:
 
 \subsection{buildIndex}\label{buildindex}
 
-Die Methode \emph{buildIndex} baut den invertierten Index auf und nutzt dafür die\\
-\textit{getStartDirectories}- und die \textit{\_addToIndex}-Methode. Dabei kann der \textit{buildIndex}-Methode optional Startverzeichnisse in Form einer Liste mit raw Strings mitgegeben werden. In der ersten If-Abfrage wird geprüft, ob die Liste \textit{startDirectories} leer ist. Dies ist der Fall, wenn der Nutzer keine Startverzeichnisse mitgegeben hat. Dann werden die Startverzeichnisse mithilfe der \textit{getStartDirectories}-Methode ermittelt.
+Die Methode \emph{buildIndex} baut den invertierten Index auf und nutzt dafür die \textit{getStartDirectories}- und die \textit{\_addToIndex}-Methode. Dabei kann der \textit{buildIndex}-Methode optional Startverzeichnisse in Form einer Liste mit raw Strings mitgegeben werden. In der ersten If-Abfrage wird geprüft, ob die Liste \textit{startDirectories} leer ist. Dies ist der Fall, wenn der Nutzer keine Startverzeichnisse mitgegeben hat. Dann werden die Startverzeichnisse mithilfe der \textit{getStartDirectories}-Methode ermittelt.
 
 Zuerst wird die Hilfsmetode \textit{cleanIndex}\ref{cleanIndex} aufgerufen. Diese löscht alle Dokumente aus dem Index, die nicht mehr auf dem System liegen.
 
@@ -524,21 +523,19 @@ def initIndex(startDictionaries):
 	\label{fig:initIndex}
 \end{figure}
 
-Wird keine Index-Datei gefunden, wird eine neue Instanz der Index-Klasse erzeugt. Mithilfe der \textit{buildIndex}-Methode wird der Index aufgebaut bzw. aktualisiert, sofern dieser persistiert vorliegt.
-\\
-Zum Schluss wird der Index wieder persistiert. Dies wird von der \textit{dump}-Funktion von \textit{pickle} übernommen. Diese Funktion nimmt ein Python-Objekt sowie eine Datei als Argumente und schreibt das Objekt in diese Datei.
-
 \begin{figure}
 	\rule{\textwidth}{0.4pt}
-		\begin{lstlisting}[language=Python]
+	\begin{lstlisting}[language=Python]
 ind = initIndex([path])
 resultSet = ind.retrieve(query)
-  if resultSet:
-    print('Pfad, \t Gewicht')
-    for url, score in resultSet:
-      print(url, '\t', score)
-		\end{lstlisting}
+	if resultSet:
+		print('Pfad, \t Gewicht')
+		for url, score in resultSet:
+			print(url, '\t', score)
+	\end{lstlisting}
 	\rule{\textwidth}{0.4pt}
 	\caption{Execute}
 	\label{fig:execute}
 \end{figure}
+
+Wird keine Index-Datei gefunden, wird eine neue Instanz der Index-Klasse erzeugt. Mithilfe der \textit{buildIndex}-Methode wird der Index aufgebaut bzw. aktualisiert, sofern dieser persistiert vorliegt. Zum Schluss wird der Index wieder persistiert. Dies wird von der \textit{dump}-Funktion von \textit{pickle} übernommen. Diese Funktion nimmt ein Python-Objekt sowie eine Datei als Argumente und schreibt das Objekt in diese Datei.

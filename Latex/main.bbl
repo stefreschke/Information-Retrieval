@@ -17,48 +17,6 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
-  \entry{IR_Intro_Cambridge}{book}{}
-    \name{author}{1}{}{%
-      {{hash=CDMHSPR}{%
-         family={Cristopher D.\bibnamedelima Manning},
-         familyi={C\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  M\bibinitperiod},
-         suffix={Prabhakar\bibnamedelima Raghavan},
-         suffixi={P\bibinitperiod\bibinitdelim R\bibinitperiod},
-         given={Hinrich\bibnamedelima Schütze},
-         giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CDMPRHS1}
-    \strng{fullhash}{CDMPRHS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{title}{Introduction to Information Retrieval}
-    \field{year}{2009}
-  \endentry
-
-  \entry{trie_Abb}{online}{}
-    \name{author}{1}{}{%
-      {{hash=f}{%
-         family={freeCodeCamp},
-         familyi={f\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{f1}
-    \strng{fullhash}{f1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{F}
-    \field{sortinithash}{F}
-    \field{title}{Introduction to Trie}
-    \verb{url}
-    \verb https://guide.freecodecamp.org/miscellaneous/data-structure-trie/
-    \endverb
-    \field{year}{o.J.}
-  \endentry
-
   \entry{IR_Uni_Duisburg}{online}{}
     \name{author}{1}{}{%
       {{hash=FI}{%
@@ -67,6 +25,12 @@
          given={Ingo},
          giveni={I\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Deutsch}%
+    }
+    \list{organization}{1}{%
+      {Universität Duisburg-Essen}%
     }
     \strng{namehash}{FI1}
     \strng{fullhash}{FI1}
@@ -80,6 +44,9 @@
     \verb n-ir.pdf
     \endverb
     \field{year}{2007}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{klass_IR}{misc}{}
@@ -91,16 +58,30 @@
          giveni={K\bibinitperiod},
       }}%
     }
+    \list{language}{1}{%
+      {Deutsch}%
+    }
+    \list{organization}{1}{%
+      {Frauenhofer}%
+    }
     \strng{namehash}{HK1}
     \strng{fullhash}{HK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{H}
     \field{sortinithash}{H}
-    \field{title}{Klassische Information Retrieval Modelle Einführung}
+    \field{subtitle}{Einführung}
+    \field{title}{Klassische Information Retrieval Modelle}
+    \verb{url}
+    \verb http://docplayer.org/50052129-Klassische-information-retrieval-modell
+    \verb e-einfuehrung.html
+    \endverb
     \field{day}{21}
     \field{month}{10}
     \field{year}{2012}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{IR_Uni_Bamberg}{book}{}
@@ -112,14 +93,67 @@
          giveni={A\bibinitperiod},
       }}%
     }
+    \list{language}{1}{%
+      {Deutsch}%
+    }
+    \list{organization}{1}{%
+      {Otto-Friedrich-Universität Bamberg}%
+    }
     \strng{namehash}{HA1}
     \strng{fullhash}{HA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{H}
     \field{sortinithash}{H}
+    \field{subtitle}{Grundlagen, Modelle und Anwendungen}
     \field{title}{Information Retrieval 1}
+    \verb{url}
+    \verb https://www.uni-bamberg.de/fileadmin/uni/fakultaeten/wiai_lehrstuehle
+    \verb /medieninformatik/Dateien/Publikationen/2008/henrich-ir1-1.2.pdf
+    \endverb
+    \field{day}{07}
+    \field{month}{01}
     \field{year}{2008}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{IR_Intro_Cambridge}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uPRuHSCDM}{%
+         prefix={und Prabhakar Raghavan\bibnamedelima und},
+         prefixi={u\bibinitperiod\bibinitdelim P\bibinitperiod
+  R\bibinitperiod\bibinitdelim u\bibinitperiod},
+         family={Hinrich\bibnamedelima Schütze},
+         familyi={H\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Cristopher D.\bibnamedelima Manning},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{HSCDMuPRu1}
+    \strng{fullhash}{HSCDMuPRu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Introduction to Information Retrieval}
+    \verb{url}
+    \verb https://nlp.stanford.edu/IR-book/
+    \endverb
+    \field{day}{01}
+    \field{month}{04}
+    \field{year}{2009}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{index_Uni_Munich}{online}{}
@@ -130,6 +164,9 @@
          given={Nagy},
          giveni={N\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Deutsch}%
     }
     \strng{namehash}{IN1}
     \strng{fullhash}{IN1}
@@ -142,7 +179,12 @@
     \verb http://www.cis.uni-muenchen.de/people/Schulz/SeminarSoSe2001IR/Nagy/n
     \verb ode4.html
     \endverb
+    \field{day}{25}
+    \field{month}{07}
     \field{year}{2001}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{Trie_Blog}{online}{}
@@ -154,6 +196,12 @@
          giveni={V\bibinitperiod},
       }}%
     }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {A Medium Corporation}%
+    }
     \strng{namehash}{JV1}
     \strng{fullhash}{JV1}
     \field{labelnamesource}{author}
@@ -164,7 +212,12 @@
     \verb{url}
     \verb https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014
     \endverb
+    \field{day}{31}
+    \field{month}{07}
     \field{year}{2017}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{Apache_Tika}{online}{}
@@ -173,6 +226,12 @@
          family={o.V.},
          familyi={o\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {The Apache Software Foundation}%
     }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
@@ -184,9 +243,10 @@
     \verb{url}
     \verb https://tika.apache.org/
     \endverb
-    \field{day}{22}
-    \field{month}{12}
-    \field{year}{2018}
+    \field{year}{o.J.}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{filetype}{online}{}
@@ -195,6 +255,12 @@
          family={o.V.},
          familyi={o\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {Python Software Foundation}%
     }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
@@ -209,6 +275,9 @@
     \field{day}{01}
     \field{month}{03}
     \field{year}{2019}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{ir_wiki}{online}{}
@@ -217,6 +286,12 @@
          family={o.V.},
          familyi={o\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Deutsch}%
+    }
+    \list{organization}{1}{%
+      {Wikimedia Foundation Inc.}%
     }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
@@ -228,8 +303,65 @@
     \verb{url}
     \verb https://de.wikipedia.org/wiki/Information_Retrieval
     \endverb
-    \warn{\item Invalid format of field 'date' \item Invalid format of field
-  'date'}
+    \field{day}{22}
+    \field{month}{02}
+    \field{year}{2019}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{trie_Abb}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {freeCodeCamp}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{Introduction to Trie}
+    \verb{url}
+    \verb https://guide.freecodecamp.org/miscellaneous/data-structure-trie/
+    \endverb
+    \field{year}{o.J.}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{multiprocess}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {Python Software Foundation}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{multiprocessing — Process-based parallelism}
+    \verb{url}
+    \verb https://docs.python.org/3/library/multiprocessing.html
+    \endverb
+    \field{year}{o.J.}
+    \warn{\item Invalid format of field 'urldate'}
   \endentry
 
   \entry{re}{online}{}
@@ -238,6 +370,12 @@
          family={o.V.},
          familyi={o\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {Python Software Foundation}%
     }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
@@ -250,6 +388,9 @@
     \verb https://docs.python.org/3/library/re.html
     \endverb
     \field{year}{o.J.}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{nltk}{online}{}
@@ -259,19 +400,28 @@
          familyi={o\bibinitperiod},
       }}%
     }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {NLTK Project}%
+    }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{O}
     \field{sortinithash}{O}
-    \field{title}{source code for nltk.tokenize.regexp}
+    \field{title}{Source code for nltk.tokenize.regexp}
     \verb{url}
     \verb https://www.nltk.org/_modules/nltk/tokenize/regexp.html
     \endverb
     \field{day}{17}
     \field{month}{11}
     \field{year}{2018}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{npl_test_collection}{online}{}
@@ -280,6 +430,12 @@
          family={o.V.},
          familyi={o\bibinitperiod},
       }}%
+    }
+    \list{language}{1}{%
+      {Englisch}%
+    }
+    \list{organization}{1}{%
+      {University of Glasgow}%
     }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
@@ -291,6 +447,9 @@
     \verb{url}
     \verb http://ir.dcs.gla.ac.uk/resources/test_collections/
     \endverb
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}
   \endentry
@@ -302,6 +461,12 @@
          familyi={o\bibinitperiod},
       }}%
     }
+    \list{language}{1}{%
+      {Deutsch}%
+    }
+    \list{organization}{1}{%
+      {Wikimedia Foundation Inc.}%
+    }
     \strng{namehash}{o1}
     \strng{fullhash}{o1}
     \field{labelnamesource}{author}
@@ -312,18 +477,43 @@
     \verb{url}
     \verb https://de.wikipedia.org/wiki/Trie
     \endverb
+    \field{day}{05}
+    \field{month}{12}
     \field{year}{2018}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{VR_Retrieval}{online}{}
+    \name{author}{1}{}{%
+      {{hash=o}{%
+         family={o.V.},
+         familyi={o\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {Deutsch}%
+    }
+    \list{organization}{1}{%
+      {Wikimedia Foundation Inc.}%
+    }
+    \strng{namehash}{o1}
+    \strng{fullhash}{o1}
+    \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{V}
-    \field{sortinithash}{V}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
     \field{title}{Vektorraum-Retrieval}
     \verb{url}
     \verb https://de.wikipedia.org/wiki/Vektorraum-Retrieval
     \endverb
-    \field{year}{2017}
+    \field{day}{03}
+    \field{month}{02}
+    \field{year}{2019}
+    \field{urlday}{29}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 \enddatalist
 \endinput
